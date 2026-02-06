@@ -90,3 +90,9 @@ trw 分支合并(merge)到master分支: 去mater分支，执行git merge trw
 合并commit
 
 修改commit，提交信息
+
+
+## 总结
+
+![alt text](./imgs/ad31af84dc3809575ae2383458570c19.jpg)
+
