@@ -81,6 +81,8 @@ ASUS@LAPTOP-6UMOON1O MINGW64 /d/project/nlbq (trw)
 $
 ```
 
+trw 分支合并(merge)到master分支: 去mater分支，执行git merge trw
+
 ## git rebase
 
 删除commit
