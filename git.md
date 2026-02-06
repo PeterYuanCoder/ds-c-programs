@@ -80,3 +80,11 @@ branch 'trw' set up to track 'origin/trw'.
 ASUS@LAPTOP-6UMOON1O MINGW64 /d/project/nlbq (trw)
 $
 ```
+
+## git rebase
+
+删除commit
+
+合并commit
+
+修改commit，提交信息
