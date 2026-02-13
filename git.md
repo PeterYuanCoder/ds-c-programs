@@ -23,6 +23,31 @@ git config --global user.name "Your Name"
 
 git clone https://gitee.com/YUANSILE/nlbq.git --recursive 拉取远程code仓库（看项d目目录是否有.gitmodules文件，里面是否有内容... git 加上 --recursive 选项）
 
+## gitbash 使用步骤
+
+```shell
+# 1. 进入项目
+ASUS@LAPTOP-6UMOON1O MINGW64 ~ (master)
+$ cd D:/project/nlbq
+
+# 2. 查看项目有什么修改
+ASUS@LAPTOP-6UMOON1O MINGW64 /d/project/nlbq (master)
+$ git status .
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+# 3. git add 指定文件
+# 4. git commit -m "提交信息"
+# 5. git push
+```
+
 ## 常用git命令
     
 git status . 查看当前路径下项目改动情况
