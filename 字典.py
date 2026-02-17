@@ -65,11 +65,43 @@ print(d)
 
 
 
-
+'''
 #字典中元素的修改
 d=dict.fromkeys('FishC',250)
 print(d)
+#单键值修改
 d['s']=250
+print(d)
+#多键值修改     .update([other])
+d.update({'i':105,'h':104})
+print(d)
+
+d.update(F='70',C='67')
+print(d)
+'''
+
+
+
+'''
+#查找字典中的元素
+d=dict.fromkeys('FishC')
+print(d)
+print(d['C'])
+#get(key[,default])查找指定元素，并指定查不到的时候的返回值
+print(d.get('z','这里没有z'))
+'''
+
+
+#字典的嵌套
+d={'吕布':{'英语':50,'数学':80,'语文':90},'刘备':{'英语':10,'数学':60,'语文':100}}
+print(d['吕布']['数学'])
+print(d['吕布'])
+
+f={'吕布':[50,80,90],'刘备':[10,60,100]}
+print(f['刘备'][1])
+
+
+
 
 
 
