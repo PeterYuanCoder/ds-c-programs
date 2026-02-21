@@ -47,8 +47,7 @@ print(div(4,0))
 '''
 
 
-
-
+'''
 #参数
 #位置参数
 def myfunc(s,vt,o):
@@ -59,15 +58,60 @@ print(myfunc('小甲鱼','打了','我'))
 print(myfunc(o='我',vt='打了',s='小甲鱼'))
 
 #默认参数
+#一个默认参数
+def myfunc(s,vt,o='小甲鱼'):
+    return ''.join((o,vt,s))
+print(myfunc('香蕉','吃了'))  #默认香蕉=s，吃了=vt
+print(myfunc('香蕉','吃了','不二如是'))   #替换小甲鱼
+#两个默认参数
+def myfunc(vt,s='苹果',o='小甲鱼'):    #要将被更换的数据写在最前面
+    return ''.join((o,vt,s))
+print(myfunc('吃了'))
+'''
+
+'''
+#收集参数（可变参数）   用一个*标记    自动组装为一个typle(元组)
+#def 函数名称(*参数)
+def myfunc(*args):
+    print('有{}个参数'.format(len(args)))  #format用于把变量填进字符串
+    print('第二个参数是：{}'.format(args[1]))
+print(myfunc('小甲鱼','袁斯乐'))
+'''
+
+'''
+#关键字参数  用两个*标记   自动组装为一个dict(字典)
+def myfunc(**kw):
+    print(kw)
+print(myfunc(a=1,b=2,c=3))
+#同时使用关键字参数和可变参数
+def xiaojiayu(a,*b,**c):
+    print(a,b,c)
+print(xiaojiayu(1,2,3,4,5,x=6,y=7))
+'''
+'''
+#两种参数的解包
+args=(1,2,3,4)
+kw={'a':1,'b':2,'c':3,'d':4}
+def myfunc(a,b,c,d):
+    print(a,b,c,d)
+print(myfunc(*args))
+print(myfunc(**kw))
+'''
 
 
+#局部作用域
+def myfunc():
+    s=222
+    print(s)
+print(myfunc())   #直接用print(s)不能调用
 
-
-
-
-
-
-
+#全局作用域       但是局部变量会覆盖全局变量
+x=555
+def xiaojiayu():
+    x=111
+    print(x)
+print(x)
+print(xiaojiayu())
 
 
 
