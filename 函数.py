@@ -98,7 +98,7 @@ print(myfunc(*args))
 print(myfunc(**kw))
 '''
 
-
+'''
 #局部作用域
 def myfunc():
     s=222
@@ -112,6 +112,71 @@ def xiaojiayu():
     print(x)
 print(x)
 print(xiaojiayu())
+#修改全局变量 global
+z=880
+def yuansile():
+    global z
+    z=100
+    print(z)
+print(yuansile())    #先调用函数修改全局变量
+print(z)
+'''
+
+
+
+#嵌套函数
+def  funA():
+    x=100
+    def funB():
+        nonlocal x   #从内部修改外部函数的值  使输出结果变成2个400
+        x=400
+        print('In funB x=',x)
+    funB()
+    print('In funA x=',x)
+print(funA())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
