@@ -1033,26 +1033,26 @@
 
                 // 4，编写代码,演示多个字符从两端移动，向中间汇集
 
-int main()
-{            // 这次的left和right表示的是下标           数组存的数字没有\0，是字符串的结束标志
-		char arr1[] = "welcome to bit!!!!";
-		char arr2[] = "###################";
-		int left = 0;
-		int sz = sizeof(arr1) / sizeof(arr1[0]);
-		int right = sz - 2;     //也可以用int right=strlen(arr2)-1;      strlen计算\0值钱的元素的个数
-		while (left <= right)
-		{
-			arr2[left] = arr1[left];
-			arr2[right] = arr1[right];
-			printf("%s\n", arr2);
-			Sleep(1000);       //使其慢慢呈现
-			system("cls");      //一行代码渐变
-			left++;
-			right--;
-		}
-		printf("%s\n", arr2);            //保留渐变后的结果
-	return 0;
-}
+//int main()
+//{            // 这次的left和right表示的是下标           数组存的数字没有\0，是字符串的结束标志
+//		char arr1[] = "welcome to bit!!!!";
+//		char arr2[] = "###################";
+//		int left = 0;
+//		int sz = sizeof(arr1) / sizeof(arr1[0]);
+//		int right = sz - 2;     //也可以用int right=strlen(arr2)-1;      strlen计算\0值钱的元素的个数
+//		while (left <= right)
+//		{
+//			arr2[left] = arr1[left];
+//			arr2[right] = arr1[right];
+//			printf("%s\n", arr2);
+//			Sleep(1000);       //使其慢慢呈现
+//			system("cls");      //一行代码渐变
+//			left++;
+//			right--;
+//		}
+//		printf("%s\n", arr2);            //保留渐变后的结果
+//	return 0;
+//}
 
 
 //             5，编写代码实现，模拟用户登录情景，并且只能登录三次
@@ -1083,5 +1083,6 @@ int main()
 //	}
 //	return 0;
 //}
+zzzz
 
-
+z
