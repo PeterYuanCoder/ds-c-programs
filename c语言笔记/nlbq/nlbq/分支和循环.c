@@ -57,15 +57,72 @@
 //}
 
 
+//             注意    else与最近的if是一个语句，所以结果不打印
+//int main()
+//{
+//	int a = 0;
+//	int b = 2;
+//	if (a == 1)
+//		if (b == 2)
+//			printf("hehe\n");
+//	else                               
+//			printf("haha\n");
+//	return 0;
+//}
+//
+////优化
+//int main()
+//{
+//	int a = 0;
+//	int b = 2;
+//	if (a == 1)
+//	{
+//		if (b == 2)
+//			printf("hehe\n");
+//		else
+//			printf("haha\n");
+//	}
+//	return 0;
+//}
 
-int main()
-{
-	int a = 0;
-	int b = 2;
-	if (a == 1)
-		if (b == 2)
-			printf("hehe\n");
-		else
-			printf("haha\n");
-	return 0;
-}
+
+//               练习1，  判断一个数是否是奇数
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//
+//	if (n % 2 == 1)
+//		printf("奇数\n");
+//	else
+//		printf("偶数\n");
+//	return 0;
+//}
+
+
+//               练习2， 输出1-100之间的奇数
+//     1,for 循环
+//int main()
+//{
+//	int i = 0;
+//	for (i = 0; i <= 100; i++)
+//	{
+//		if (i % 2 == 1)
+//			printf("%d ", i);    //d后面加空格输出结果就有空格，\n每一个数字占一行   加 ，就是用逗号隔开
+//	}
+//	return 0;
+//}
+
+//      2，while 循环
+//int main()
+//{
+//	int i = 1;
+//	while (i <= 100)
+//	{
+//		if (i % 2 == 1)
+//			printf("%d ", i);
+//	i++;
+//	}
+//		
+//	return 0;
+//}
