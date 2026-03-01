@@ -5,7 +5,9 @@
 //循环语句 while ，for , do while
 //转向语句 break语句 ， goto语句 ，  continue语句
 
+//一，分支语句
 //if语法
+// 
 //单分支
 //if(表达式)
 //	语句1;
@@ -126,3 +128,73 @@
 //		
 //	return 0;
 //}
+
+
+
+ 
+
+//switch语句
+//
+//switch (整形表达式)       必须是整形   字符也是整形
+//{
+//	语句项:
+//}
+
+//语句项
+//是一些case语句:
+//如下
+//case 整形常量表达式:           case确定入口
+//	语句；
+
+//int main()
+//{
+//	int day = 0;
+//	scanf("%d", &day);
+//	switch(day)
+//	{
+//	case 1:
+//		printf("星期1\n");
+//		break;
+//	case 2:
+//		printf("星期2\n");
+//		break;
+//	case 3:
+//		printf("星期3\n");
+//		break;
+//	case 4:
+//		printf("星期4\n");
+//		break;
+//
+//	case 5:
+//		printf("星期5\n");
+//		break;
+//
+//	case 6:
+//		printf("星期6\n");
+//		break;
+//
+//	case 7:
+//		printf("星期7\n");
+//		break;
+//	default:                        //当case不能匹配的就到这里
+//		printf("选择错误\n");
+//		break;
+//	}
+//	return 0;
+//}
+
+
+
+
+
+
+
+//二，循环语句
+//while循环
+
+
+
+int main()
+{
+	
+}
