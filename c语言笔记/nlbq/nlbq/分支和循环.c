@@ -194,7 +194,70 @@
 
 
 
+//break  跳出后面所有的循环
+//continue 跳出当前循环
+/*
 int main()
 {
-	
+	int i = 1;
+	while (i <= 10)
+	{
+		if (i == 5)
+			break;
+		printf("%d ", i);
+		i++;
+	}
+}
+*/
+
+
+/*
+int main()
+{
+	int i = 1;
+	while (i <= 10)
+	{
+		if (i == 5)
+			continue;
+		printf("%d ", i);
+		i++;
+	}
+}
+*/
+
+/*
+int main()
+{
+	int ch = getchar();   //getchar获取一个字符
+	printf("%c\n", ch);
+	putchar(ch);
+	return 0;
+}
+*/
+
+
+
+
+
+
+
+int main()
+{
+	int ch = 0;
+	while ((ch = getchar()) != EOF)     //    !=  不等于
+	{
+		putchar(ch);
+	}
+	return 0;
+}
+
+
+
+
+for 循环
+for (初始化; 判断部分; 调整部分);
+int main()
+{
+
+	return 0;
 }
