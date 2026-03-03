@@ -236,11 +236,7 @@ int main()
 */
 
 
-
-
-
-
-
+/*
 int main()
 {
 	int ch = 0;
@@ -250,14 +246,80 @@ int main()
 	}
 	return 0;
 }
+*/
+
+
+//   作业一,将ASCLL码对应字符并输出他们
+
+//int main()
+//{
+//	int arr[] = { 73,32,99,96,70,111,100 };
+//	int i = 0;
+//	//sizeof(arr)   计算的是数组的总大小，单位是字节
+//	//sizeof(arr[0])   计算的是数组元素的大小
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	while (i < sz)
+//	{
+//		printf("%c", arr[i]);
+//		i++;
+//	}
+//	return 0;
+//}
 
 
 
 
-for 循环
-for (初始化; 判断部分; 调整部分);
+
+
+
+//for 循环
+//for (初始化; 判断部分; 调整部分);
+//不要再for循环体内修改循环变量，防止for循环失去控制
+//建议for语句的循环控制变量的取值采用“前闭后开区间”写法
+
+
+
+
+/*
 int main()
 {
-
+	int i = 0;
+	for (i =1; i <= 10; i++)
+	{
+		printf("%d ", i);
+		printf("hehe\n");
+	}
 	return 0;
 }
+*/
+
+
+/*
+int main()
+{
+	int i = 0;
+	for (i = 1; i <= 10; i++)
+	{
+		if (i == 5)
+			break;
+		printf("%d ", i);
+	}
+	return 0;
+}
+*/
+
+
+
+int main()
+{
+	int i = 0;
+	for (i = 1; i <= 10; i++)
+	{
+		if (i == 5)
+			continue;
+		printf("%d ", i);
+	}
+	return 0;
+}
+
+
