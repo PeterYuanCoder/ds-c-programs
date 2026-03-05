@@ -310,14 +310,32 @@ int main()
 
 
 
+//int main()
+//{
+//	int i = 0;
+//	for (i = 1; i <= 10; i++)
+//	{
+//		if (i == 5)
+//			continue;
+//		printf("%d ", i);
+//	}
+//	return 0;
+//}
+
+
+
+
 int main()
 {
 	int i = 0;
-	for (i = 1; i <= 10; i++)
+	int j = 0;
+
+	for (i = 0; i < 10; i++)
 	{
-		if (i == 5)
-			continue;
-		printf("%d ", i);
+		for (j = 0; j < 10; j++)
+		{
+			printf("hehe\n");
+		}
 	}
 	return 0;
 }
