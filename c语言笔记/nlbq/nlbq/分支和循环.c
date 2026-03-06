@@ -325,19 +325,65 @@ int main()
 
 
 
+//int main()
+//{
+//	int i = 0;
+//	int j = 0;
+//
+//	for (i = 0; i < 10; i++)
+//	{
+//		for (j = 0; j < 10; j++)
+//		{
+//			printf("hehe\n");
+//		}
+//	}
+//	return 0;
+//}
+
+
+
+
+
+//do...while()循环
+//do
+//	循环语句;
+//while (表达式);
+
+
+
+
+//int main()
+//{
+//	int i = 1;
+//	do
+//	{
+//		printf("%d ", i);
+//		i++;
+//	} 
+//	while (i <= 10);
+//	return 0;
+//}
+
+
+
+
+
+
+
+//作业一 ，    计算n的阶乘
+
+
 int main()
 {
-	int i = 0;
-	int j = 0;
-
-	for (i = 0; i < 10; i++)
+	int i = 1;
+	int n = 0;
+	int ret = 1;
+	scanf("%d", &n);
+	for (i = 1; i <= n; i++)
 	{
-		for (j = 0; j < 10; j++)
-		{
-			printf("hehe\n");
-		}
+		ret = ret * i;
+
 	}
+	printf("%d", ret);
 	return 0;
 }
-
-
