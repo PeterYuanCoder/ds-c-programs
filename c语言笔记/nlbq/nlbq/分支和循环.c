@@ -372,18 +372,86 @@ int main()
 
 //作业一 ，    计算n的阶乘
 
+//int main()
+//{
+//	int i = 1;
+//	int n = 0;
+//	int ret = 1;
+//	int sum = 0;
+//	scanf("%d", &n);
+//	for (i = 1; i <= n; i++)
+//	{
+//		ret = ret * i;
+//		
+//	}
+//	printf("%d", ret);
+//	return 0;
+//}
 
+
+//  作业二，计算1到10的阶乘之和
+
+
+//法一
+//int main()
+//{
+//	int i = 1;
+//	int n = 0;
+//	int ret = 1;
+//	int sum = 1;
+//	for (n = 1; n <= 10; n++)
+//	{
+//		ret = 1;
+//		for (i = 1; i <= n; i++)
+//		{
+//			ret = ret * i;
+//		}
+//		sum = ret + sum;
+//	}
+//	printf("%d", sum);
+//	return 0;
+//}
+
+
+//法二
+//int main()
+//{
+//	int ret = 1;
+//	int n = 0;
+//	int sum = 0;
+//	for (n = 1; n <= 10; n++)
+//	{
+//		ret = ret * n;
+//		sum = sum + ret;
+//	}
+//	printf("%d", sum);
+//	return 0;
+//}
+
+
+//作业三，在一个有序数组中查找具体的某个数n
+
+//一个一个查找
 int main()
 {
-	int i = 1;
-	int n = 0;
-	int ret = 1;
-	scanf("%d", &n);
-	for (i = 1; i <= n; i++)
+	int arr[] = { 1,2.3,4,5,6,7,8,9,10 };
+	int k = 8;
+	int i = 0;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	for (i = 0; i < sz; i++)
 	{
-		ret = ret * i;
-
+		if (arr[i] == k)
+		{
+			printf("找到了，下标是:%d\n",i);
+			break;
+		}
 	}
-	printf("%d", ret);
+	if (i == sz)
+	{
+		printf("找不到\n");
+	}
 	return 0;
 }
+
+
+//二分法查找
