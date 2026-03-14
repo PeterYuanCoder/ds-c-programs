@@ -522,28 +522,46 @@ int main()
 
 // 作业五，编写代码，模拟用户登录情景，并且只能登录三次。
 // （只允许输入三次密码，如果密码正确则提示登录成功，如果三次军输入错误，则退出程序）
-#include<string.h>
+//#include<string.h>
+//int main()
+//{
+//	int i = 0;
+//	char password[20] = { 0 };
+//	for (i = 0; i < 3; i++)
+//	{
+//		printf("请输入密码:>");
+//		scanf("%s", password);  //数组名本来就是地址不需要取地址
+//		if (strcmp(password ,"abcdef")==0)     //比较2个字符串是否相等，不能用==，而应该使用一个库函数:strcmp
+//		{
+//			printf("登录成功\n");
+//			break;
+//		}
+//		else
+//		{
+//			printf("密码错误\n");
+//		}
+//		
+//	}
+//	if (i == 3)
+//	{
+//		printf("三次密码均输入，退出程序\n");
+//	}
+//	return 0;
+//}
+
+
+
+
+//电脑产生一个随机数（1-100）
+//猜数字
+//猜大了
+//猜小了
+//直到猜对
+
+
+viod
 int main()
 {
-	int i = 0;
-	char password[20] = { 0 };
-	for (i = 0; i < 3; i++)
-	{
-		printf("请输入密码:>");
-		scanf("%s", password);  //数组名本来就是地址不需要取地址
-		if (strcmp(password ,"abcdef")==0)     //比较2个字符串是否相等，不能用==，而应该使用一个库函数:strcmp
-		{
-			printf("登录成功\n");
-			break;
-		}
-		else
-		{
-			printf("密码错误，请重新输入：");
-		}
-		if (i == 3)
-		{
-			printf("三次密码均输入，退出程序\n");
-		}
-	}
+	
 	return 0;
 }
