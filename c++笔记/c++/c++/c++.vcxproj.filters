@@ -18,5 +18,8 @@
     <ClCompile Include="数据类型和运算符.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="程序练习题.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
