@@ -47,3 +47,4 @@ int main()
 	cout << "地砖的价格是: " << fixed << setprecision(2) << tileTotal << "元" << endl;
 	return 0;
 }
+int main()
