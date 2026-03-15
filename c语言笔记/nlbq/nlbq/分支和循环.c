@@ -451,7 +451,6 @@ int main()
 //	}
 //	return 0;
 //}
-//
 
 
 //折半查找法
@@ -559,9 +558,4 @@ int main()
 //直到猜对
 
 
-viod
-int main()
-{
-	
-	return 0;
-}
+
