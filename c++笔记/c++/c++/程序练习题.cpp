@@ -33,18 +33,62 @@ using namespace std;
 //49页
 #include<iomanip>  //精确小数点后几位函数所需的头文件
 //fixed<<setprecision(需要精确的位数)<<
+//int main()
+//{    //const用于锁定变量的值，更安全
+//	const float PI = 3.1415926;
+//	const float RAILING_PRICE = 35;
+//	const float TILE_PRICE = 20;
+//	float rad,railingTotal,tileTotal;
+//	cout << "请输入泳池的半径：";
+//	cin >> rad;
+//	railingTotal = RAILING_PRICE * 2 * PI * rad;
+//	tileTotal = TILE_PRICE * (PI * (rad + 3) * (rad + 3) - PI * rad * rad);
+//	cout << "栏杆的价格是；" << fixed << setprecision(2) << railingTotal << "元" << endl;
+//	cout << "地砖的价格是: " << fixed << setprecision(2) << tileTotal << "元" << endl;
+//	return 0;
+//}
+
+
+
+//57页
+//int main()
+//{
+//	int year;
+//	cout << "输入年份：";
+//	cin >> year;
+//	cout << year << "年是" << ((year % 100 != 0 && year % 4 == 0 || year % 400 == 0) ? "闰年" : "平年") << endl;
+//	//!=表示不等于，&&表示并且 ,||表示或者 ，满足条件返回第一个""中的内容。 注意格式
+//	return 0;
+//}
+
+
+
+//58页
+//条件语句
+//int main()
+//{
+//	int a, b;
+//	cout << "请输入a和b的值：";
+//	cin >> a >> b;
+//	cout << "a+|b|=" << (b > 0 ? a + b : a - b);
+//	//当b>0输出a+b，反之
+//	return 0;
+//}
+
+//等价于
 int main()
-{    //const用于锁定变量的值，更安全
-	const float PI = 3.1415926;
-	const float RAILING_PRICE = 35;
-	const float TILE_PRICE = 20;
-	float rad,railingTotal,tileTotal;
-	cout << "请输入泳池的半径：";
-	cin >> rad;
-	railingTotal = RAILING_PRICE * 2 * PI * rad;
-	tileTotal = TILE_PRICE * (PI * (rad + 3) * (rad + 3) - PI * rad * rad);
-	cout << "栏杆的价格是；" << fixed << setprecision(2) << railingTotal << "元" << endl;
-	cout << "地砖的价格是: " << fixed << setprecision(2) << tileTotal << "元" << endl;
+{
+	int a, b;
+	cout << "请输入a和b的值：";
+	cin >> a >> b;
+	if (b > 0)
+	{
+		cout << "a+|b|=" << a + b;
+	}
+	else
+	{
+		cout << "a+|b|=" << a - b;
+	}
 	return 0;
+
 }
-int main()
