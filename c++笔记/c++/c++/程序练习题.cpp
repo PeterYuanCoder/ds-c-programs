@@ -76,19 +76,69 @@ using namespace std;
 //}
 
 //等价于
+//int main()
+//{
+//	int a, b;
+//	cout << "请输入a和b的值：";
+//	cin >> a >> b;
+//	if (b > 0)
+//	{
+//		cout << "a+|b|=" << a + b;
+//	}
+//	else
+//	{
+//		cout << "a+|b|=" << a - b;
+//	}
+//	return 0;
+//
+//}
+
+
+//#include<iostream>
+//#include<iomanip>
+//using namespace std;
+//int main()
+//{
+//	int a, b;
+//	cout << "输入变量a和b的值：";
+//	cin >> a >> b;
+//	cout << "交换前a=" << a << ",b=" << b << endl;
+//	a = a ^ b;
+//	b = a ^ b;
+//	a = a ^ b;
+//	cout << "=====================" << endl;
+//	cout << "交换后a=" << a << ",b=" << b << endl;
+//	return 0;
+//}
+
+
+
+
+#include<iostream>
+#include<string>
+using namespace std;
 int main()
 {
-	int a, b;
-	cout << "请输入a和b的值：";
-	cin >> a >> b;
-	if (b > 0)
+	
+	string userName = "";
+	string passWord = "";
+	cout << "请输入账号和密码：";
+	cin >> userName;
+	cin >> passWord;
+	if (userName == "张三" && passWord == "123456")
 	{
-		cout << "a+|b|=" << a + b;
+		cout << "登陆成功!" << endl;
 	}
 	else
 	{
-		cout << "a+|b|=" << a - b;
+		if (userName == "张三")
+		{
+			cout << "密码错误" << endl;
+		}
+		else 
+		{
+			cout << "账号错误" << endl;
+		}
 	}
 	return 0;
-
 }
