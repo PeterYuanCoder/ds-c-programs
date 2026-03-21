@@ -551,11 +551,40 @@ int main()
 
 
 
-//电脑产生一个随机数（1-100）
-//猜数字
-//猜大了
-//猜小了
-//直到猜对
+//         goto语句
+//可以跳出深层循环
+//int main()
+//{
+//again:
+//	printf("hehe\n");
+//	printf("haha\n");
+//	goto again;       //跳到again   
+//		return 0;
+//}
+
+
+
+//关机程序
+//1，电脑运行起来后，1分钟内关机
+//2，如果输入：我是猪，就取消关机
+//int main()
+//{
+//	char input[20] = { 0 };
+//	system("shutdown -s -t 60");
+//	again:
+//	printf("请注意，你的电脑再60秒内关机，如果输入:袁斯乐是我爹，就取消关机\n");
+//	scanf("%s", input);
+//	if (strcmp(input,"袁斯乐是我爹")==0)    //用strcmp函数记得头文件 #include<string.h>
+//	{
+//		system("shutdown -a");
+//	}
+//	else
+//	{
+//		goto again;
+//	}
+//	return 0;
+//}
+
 
 
 
