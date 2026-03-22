@@ -49,23 +49,62 @@
 
 
 //写一个函数可以交换两个整形变量
-void Swap(int a, int b)
-{
-	int z;
-	z = a;
-	a = b;
-	b = z;
+//void Swap(int x, int y)
+//{
+//	//x和y是形参
+//	int z;
+//	z = x;
+//	x = y;
+//	y = z;
+//
+//}
+//当实参传递给形参的时候，形参是实参的一份临时拷贝
+//对形参的修改不会影响实参
 
-}
+//int main()
+//{
+//	int a, b;
+//	scanf("%d %d", &a, &b);
+//	//交换
+//	printf("交换前:a=%d b=%d\n",a, b);
+//	//a和b叫实参
+//	Swap(a, b);
+//	printf("交换后:a=%d b=%d\n",a, b);
+//
+//	return 0;
+//}
 
-int main()
-{
-	int a, b;
-	scanf("%d %d", &a, &b);
-	//交换
-	printf("交换前：a=%d b=%d\n".a, b);
-	Swap(a, b);
-	printf("交换后：a=%d b=%d\n".a, b);
 
-	return 0;
-}
+
+//int main()
+//{
+//	int a = 10;
+//	int* p = &a;//指针
+//	a = 20;//直接改
+//	*p = 30;//间接该
+//	return 0;
+//
+//}
+
+
+//依次修改上面的代码
+//void Swap(int* px, int* py)
+//{
+//	int z = *px;
+//	*px = *py;
+//	*py = z;
+//}
+//int main()
+//{
+//	int a, b;
+//	scanf("%d %d", &a, &b);
+//	//交换
+//	printf("交换前:a=%d b=%d\n",a, b);
+//	//a和b叫实参
+//	Swap(&a, &b);
+//	printf("交换后:a=%d b=%d\n",a, b);
+//
+//	return 0;
+//}
+
+
