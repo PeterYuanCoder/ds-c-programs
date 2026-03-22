@@ -88,29 +88,80 @@
 
 
 //依次修改上面的代码
-void Swap(int* px, int* py)
-{
-	int z = *px;
-	*px = *py;
-	*py = z;
-}
-int Add(int x, int y)
-{
-	int z;
-	z = x + y;
-	return z;
-}
+//void Swap(int* px, int* py)
+//{
+//	int z = *px;
+//	*px = *py;
+//	*py = z;
+//}
+//int Add(int x, int y)
+//{
+//	int z;
+//	z = x + y;
+//	return z;
+//}
+//int main()
+//{
+//	int a, b;
+//	scanf("%d %d", &a, &b);
+//	int c = Add(a, b);     //'当函数要改变a和b的值是要用取地址
+//	printf("%d\n", c);
+//	//交换
+//	printf("交换前:a=%d b=%d\n",a, b);
+//	//a和b叫实参
+//	Swap(&a, &b);
+//	printf("交换后:a=%d b=%d\n",a, b);
+//	return 0;
+//}
+
+
+
+//         函数参数
+// 1,形参只在函数范围内有效
+
+
+//          函数的调用
+
+//1，传值调用   形参和实参分别占有不同的内存块，对形参的修改不会影响实参
+//2，传址调用   函数内部可以直接操作函数外部的变量
+//void Swap(int* px, int* py)
+//{
+//	int z = *px;
+//	*px = *py;
+//	*py = z;
+//}
+//int Add(int x, int y)
+//{
+//	int z;
+//	z = x + y;
+//	return z;
+//}
+//int main()
+//{
+//	int a, b;
+//	scanf("%d %d", &a, &b);
+//	int c = Add(a, b);     //'当函数要改变a和b的值是要用取地址
+//	printf("%d\n", c);
+//	//交换
+//	printf("交换前:a=%d b=%d\n",a, b);
+//	//a和b叫实参
+//	Swap1(a, b);  //传值调用
+//	Swap2(&a, &b);  //传址调用
+//	printf("交换后:a=%d b=%d\n",a, b);
+//	return 0;
+//}
+
+
+
+//练习1.写一个函数可以判断一个数是不是素数
+//打印100到200之间的素数
+//素数是只能被1和他本身整除的数
 int main()
 {
-	int a, b;
-	scanf("%d %d", &a, &b);
-	int c = Add(a, b);     //'当函数要改变a和b的值是要用取地址
-	printf("%d\n", c);
-	//交换
-	printf("交换前:a=%d b=%d\n",a, b);
-	//a和b叫实参
-	Swap(&a, &b);
-	printf("交换后:a=%d b=%d\n",a, b);
+	int i;
+	for (i = 100; i <= 200; i++)
+	{
+
+	}
 	return 0;
 }
-
