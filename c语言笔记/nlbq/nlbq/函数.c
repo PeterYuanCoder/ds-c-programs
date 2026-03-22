@@ -88,23 +88,29 @@
 
 
 //依次修改上面的代码
-//void Swap(int* px, int* py)
-//{
-//	int z = *px;
-//	*px = *py;
-//	*py = z;
-//}
-//int main()
-//{
-//	int a, b;
-//	scanf("%d %d", &a, &b);
-//	//交换
-//	printf("交换前:a=%d b=%d\n",a, b);
-//	//a和b叫实参
-//	Swap(&a, &b);
-//	printf("交换后:a=%d b=%d\n",a, b);
-//
-//	return 0;
-//}
-
+void Swap(int* px, int* py)
+{
+	int z = *px;
+	*px = *py;
+	*py = z;
+}
+int Add(int x, int y)
+{
+	int z;
+	z = x + y;
+	return z;
+}
+int main()
+{
+	int a, b;
+	scanf("%d %d", &a, &b);
+	int c = Add(a, b);     //'当函数要改变a和b的值是要用取地址
+	printf("%d\n", c);
+	//交换
+	printf("交换前:a=%d b=%d\n",a, b);
+	//a和b叫实参
+	Swap(&a, &b);
+	printf("交换后:a=%d b=%d\n",a, b);
+	return 0;
+}
 
