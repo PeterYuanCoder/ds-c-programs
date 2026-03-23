@@ -156,12 +156,94 @@
 //练习1.写一个函数可以判断一个数是不是素数
 //打印100到200之间的素数
 //素数是只能被1和他本身整除的数
+//不是素数必定有一个是小于或等于它的开平方的因子
+
+//1,循环
+#include<math.h>
+//sqrt是数学库函数
+//开平方
+//头文件  <math.h>
+//int main()
+//{
+//	int i = 0;
+//	int count = 0;
+//
+//	for (i = 100; i <= 200; i++)
+//	{  
+//		int flag = 1;
+//	    int j = 0;
+//		for (j = 2; j <= sqrt(i); j++)
+//		{
+//			if (i % j == 0)
+//		{
+//			flag = 0;
+//			break;
+//		}
+//		}
+//		
+//		if (flag == 1)
+//		{
+//		count++;
+//		printf("%d ", i);
+//		}
+//	}
+//	printf("\ncount=%d\n", count);
+//	return 0;
+//}
+
+
+
+
+//2.函数
+
+
+//定义  是素数返回1   不是素数返回0
+//int is_prime(int n)
+//{
+//	int j = 0;
+//	for (j = 2; j <= sqrt(n); j++)
+//	{
+//		if (n % j == 0)
+//		{
+//			return 0;
+//		}
+//	}
+//	return 1;
+//
+//}
+//int main()
+//{
+//	int i = 0;
+//	int count = 0;
+//	for (i = 101; i <= 200; i += 2)
+//	{
+//		if (is_prime(i))
+//		{
+//			printf("%d ", i);
+//			count++;
+//		}
+//	}
+//	printf("\ncount=%d\n",count);
+//	return 0;
+//}
+
+
+
+//2.练习二 ，用一个函数来判断是否为闰年  
+// 打印1000到2000年之间的闰年
+//闰年判断规则
+// 1，能被4整除，并且不能被100整除是闰年
+//2.能被400整除是闰年是
+
 int main()
 {
-	int i;
-	for (i = 100; i <= 200; i++)
+	int year = 0;
+	for (year = 1000;year<=2000;year++)
 	{
-
+		if (year % 4 == 0 && year % 100 != 0||year%400==0)
+		{
+			printf("%d ", year);
+		}
 	}
 	return 0;
 }
