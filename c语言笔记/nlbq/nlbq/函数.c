@@ -235,15 +235,94 @@
 // 1，能被4整除，并且不能被100整除是闰年
 //2.能被400整除是闰年是
 
+//1，循环
+//int main()
+//{
+//	int year = 0;
+//	for (year = 1000;year<=2000;year++)
+//	{
+//		if (year % 4 == 0 && year % 100 != 0||year%400==0)
+//		{
+//			printf("%d ", year);
+//		}
+//	}
+//	return 0;
+//}
+
+//2.函数
+//是闰年返回1，非闰年返回0
+//int is_leap_year(int y)    //函数用于判断闰年  函数功能尽量单一
+//{
+//	if (y % 4 == 0 && y % 100 != 0 || y % 400 == 0)   //记得改成y
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//		return 0;
+//	}
+//}
+//
+//int main()
+//{
+//	int year;
+//	for(year = 1000; year <= 2000; year++)
+//	{
+//		if (is_leap_year(year))
+//		{
+//			printf("%d ", year);
+//		}
+//	}
+//	return 0;
+//}
+
+
+
+
+//练习三,写一个函数，实现一个整形有序数组的二分查找。
+
+//写函数之前先考虑函数怎么用
+int binary_search(int arr[], int k, int sz)
+{
+	int left = 0;
+	int right = sz - 1;
+	
+	while (left <= right)
+	{
+		int mid = left+(right-left)/2;
+		if (arr[mid] < k)
+		{
+			left = mid + 1;
+		}
+		else if (arr[mid] > k)
+		{
+			right = mid - 1;
+		}
+		else
+		{
+			return mid;//找到了返回下标
+		}
+	}
+	if (left > right)
+	{
+		return -1;
+	}
+	
+}
 int main()
 {
-	int year = 0;
-	for (year = 1000;year<=2000;year++)
+	int arr[] = { 1,2,3,4,5,6,7,8,9.10 };
+	int k = 7;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	//找到的话我返回下标   ，  找不到返回-1
+	int ret = binary_search(arr, k, sz);     //传入判断所需的条件
+	if (ret == -1)
 	{
-		if (year % 4 == 0 && year % 100 != 0||year%400==0)
-		{
-			printf("%d ", year);
-		}
+		printf("找不到\n");
+	}
+	else
+	{
+		printf("找到了，下标是：%d\n", ret);
 	}
 	return 0;
 }
