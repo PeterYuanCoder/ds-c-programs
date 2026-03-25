@@ -114,31 +114,55 @@ using namespace std;
 
 
 
-#include<iostream>
-#include<string>
-using namespace std;
+//#include<iostream>
+//#include<string>
+//using namespace std;
+//int main()
+//{
+//	
+//	string userName = "";
+//	string passWord = "";
+//	cout << "请输入账号和密码：";
+//	cin >> userName;
+//	cin >> passWord;
+//	if (userName == "张三" && passWord == "123456")
+//	{
+//		cout << "登陆成功!" << endl;
+//	}
+//	else
+//	{
+//		if (userName == "张三")
+//		{
+//			cout << "密码错误" << endl;
+//		}
+//		else 
+//		{
+//			cout << "账号错误" << endl;
+//		}
+//	}
+//	return 0;
+//}
+
+
+
+#include<windows.h>
 int main()
 {
-	
-	string userName = "";
-	string passWord = "";
-	cout << "请输入账号和密码：";
-	cin >> userName;
-	cin >> passWord;
-	if (userName == "张三" && passWord == "123456")
-	{
-		cout << "登陆成功!" << endl;
-	}
-	else
-	{
-		if (userName == "张三")
-		{
-			cout << "密码错误" << endl;
-		}
-		else 
-		{
-			cout << "账号错误" << endl;
-		}
-	}
+	string name;
+	string id;
+	cout << "请输入姓名：";
+	cin >> name;
+	cout << "身份证号码：";
+	cin >> id;
+	cout << "****************************" << endl;
+	cout << "姓   名：" << name << endl;
+	cout << "身份证号：" << id << endl;
+	cout << "出生年月:" << id.substr(6, 4) << "年" << id.substr(10, 2) << "月" << id.substr(12, 2) << "日" << endl;
+	string year;
+	year = id.substr(6, 4);
+	SYSTEMTIME st;
+	GetLocalTime(&st);
+	int iyear = atoi(year.c_str());
+	cout << "年   龄：" << st.wYear - iyear << endl;
 	return 0;
 }
