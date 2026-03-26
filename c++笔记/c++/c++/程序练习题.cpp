@@ -145,24 +145,53 @@ using namespace std;
 
 
 
-#include<windows.h>
+//#include<windows.h>
+//int main()
+//{
+//	string name;
+//	string id;
+//	cout << "请输入姓名：";
+//	cin >> name;
+//	cout << "身份证号码：";
+//	cin >> id;
+//	cout << "****************************" << endl;
+//	cout << "姓   名：" << name << endl;
+//	cout << "身份证号：" << id << endl;
+//	cout << "出生年月:" << id.substr(6, 4) << "年" << id.substr(10, 2) << "月" << id.substr(12, 2) << "日" << endl;
+//	string year;
+//	year = id.substr(6, 4);
+//	SYSTEMTIME st;
+//	GetLocalTime(&st);
+//	int iyear = atoi(year.c_str());
+//	cout << "年   龄：" << st.wYear - iyear << endl;
+//	return 0;
+//}
+
+
+//93页
 int main()
 {
-	string name;
-	string id;
-	cout << "请输入姓名：";
-	cin >> name;
-	cout << "身份证号码：";
-	cin >> id;
-	cout << "****************************" << endl;
-	cout << "姓   名：" << name << endl;
-	cout << "身份证号：" << id << endl;
-	cout << "出生年月:" << id.substr(6, 4) << "年" << id.substr(10, 2) << "月" << id.substr(12, 2) << "日" << endl;
-	string year;
-	year = id.substr(6, 4);
-	SYSTEMTIME st;
-	GetLocalTime(&st);
-	int iyear = atoi(year.c_str());
-	cout << "年   龄：" << st.wYear - iyear << endl;
+	cout << "请输入本年度的用水量：";
+	const float price1 = 5.00;
+	const float price2 = 6.75;
+	const float price3 = 12.00;
+	int a;
+	int money;
+	cin >> a;
+	
+	if (a > 0 && a <= 120)
+	{
+		money = a * price1;
+	}
+	else if (a > 120 && a <= 180)
+	{
+		money = 120* price1 + (a - 120) * price2;
+	}
+	else
+	{
+		money = 120 * price1 + (180 - 120) * price2 + (a - 180) * 12.00;
+	}
+	cout << "本年度所需缴费" << money << "元" << endl;
+
 	return 0;
 }
