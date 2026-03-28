@@ -329,8 +329,3 @@
 
 
 
-int main()
-{
-	printf("今天不适合学c\n");
-	return 0;
-}

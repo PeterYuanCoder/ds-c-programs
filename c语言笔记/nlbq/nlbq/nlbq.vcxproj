@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="函数.c" />
     <ClCompile Include="分支和循环.c" />
+    <ClCompile Include="数据类型与变量.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
