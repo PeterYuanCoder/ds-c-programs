@@ -329,3 +329,76 @@
 
 
 
+//练习四，写一个函数，每调用一次这个函数，就会将num的值增加1。
+// 方法一
+//void ADD(int* p)
+//{
+//	(*p)++;
+//}
+//int main()
+//{
+//	int num = 0;
+//		ADD(&num);
+//		printf("%d\n", num);
+//	return 0;
+//}
+// 
+//方法二   比较&和*p指针的用法  
+//int ADD(int n)
+//{
+//	n++;
+//}
+//int main()
+//{
+//	int num = 0;
+//	num = ADD(num);
+//	printf("%d\n", num);
+//	num = ADD(num);
+//	printf("%d\n", num);
+//	return 0;
+//}
+
+
+
+
+
+//                                    函数的嵌套调用和链式访问
+
+//1，函数嵌套调用        函数可以嵌套调用，但是不能嵌套定义
+//int new_line()
+//{
+//	printf("hehe\n");
+//}
+//int three_line()
+//{
+//	int i = 0;
+//	for (i = 0; i < 3; i++)
+//	{
+//		new_line();
+//	}
+//}
+//int main()
+//{
+//	three_line();
+//	return 0;
+//}
+
+
+//2，链式访问
+//int main()
+//{
+//	int len = strlen("abcdef");
+//	printf("%d\n", len);
+//	
+//	//链式访问
+//	printf("%d\n", strlen("abcdef"));   
+//	return 0;
+//}
+
+
+int main()
+{
+	printf("%d", printf("%d", printf("%d", 43)));   
+	//printf返回字符打印的个数     第一个printf返回43第二个printf返回2第三个printf返回1，输出结果为4321
+	return 0;
+}
