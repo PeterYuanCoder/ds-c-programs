@@ -396,9 +396,56 @@
 //}
 
 
-int main()
-{
-	printf("%d", printf("%d", printf("%d", 43)));   
-	//printf返回字符打印的个数     第一个printf返回43第二个printf返回2第三个printf返回1，输出结果为4321
-	return 0;
-}
+//int main()
+//{
+//	printf("%d", printf("%d", printf("%d", 43)));   
+//	//printf返回字符打印的个数     第一个printf返回43第二个printf返回2第三个printf返回1，输出结果为4321
+//	return 0;
+//}
+
+
+
+
+//函数不写返回值的时候，默认返回类型时int
+//ADD(int x, int y)
+//{
+//	return x + y;
+//}
+// 
+// 
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	int c = ADD(a, b);
+//	printf("%d\n", c);
+//	return 0;
+//}
+
+
+ 
+
+
+//                                       函数的声明和定义
+
+//函数的声明               一般出现在函数的使用之前。要满足先声明后使用
+//int ADD(int x,int y);
+//
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	scanf("%d %d", &a, &b);
+//	//加法
+//	int sum = ADD(a, b);
+//	printf("%d\n", sum);
+//	return 0;
+//}
+//
+////函数的定义
+//int ADD(int x, int y)
+//{
+//	return x + y;
+//}
+
+
