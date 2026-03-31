@@ -449,3 +449,35 @@
 //}
 
 
+
+
+
+
+
+//                                      函数的递归
+
+
+//接受一个整形值(无符号)，按顺序打印它的每一位
+//例如：
+//输入：1234，输出1，2，3，4
+
+void print(unsigned int n)
+{
+
+}
+int main()
+{
+	unsigned int num = 0;    //unsigned int 是无符号整形
+	scanf("%u", &num);
+	////逆序
+	//while (num)    //当num等于0是不进入循环
+	//{
+	//	printf("%d ", num % 10);
+	//	num = num / 10;
+	//}
+	
+
+	//递归思路      用函数
+	print(num);
+	return 0;
+}
