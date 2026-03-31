@@ -455,33 +455,61 @@
 
 
 //                                      函数的递归
+// 1,递归必须存在限制条件，当满足这个限制条件的时候，递归便不再继续
+//2，每次递归调用之后越来越接近这个限制条件
 
 
-//接受一个整形值(无符号)，按顺序打印它的每一位
+
+//1，接受一个整形值(无符号)，按顺序打印它的每一位
 //例如：
 //输入：1234，输出1，2，3，4
 
-void print(unsigned int n)
+//void print(unsigned int n)
+//{
+//	if (n > 9)
+//	{
+//		print(n / 10);
+//	}
+//	printf("%d ", n % 10);
+//}
+//int main()
+//{
+//	unsigned int num = 0;    //unsigned int 是无符号整形
+//	scanf("%u", &num);
+//	////逆序
+//	//while (num)    //当num等于0是不进入循环
+//	//{
+//	//	printf("%d ", num % 10);
+//	//	num = num / 10;
+//	//}
+//	
+//
+//	//递归思路      用函数
+//	print(num);
+//	return 0;
+//}
+
+
+
+
+
+// 2，编写函数不允许创建临时变量，求字符串的长度
+#include<string.h>
+//int my_strlen(char str[])  //参数部分写出数组的形式
+int my_strlen(char*str)     //参数部分写出指针的性质
 {
-	if (n > 9)
+	int count = 0;
+	while (*str != '\0')
 	{
-		print(n / 10);
+		count++;
+		str++;//找下一个字符
 	}
-	printf("%d ", n % 10);
+	return count;
 }
 int main()
 {
-	unsigned int num = 0;    //unsigned int 是无符号整形
-	scanf("%u", &num);
-	////逆序
-	//while (num)    //当num等于0是不进入循环
-	//{
-	//	printf("%d ", num % 10);
-	//	num = num / 10;
-	//}
-	
-
-	//递归思路      用函数
-	print(num);
+	char arr[] = "abc";
+	int len = my_strlen(arr);
+	printf("%d ", len);
 	return 0;
 }
