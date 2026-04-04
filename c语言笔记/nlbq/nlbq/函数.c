@@ -496,20 +496,20 @@
 // 2，编写函数不允许创建临时变量，求字符串的长度
 #include<string.h>
 //int my_strlen(char str[])  //参数部分写出数组的形式
-int my_strlen(char*str)     //参数部分写出指针的性质
-{
-	int count = 0;
-	while (*str != '\0')
-	{
-		count++;
-		str++;//找下一个字符
-	}
-	return count;
-}
-int main()
-{
-	char arr[] = "abc";
-	int len = my_strlen(arr);
-	printf("%d ", len);
-	return 0;
-}
+//int my_strlen(char*str)     //参数部分写出指针的性质
+//{
+//	int count = 0;
+//	while (*str != '\0')
+//	{
+//		count++;
+//		str++;//找下一个字符
+//	}
+//	return count;
+//}
+//int main()
+//{
+//	char arr[] = "abc";
+//	int len = my_strlen(arr);
+//	printf("%d ", len);
+//	return 0;
+//}
