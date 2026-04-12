@@ -215,3 +215,55 @@
 
 
 
+
+//作业
+//将数组A中的内容和数组B中的内容进行交换。（数组一样大）
+
+//int main()
+//{
+//	int A[] = { 1,2,3 };
+//	int B[] = { 4,5,6 };
+//	int c = 0;
+//	int len = sizeof(A) / sizeof(A[0]);
+//	//交换
+//	for (int i = 0; i < len; i++)
+//	{
+//		c = A[i];
+//		A[i] = B[i];
+//		B[i] = c;
+//	}
+//	//查看数组A的元素变化
+//	for (int j = 0; j < len; j++)
+//	{
+//		printf("%d ", A[j]);
+//	}
+//	printf("\n");
+//	//查看数组B的元素变化
+//	for (int n = 0; n < len; n++)
+//	{
+//		printf("%d ", B[n]);
+//	}
+//	return 0;
+//}
+
+
+
+//编写一个程序，从用户输入中读取10个整数并存储在一个数组中。然后，计算并输出这些整数的平均值。
+
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int sum = 0;
+//	for (int i = 0; i < 10; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	for (int i = 0; i < 10; i++)
+//	{
+//		sum = sum + arr[i];
+//	}
+//	int ever = sum/10;
+//	printf("%d", ever);
+//	
+//	return 0;
+//}
