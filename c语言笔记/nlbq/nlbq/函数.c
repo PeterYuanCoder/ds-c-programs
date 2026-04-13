@@ -145,8 +145,8 @@
 //	//交换
 //	printf("交换前:a=%d b=%d\n",a, b);
 //	//a和b叫实参
-//	Swap1(a, b);  //传值调用
-//	Swap2(&a, &b);  //传址调用
+//	//Swap1(a, b);  //传值调用
+//	//Swap2(&a, &b);  //传址调用
 //	printf("交换后:a=%d b=%d\n",a, b);
 //	return 0;
 //}
@@ -513,3 +513,80 @@
 //	printf("%d ", len);
 //	return 0;
 //}
+
+
+
+
+//sqrt函数    开平方
+#include<math.h>
+//int main()
+//{
+//	double ret;
+//	ret = sqrt(16.0);
+//	printf("%lf", ret);
+//	return 0;
+//}
+
+
+//传地址 ，用指针接收
+//void swap(int* px, int* py)
+//{
+//	int z = *px;
+//	*px = *py;
+//	*py = z;
+//}
+//int main()
+//{
+//	int a = 2;
+//	int b = 3;
+//	printf("交换前：%d %d", a, b);
+//	swap(&a, &b);
+//	printf("交换后：%d %d", a, b);
+//	return 0;
+//}
+
+
+
+//计算单个阶乘的和
+//int fac(int n)
+//{
+//	int sum1 = 0;
+//	for (int j = 1; j <= n; j++)
+//	{
+//		int ret = 1;
+//		for (int i = 1; i <= j; i++)
+//		{
+//			ret = ret * i;
+//		}
+//		sum1 = sum1+ret;
+//	}
+//	return sum1;
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int sum = fac(n);
+//	printf("%d", sum);
+//	return 0;
+//}
+
+
+
+//static 关键字    修饰局部变量  修饰全局变量
+//局部变量用 static 后变成全局变量
+//全局变量用 static 后限制只能在当前文件中使用时
+int tect()
+{
+	static int j = 0;
+	j++;
+	printf("%d ", j);
+}
+int main()
+{
+	for (int i = 0; i < 5; i++)
+	{
+		tect();
+	}
+	return 0;
+}
