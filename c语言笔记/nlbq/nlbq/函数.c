@@ -576,17 +576,17 @@
 //static 关键字    修饰局部变量  修饰全局变量
 //局部变量用 static 后变成全局变量
 //全局变量用 static 后限制只能在当前文件中使用时
-int tect()
-{
-	static int j = 0;
-	j++;
-	printf("%d ", j);
-}
-int main()
-{
-	for (int i = 0; i < 5; i++)
-	{
-		tect();
-	}
-	return 0;
-}
+//void tect()
+//{
+//	static int j = 0;     //延长了生命周期  ，但没有改变其作用域
+//	j++;
+//	printf("%d ", j);
+//}
+//int main()
+//{
+//	for (int i = 0; i < 5; i++)
+//	{
+//		tect();
+//	}
+//	return 0;
+//}

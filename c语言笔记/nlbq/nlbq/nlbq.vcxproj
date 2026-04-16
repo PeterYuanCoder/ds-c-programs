@@ -129,6 +129,7 @@
     <ClCompile Include="数组.c" />
     <ClCompile Include="程序逻辑控制.c" />
     <ClCompile Include="运算符.c" />
+    <ClCompile Include="递归.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
