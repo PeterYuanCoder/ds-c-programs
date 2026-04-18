@@ -5,4 +5,4 @@ Debug/
 Release/
 build/
 *.sln
-Browse.VC.db
+*/Browse.VC.db
