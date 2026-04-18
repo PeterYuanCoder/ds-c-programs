@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="函数.c" />
     <ClCompile Include="分支和循环.c" />
+    <ClCompile Include="指针.c" />
     <ClCompile Include="数据类型与变量.c" />
     <ClCompile Include="数组.c" />
     <ClCompile Include="程序逻辑控制.c" />
