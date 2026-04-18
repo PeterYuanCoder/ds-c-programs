@@ -96,7 +96,7 @@
 //}
 
 
-//斐波那契函数   求这个数列的第N项
+//斐波那契函数   求这个数列的第N项     用递归效率太慢了 有重复的计算
 //int fib(int n)
 //{
 //	if (n == 1 || n == 2)
@@ -114,3 +114,29 @@
 //	printf("%d\n", ret);
 //	return 0;
 //}
+
+
+
+
+int fib(int n)
+{
+	int f1 = 1;
+	int f2 = 1;
+	int f3;
+	for (int i = 3; i <= n; i++)
+	{
+		f3 = f1 + f2;
+		f1 = f2;
+		f2 = f3;
+	}
+	return f3;
+}
+
+int main()
+{
+	int a;
+	scanf("%d", &a);
+	int ret = fib(a);
+	printf("%d\n", ret);
+	return 0;
+}
