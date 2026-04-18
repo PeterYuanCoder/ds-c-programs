@@ -9,11 +9,11 @@
 //}
 
 
-int main()
-{
-    printf("C语言学习程序运行成功！\n");
-    return 0;
-}
+//int main()
+//{
+//    printf("C语言学习程序运行成功！\n");
+//    return 0;
+//}
 // 
 // 
 //int a = 10;
