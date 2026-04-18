@@ -590,3 +590,84 @@
 //	}
 //	return 0;
 //}
+
+
+
+
+//实现函数判断year是不是润年。
+
+//int year(int n)
+//{
+//	if (n % 4 == 0 && n % 100 == 0 || n % 400)
+//	{
+//		
+//		return 1;
+//	}
+//	else
+//	{
+//		return 0;
+//
+//	}
+//}
+//int main()
+//{
+//	int a;
+//	scanf("%d", &a);
+//	int b = year(a);
+//	if (b == 1)
+//	{
+//		printf("%d是闰年\n", a);
+//	}
+//	else
+//	{
+//		printf("%d不是闰年\n", a);
+//	}
+//	return 0;
+//}
+
+
+//写一个二分查找函数
+
+//int bin_search(int arr[], int left, int right, int key)
+//{
+//	while (left <= right)
+//	{
+//		int mid = left + (right - left) / 2;
+//		if (key < arr[mid])
+//		{
+//			right = mid - 1;
+//		}
+//		else if (key > arr[mid])
+//		{
+//			left = mid + 1;
+//		}
+//		else
+//		{
+//			return mid;
+//		}
+//
+//	}
+//	if (left > right)
+//	{
+//		return -1;
+//	}
+//}
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9.10 };
+//	int left = 0;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int right = sz - 1;
+//	int key = 7;
+//	int ret = bin_search(arr, 0,sz-1, key);
+//	if (ret != -1)
+//	{
+//		printf("找到了，下标是：%d", ret);
+//
+//	}
+//	if (ret == -1)
+//	{
+//		printf("没有找到返回：-1");
+//	}
+//	return 0;
+//}
