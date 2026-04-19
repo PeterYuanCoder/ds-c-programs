@@ -69,6 +69,6 @@ int main()
 
 int main()
 {
-	printf("hahsa")
+	printf("hahsasregf\b");
 	return 0;
 }
