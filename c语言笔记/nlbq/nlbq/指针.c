@@ -69,5 +69,6 @@ int main()
 
 int main()
 {
+	printf("hahsa")
 	return 0;
 }
