@@ -67,4 +67,7 @@ int main()
 	return 0;
 }
 
-affasdfsdint main()
+int main()
+{
+	return 0;
+}
