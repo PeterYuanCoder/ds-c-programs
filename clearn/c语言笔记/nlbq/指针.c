@@ -66,9 +66,3 @@ int main()
 	}
 	return 0;
 }
-
-int main()
-{
-	printf("hahsasregf\b");
-	return 0;
-}
