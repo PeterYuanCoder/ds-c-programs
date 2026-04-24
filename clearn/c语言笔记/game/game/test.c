@@ -22,6 +22,7 @@ void game()
 	//ÉèÖÃÀ×
 	SetMine(mine, ROW, COL);
 	//ÅÅ²éÀ×
+	FindMine(mine, show, ROW, COL);
 }
 int main()
 {

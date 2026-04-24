@@ -1,5 +1,6 @@
 #pragma once
 //方便修改扫雷的规模
+#define EASY_COUNT 10
 #define ROW 9
 #define COL 9
 #define ROWS ROW+2
@@ -13,3 +14,5 @@ void InitBoard(char board[ROWS][COLS], int r, int c,char set);
 void DisplayBoard(char board[ROWS][COLS], int r, int c);
 //设置雷
 void SetMine(char board[ROWS][COLS], int r, int c);
+//排查雷
+void FindMine(char mine[ROWS][COLS],char show[ROWS][COLS],int r,int c);
