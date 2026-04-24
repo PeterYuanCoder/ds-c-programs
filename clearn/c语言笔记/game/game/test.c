@@ -21,6 +21,7 @@ void game()
 	DisplayBoard(show,ROW,COL);   //打印的是show的信息，再输出行和列
 	//设置雷
 	SetMine(mine, ROW, COL);
+	//DisplayBoard(mine, ROW, COL);   //注意是用  mine  打印初始化雷的位置
 	//排查雷
 	FindMine(mine, show, ROW, COL);
 }

@@ -1,10 +1,13 @@
 #pragma once
 //方便修改扫雷的规模
-#define EASY_COUNT 10
+
 #define ROW 9
 #define COL 9
 #define ROWS ROW+2
 #define COLS COL+2
+//方便设置雷的个数，只需修改参数就行了
+#define EASY_COUNT 10   
+
 #include<stdlib.h>
 #include<time.h>
 
