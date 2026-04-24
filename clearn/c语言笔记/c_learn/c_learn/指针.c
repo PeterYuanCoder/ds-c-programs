@@ -1,6 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
+
+//                                             指针初识
 //int main()
 //{
 //	int a = 10;
@@ -68,3 +70,44 @@
 //}
 
 
+//指针-指针=元素个数
+//前提：两个指针的类型是一样的且两个指针指向的是同一个内存
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int* p1 = &arr[2];
+//	int* p2 = &arr[4];
+//	printf("%d", p2 - p1);
+//	return 0;
+//}
+
+
+
+//指针的关系运算
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int* p = &arr[0];
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	while (p < arr + sz)
+//	{
+//		printf("%d ", *p);
+//		p++;
+//	}
+//	return 0;
+//}
+
+
+
+//                                                   指针进阶
+
+//const修饰   
+//const修饰必须进行初始化
+//被修饰之后，在语法是加了限制，无法直接修改n  ,但n属性还是变量
+//如果绕过n,使用n的地址，去修改能做到
+int main()
+{
+	const int a = 10;
+
+	return 0;
+}
