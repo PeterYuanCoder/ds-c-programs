@@ -102,12 +102,92 @@
 //                                                   指针进阶
 
 //const修饰   
-//const修饰必须进行初始化
+//const修饰必须进行初始化 
 //被修饰之后，在语法是加了限制，无法直接修改n  ,但n属性还是变量
 //如果绕过n,使用n的地址，去修改能做到
-int main()
-{
-	const int a = 10;
+//int main()
+//{
+//	const int a = 10;
+//	//通过指针修改b
+//	const int b = 10;   //修饰的是*b
+//	int* pb = &b;
+//	*pb = 99;
+//	printf("%d\n", b);
+//	printf("%d\n", *pb);
+//	return 0;
+//}
 
-	return 0;
-}
+//int main()
+//{
+//	int a = 10;
+//	int b = 10;
+//	//const修饰pb ,pb的值指向&b不能改变 ，但是*p能变
+//	int* const pb = &b;
+//	*pb = 99;
+//	return 0;
+//
+//}
+
+
+
+//assert 断言
+// 我们可以用它检查一个指针是否是NULL
+// #include<assert.h>
+// 
+//int main()
+//{
+//	int* p = NULL;
+//	//断言只能在debug情况下有效
+//	assert(*p != NULL);
+//	//
+//	if (*p == NULL)
+//	{
+//		printf("当前指针为空\n");
+//		return -1;
+//	}
+//	*p = 100;
+//	return 0;
+//}
+
+
+
+//野指针
+//指针指向的位置未知
+
+//1.指针未初始化
+//int main()
+//{
+//	int* p;
+//	*p = 10;
+//	return 0;
+//}
+
+//2.指针的越界访问
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int* p = &arr[0];
+//	int i = 0;
+//	for (i = 0; i <= 11; i++)
+//	{
+//		//当指针超出指向范围时，p就是野指针
+//		*(p++) = i;
+//	}
+//	return 0;
+//}
+
+
+//指针指向的空间释放
+
+//int* text()  //n是整形 返回&n用int*返回
+//{
+//	int n = 100;   //可以用static修饰延长生命周期
+//	return &n;  //n局部变量在函数结束是销毁，返回的地址是无效的
+//}
+//
+//int main()
+//{
+//	int* p = test();
+//	printf("%d\n", *p);
+//	return 0;
+//}
