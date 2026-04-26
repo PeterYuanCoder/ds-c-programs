@@ -99,8 +99,6 @@
 
 
 
-//                                                   指针进阶
-
 //const修饰   
 //const修饰必须进行初始化 
 //被修饰之后，在语法是加了限制，无法直接修改n  ,但n属性还是变量
@@ -138,9 +136,10 @@
 //{
 //	int* p = NULL;
 //	//断言只能在debug情况下有效
-//	assert(*p != NULL);
-//	//
-//	if (*p == NULL)
+//	assert(p == NULL);
+//	printf("hehe");
+//	
+//	if (p == NULL)
 //	{
 //		printf("当前指针为空\n");
 //		return -1;
@@ -148,7 +147,7 @@
 //	*p = 100;
 //	return 0;
 //}
-
+//
 
 
 //野指针
@@ -191,3 +190,162 @@
 //	printf("%d\n", *p);
 //	return 0;
 //}
+
+
+//strlen     输出绝对长度不带字符串后面的\0
+// #include<string.h>
+// 
+// 
+//int main()
+//{
+//	char* str = "hello";
+//	printf("%s\n", str);
+//	str++;
+//	printf("%s\n", str);      //以此内推  ，当str为\0是计算字符串的长度
+//	return 0;
+//}
+
+//int main()
+//{
+//	char* str = "hello";
+//	int len = strlen(str);
+//	printf("%d\n", len);
+//	return 0;
+//}
+
+//用函数来表示是strlen
+
+//#include<assert.h>
+//size_t my_strlen(const char* p)    //加const防止在计算长度时修改了字符的值     size_t是无符号整数
+//{
+//	assert(p!=NULL);
+//	size_t len = 0;
+//	while (*p != '\0')
+//	{
+//		len++;
+//		p++;
+//	}
+//	return len;
+//}
+//int main()
+//{
+//	char* str = "hello";
+//	size_t len = my_strlen(str);
+//	printf("%zu\n", len);
+//	return 0;
+//}
+
+
+//按址传递
+//void swap(int* px, int* py)
+//{
+//	int tmp = *px;
+//	*px = *py;
+//	*py = tmp;
+//
+//}
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	
+//	printf("%d,%d\n", a, b);
+//	swap(&a, &b);
+//	printf("%d,%d\n", a, b);
+//
+//	return 0;
+//
+//}
+
+
+
+
+//                                           指针进阶
+
+
+//二级指针
+
+//int main()
+//{
+//	int a = 10;
+//	int* p1 = &a;
+//
+//	int** p2 = &p1;   //p2存p1的地址
+//	printf("%d\n", p1);
+//	printf("%d\n", *p2);   //一次解引用，返回p1的地址
+//	return 0;
+//}
+
+
+//理解数组名
+
+//数组名字表示首元素的地址
+//sizeof(数组名),这里数组名表示整个数组，计算的是整个数组的大小，单位是字节
+//&数组名 表示的是整个数组的地址
+
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	
+//	printf("%p\n", arr);//数组名字表示首元素的地址
+//
+//	printf("%p\n", &arr[0]);//数组名字表示首元素的地址
+//
+//	printf("%p\n", &arr);  //值虽然相等但是意义不同  ，这表示整个数组的地址
+//
+//	printf("%p\n", &arr+1);//上面的+1都是加4个字节 ，这里是加一整个数组的字节大小
+//	return 0;
+//}
+
+
+//使用指针的方式打印数组的内容
+//void print_arr(int *p, int len)
+//{
+//	for (int i = 0; i < len; i++)
+//	{
+//		printf("%d\n", *(p + i));
+//	}
+//	printf("\n");
+//}
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6 };
+//	int len = sizeof(arr)/sizeof(arr[0]);  //len一定要在main函数中计算再传进函数中
+//	print_arr(arr, len);
+//	return 0;
+//}
+
+
+
+//数组指针
+//数据类型 (*指针名)[数组长度]
+//int (*p)[4];
+//int main()
+//{
+//	int arr[4] = { 1,2,3,4 };
+//	int (*p)[4] = &arr;
+//	printf("%p\n", *p);    //输出首元素的地址
+//	printf("%p\n", (*p)[1]);  //(*p)[1] ===>*((*p)+1)
+//	return 0;
+//}
+
+
+
+//二维数组
+void print_arr(int (*arr)[3], int row, int col)
+{
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			printf("%d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+}
+int main()
+{
+	int arr[2][3] = { 1,2,3,4,5,6 };
+	print_arr(arr, 2, 3);
+	return 0;
+}
