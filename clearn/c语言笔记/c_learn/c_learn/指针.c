@@ -331,21 +331,40 @@
 
 
 
-//二维数组
-void print_arr(int (*arr)[3], int row, int col)
-{
-	for (int i = 0; i < row; i++)
-	{
-		for (int j = 0; j < col; j++)
-		{
-			printf("%d ", arr[i][j]);
-		}
-		printf("\n");
-	}
-}
+//二维数组  的元素名代表第一行的地址
+//void print_arr(int (*arr)[3], int row, int col)
+//{
+//	for (int i = 0; i < row; i++)
+//	{
+//		for (int j = 0; j < col; j++)
+//		{
+//			printf("%d ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//}
+//int main()
+//{
+//	int arr[2][3] = { 1,2,3,4,5,6 };
+//	print_arr(arr, 2, 3);
+//	return 0;
+//}
+
+
+//指针数组
 int main()
 {
-	int arr[2][3] = { 1,2,3,4,5,6 };
-	print_arr(arr, 2, 3);
+	int a = 10;
+	int b = 20;
+	int c = 30;
+	int* arr[3] = { &a,&b,&c };
+	int len = sizeof(arr)/sizeof(arr[0]);
+	for (int i = 0; i < len; i++)
+	{
+		printf("%p\n", arr[i]);  //打印地址
+		printf("%d\n", *(arr[i]));//打印值
+
+	}
+
 	return 0;
 }
