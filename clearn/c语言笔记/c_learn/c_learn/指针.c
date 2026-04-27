@@ -331,7 +331,7 @@
 
 
 
-//二维数组  的元素名代表第一行的地址
+//二维数组  的数组名代表第一行的地址
 //void print_arr(int (*arr)[3], int row, int col)
 //{
 //	for (int i = 0; i < row; i++)
@@ -352,19 +352,94 @@
 
 
 //指针数组
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int c = 30;
+//	int* arr[3] = { &a,&b,&c };
+//	int len = sizeof(arr)/sizeof(arr[0]);
+//	for (int i = 0; i < len; i++)
+//	{
+//		printf("%p\n", arr[i]);  //打印地址
+//		printf("%d\n", *(arr[i]));//打印值
+//
+//	}
+//
+//	return 0;
+//}
+
+
+//函数指针
+
+//void test()
+//{
+//	printf("hehe\n");
+//}
+//
+//int add(int x, int y)
+//{
+//	return x + y;
+//}
+//int main()
+//{
+//	printf("test: %p\n", test);
+//	printf("&test: %p\n", &test);
+//	void (*pf1)() = test;
+//	int (*pf2)(int, int) = add;
+//	//调用
+//	int ret = (*pf2)(1, 2);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+
+
+
+//写出输出结果
+
+//习题1
+//int main()
+//{
+//	int a[3][2] = { (0,1),(2,3),(4,5) };  //逗号运算符    它会从左到右执行表达式，最终结果是最右边那个值
+//	int* p = a[0];
+//	printf("%d", p[0]);  //printf("%d",*(p+0));
+//}
+
+
+//习题2
+//int main()
+//{
+//	int a[5] = { 1,2,3,4,5 };
+//	int* ptr = (int*)(&a + 1);
+//	printf("%d %d", *(a + 1), *(ptr - 1));
+//	return 0;
+//}
+
+
+
+//习题3
+
+//int main()
+//{
+//	int aa[2][5] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int* ptr1 = (int*)(&aa + 1);
+//	int* ptr2 = (int*)(*(aa + 1));
+//	printf("%d,%d", *(ptr1 - 1), *(ptr2 - 1));
+//	return 0;
+//}
+
+
+//习题4
 int main()
 {
-	int a = 10;
-	int b = 20;
-	int c = 30;
-	int* arr[3] = { &a,&b,&c };
-	int len = sizeof(arr)/sizeof(arr[0]);
-	for (int i = 0; i < len; i++)
-	{
-		printf("%p\n", arr[i]);  //打印地址
-		printf("%d\n", *(arr[i]));//打印值
-
-	}
+	int a[] = { 1,2,3,4 };
+	printf("%zu\n", sizeof(a));//16  求整个数组的字节大小
+	printf("%zu\n", sizeof(a+1));
+	printf("%zu\n", sizeof(a[1]));
+	printf("%zu\n", sizeof(&a));
+	printf("%zu\n", sizeof(&a+1));
+	printf("%zu\n", sizeof(&a[0]));
+	printf("%zu\n", sizeof(&a[0]+1));
 
 	return 0;
 }
