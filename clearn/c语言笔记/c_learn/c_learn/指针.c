@@ -430,16 +430,92 @@
 
 
 //习题4
+//int main()
+//{
+//	int a[] = { 1,2,3,4 };
+//	printf("%zu\n", sizeof(a));//16  求整个数组的字节大小
+//	printf("%zu\n", sizeof(a+1));
+//	printf("%zu\n", sizeof(a[1]));
+//	printf("%zu\n", sizeof(&a));
+//	printf("%zu\n", sizeof(&a+1));
+//	printf("%zu\n", sizeof(&a[0]));
+//	printf("%zu\n", sizeof(&a[0]+1));
+//
+//	return 0;
+//}
+
+
+
+//输入一个整数数组，实现一个函数，
+//来调整该数组中数字的顺序使得数组中所有的奇数位于数组的前半部分，
+//所有偶数位于数组的后半部分。
+
+//void swap(int p[], int n)
+//{
+//	int left = 0;
+//	int right = n - 1;
+//	while (left < right)
+//	{
+//		while (left < right && p[left] % 2 != 0)
+//		{
+//			left++;
+//		}
+//		while (left < right && p[right] % 2 == 0)
+//		{
+//			right--;
+//		}
+//		if (left < right)
+//		{
+//			int tmp = p[left];
+//			p[left] = p[right];
+//			p[right] = tmp;
+//		}
+//	}
+//}
+//
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	int arr[1000];
+//	for (int i = 0; i < n; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	swap(arr,n);
+//	for (int i = 0; i < n; i++)
+//	{
+//		printf("%d\n", arr[i]);
+//	}
+//	return 0;
+//}
+
+
+
+//写一个函数，可以逆序一个字符串的内容。
+void swap(char arr[],int len)
+{
+	
+	int left = 0;
+	int right = len - 2;
+	while (left < right)
+	{
+		int tmp = arr[left];
+		arr[left] = arr[right];
+		arr[right] = tmp;
+
+		left++;
+		right--;
+	}
+}
 int main()
 {
-	int a[] = { 1,2,3,4 };
-	printf("%zu\n", sizeof(a));//16  求整个数组的字节大小
-	printf("%zu\n", sizeof(a+1));
-	printf("%zu\n", sizeof(a[1]));
-	printf("%zu\n", sizeof(&a));
-	printf("%zu\n", sizeof(&a+1));
-	printf("%zu\n", sizeof(&a[0]));
-	printf("%zu\n", sizeof(&a[0]+1));
-
+	char arr[] = "abcdef";
+	int len = sizeof(arr) / sizeof(arr[0]);
+	swap(arr, len);
+	for (int j = 0; j < len; j++)
+	{
+		printf("%c\n", arr[j]);
+	}
 	return 0;
 }
