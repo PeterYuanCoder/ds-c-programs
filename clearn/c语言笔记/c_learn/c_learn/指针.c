@@ -493,29 +493,124 @@
 
 
 //写一个函数，可以逆序一个字符串的内容。
-void swap(char arr[],int len)
-{
-	
-	int left = 0;
-	int right = len - 2;
-	while (left < right)
-	{
-		int tmp = arr[left];
-		arr[left] = arr[right];
-		arr[right] = tmp;
+//void swap(char arr[],int len)
+//{
+//	
+//	int left = 0;
+//	int right = len - 2;
+//	while (left < right)
+//	{
+//		int tmp = arr[left];
+//		arr[left] = arr[right];
+//		arr[right] = tmp;
+//
+//		left++;
+//		right--;
+//	}
+//}
+//int main()
+//{
+//	char arr[] = "abcdef";
+//	int len = sizeof(arr) / sizeof(arr[0]);
+//	swap(arr, len);
+//	for (int j = 0; j < len; j++)
+//	{
+//		printf("%c\n", arr[j]);
+//	}
+//	return 0;
+//}
 
-		left++;
-		right--;
-	}
-}
-int main()
-{
-	char arr[] = "abcdef";
-	int len = sizeof(arr) / sizeof(arr[0]);
-	swap(arr, len);
-	for (int j = 0; j < len; j++)
-	{
-		printf("%c\n", arr[j]);
-	}
-	return 0;
-}
+
+
+
+//输出杨辉三角     每个数等于它左上方和上方的两数之和。
+//int main()
+//{
+//	int a;
+//	scanf("%d", &a);
+//	int arr[30][30] = { 0 };
+//	for (int i = 0; i < a; i++)
+//	{
+//		arr[i][0] = 1;
+//		arr[i][i] = 1;
+//		for (int j = 1; j < i; j++)
+//		{
+//			arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j];
+//		}
+//	}
+//	for (int i = 0; i < a; i++)
+//	{
+//		for (int j = 0; j <= i; j++)
+//		{
+//			printf("%5d", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+//杨氏矩阵
+//有一个数字矩阵，矩阵的每行从左到右是递增的，矩阵从上到下是递增的，请编写程序在这样的矩阵中查找某个数字是否存在。
+//
+//int search(int arr[20][20], int row, int col, int k)
+//{
+//	int i = 0;
+//	int j = col - 1;
+//	while (i < row && j>=0)
+//	{
+//		if (arr[i][j] == k)
+//		{
+//			return 1;
+//		}
+//		else if (arr[i][j] > k)
+//		{
+//			j--;
+//		}
+//		else
+//		{
+//			i++;
+//		}
+//		
+//	}
+//	return 0;
+//
+//}
+//int main()
+//{
+//	int row,col;
+//	scanf("%d %d", &row,&col);
+//	int arr[20][20] = { 0 };
+//	int num = 1;
+//	//矩阵
+//	for (int i = 0; i < row; i++)
+//	{
+//		for (int j = 0; j < col; j++)
+//		{
+//			arr[i][j] = num++;
+//		}
+//	}
+//	//输出矩阵
+//	for (int i = 0; i < row; i++)
+//	{
+//		for (int j = 0; j < col; j++)
+//		{
+//			printf("%5d", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	//查找元素
+//	int k;
+//	scanf("%d", &k);
+//	//查找
+//	int n = search(arr, row, col, k);
+//	if (n == 1)
+//	{
+//		printf("存在\n");
+//	}
+//	else
+//	{
+//		printf("不存在\n");
+//	}
+//	
+//	return 0;
+//}
