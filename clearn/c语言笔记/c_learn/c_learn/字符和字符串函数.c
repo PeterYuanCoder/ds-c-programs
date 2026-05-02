@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
-#include<ctype.c>
+#include<ctype.h>
 
 
 //补充void类型指针
@@ -38,4 +38,42 @@
 //	return 0;
 //}
 
-//2.
+
+
+//写一个代码，将字符串中的小写转大写，其他字符不变
+// 运用islower函数 判断是不是小写
+// putcher  输出大写
+// 
+//注意的情况
+//int main()
+//{
+//	//char* str = "abcdef";   //常量区 
+//	char str[] = "abcdef";  
+//	str[0] = 'A';
+//	printf("%c", str);
+//	return 0;
+//}
+
+
+int main()
+{
+	char str[] = "abcdef";
+	int i = 0;
+	while (str[i] != '\0')
+	{
+		//判断当前字符是小写
+		if (islower(str[i]))
+		{
+			//转大写
+			//str[i]=str[i]-32;  //小写a是97  大写A是65
+			putchar(str[i] - 32);
+		}
+		else
+		{
+			putchar(str[i]);
+		}
+		i++;
+	}
+	//printf("%s", str);  //s是打印字符串变量   c是打印字符型变量
+	return 0;
+}
