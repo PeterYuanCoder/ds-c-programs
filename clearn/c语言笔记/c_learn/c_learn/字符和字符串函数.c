@@ -20,7 +20,7 @@
 
 
 
-//字符函数（字符分类函数） 操作字符
+//字符函数（字符分类函数） 操作字符    比较多需要自己记
 
 //1.isdigit函数    判断是不是数字字符  限制 十进制'0'-'9'
 //int main()
@@ -55,25 +55,83 @@
 //}
 
 
-int main()
-{
-	char str[] = "abcdef";
-	int i = 0;
-	while (str[i] != '\0')
-	{
-		//判断当前字符是小写
-		if (islower(str[i]))
-		{
-			//转大写
-			//str[i]=str[i]-32;  //小写a是97  大写A是65
-			putchar(str[i] - 32);
-		}
-		else
-		{
-			putchar(str[i]);
-		}
-		i++;
-	}
-	//printf("%s", str);  //s是打印字符串变量   c是打印字符型变量
-	return 0;
-}
+//int main()
+//{
+//	char str[] = "abcdef";
+//	int i = 0;
+//	while (str[i] != '\0')
+//	{
+//		//判断当前字符是小写
+//		if (islower(str[i]))
+//		{
+//			//转大写
+//			//str[i]=str[i]-32;  //小写a是97  大写A是65
+//			putchar(str[i] - 32);
+//		}
+//		else
+//		{
+//			putchar(str[i]);
+//		}
+//		i++;
+//	}
+//	//printf("%s", str);  //s是打印字符串变量   c是打印字符型变量
+//	return 0;
+//}
+
+
+
+
+//字符串函数
+
+//strlen函数   查看函数库观察标准形式   遇到\0停止
+
+//strlen的函数运行
+//size_t my_strlen(const char* str1)
+//{
+//	assert(str1 != NULL);   //断言
+//	int len = 0;
+//	while (*str1 != '\0')
+//	{
+//		len++;
+//		str1++;
+//	}
+//	return len;
+//}
+//int main()
+//{
+//	const char* str1 = "abcdef";
+//	size_t len = strlen(str1);
+//	printf("%zu\n", len);
+//	return 0;
+//}
+
+
+//strlen的返回值   返回值类型是size_t        typedef unsigned long long size_t  返回无符号  
+// 
+//int main()
+//{
+//	const char* str1 = "abcdef";
+//	const char* str2 = "abc";
+//	if (strlen(str2) - strlen(str1) > 0)
+//	{
+//		printf("str2>str1");
+//	}
+//	else
+//	{
+//		printf("str1>str2");
+//	}
+//	return 0;
+//}
+
+
+//指针-指针的方式实现strlen的效果
+//int my_strlen(char* str)
+//{
+//	assert(*str != NULL);
+//	char* p = str;
+//	while (*p != '0')
+//	{
+//		p++;
+//	}
+//	return p - str;  
+//}
