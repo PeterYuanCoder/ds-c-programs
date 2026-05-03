@@ -135,3 +135,35 @@
 //	}
 //	return p - str;  
 //}
+
+
+
+
+
+//strcpy函数    字符串拷贝
+//int main()
+//{
+//	char str[10] = { 0 };
+//
+//	char* str_source = "abcd";
+//
+//	strcpy(str, str_source);     //返回值类型是char*
+//	printf("%s\n", str);
+//	return 0;
+//}
+
+
+//函数形式
+//char* my_strcpy(char* str, const char* str_source)
+//{
+// assert(*str!=NULL)
+//	while (*str_source != '0')
+//	{
+//		*str = *str_source;
+//		str_source++;
+//		str++;
+//	}
+//	*str = '\0';  //手动添加一个\0
+//}
+
+
