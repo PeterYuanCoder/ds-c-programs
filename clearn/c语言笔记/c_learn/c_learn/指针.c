@@ -703,3 +703,65 @@
 //将0这个整形强制转换成函数指针类型
 //*(short)0
 //将0这个整形强制转换成短整型
+
+
+
+//typedef关键字
+//用于类型的重命名，可以将复杂的类型，简单化      注意是类型
+//typedef unsigned int unit;
+//int main()
+//{
+//	unsigned int num1 = 0;
+//	unit num2 = 0;
+//	//两个定义是一样的
+//	return 0;
+//}
+
+
+//指针的重命名
+//typedef int* pint_t;
+//int main()
+//{
+//	int* p1;
+//	pint_t p2;
+//	return 0;
+//}
+
+
+//typedef应用
+
+//typedef int* pint_t;
+//int main()
+//{
+//	int* p1, p2;
+//	//p1是指针变量
+//	//p2是整形
+//	int* p1, * p2;
+//	//p1,p2都是指针变量
+//
+//	pint_t p1, p2;
+//	//p1和p2都是指针变量
+//}
+
+
+//数组指针的重命名
+//typedef int (*parr_t)[5];     //放到括号里面
+//int main()
+//{
+//	int arr[5] = { 0 };
+//	int (*pa)[5] = &arr;
+//	parr_t pb = &arr;
+//	return 0;
+//}
+
+//函数指针的重命名
+//int Add(int x, int y)
+//{
+//	return x + y;
+//}
+//typedef int (*parr_t)(int,int);
+//int main()
+//{
+//	int (*pf)(int, int) = Add;
+//	parr_t pf2 = Add;
+//}
