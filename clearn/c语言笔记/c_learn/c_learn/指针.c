@@ -765,3 +765,132 @@
 //	int (*pf)(int, int) = Add;
 //	parr_t pf2 = Add;
 //}
+
+
+
+//函数指针数组
+
+//int add(int x, int y)
+//{
+//	return x + y;
+//}
+//int sub(int x, int y)
+//{
+//	return x - y;
+//}
+//int mul(int x, int y)
+//{
+//	return x * y;
+//}
+//int div(int x, int y)
+//{
+//	return x / y;
+//}
+//int main()
+//{
+//	int (*pf[4])(int, int) = { add,sub,mul,div };
+//	//这是一个函数指针数组
+//	return 0;
+//}
+
+
+
+
+
+//函数指针数组应用
+
+//实现一个计算器
+//整数的（1）加（2）减（3）乘（4）除
+//菜单：0退出
+
+
+int add(int x, int y)
+{
+	return x + y;
+}
+int sub(int x, int y)
+{
+	return x - y;
+}
+int mul(int x, int y)
+{
+	return x * y;
+}
+int div(int x, int y)
+{
+	return x / y;
+}
+void meun()
+{
+	printf("--------------------------\n");
+	printf("----------1.add-----------\n");
+	printf("----------2.sub-----------\n");
+	printf("----------3.mul-----------\n");
+	printf("----------4.div-----------\n");
+	printf("----------0.exit-----------\n");
+	printf("--------------------------\n");
+}
+
+int main()
+{
+	int input;
+	int x, y;
+	int r;
+	do
+	{
+		meun();
+		printf("请选择:>");
+		scanf("%d", &input);
+		//函数指针数组
+		int (*pf[])(int, int) = { NULL,add,sub,mul,div };//通过NULL使下标与switch中的一致
+		if (input >= 1 && input <= 4)
+		{
+			printf("请输入2个操作数：");
+			scanf("%d %d", &x, &y);
+			r = pf[input](x, y);
+			printf("结果是：%d\n", r);
+		}
+		else if (input == 0)
+		{
+			printf("退出计算器\n");
+		}
+		else
+		{
+			printf("输入错误，请输入0~4的值\n");
+		}
+		/*switch (input)
+		{
+		case 1:
+			printf("请输入2个操作数：");
+			scanf("%d %d", &x, &y);
+			r = add(x, y);
+			printf("结果是：%d\n", r);
+			break;
+		case 2:
+			printf("请输入2个操作数：");
+			scanf("%d %d", &x, &y);
+			r = sub(x, y);
+			printf("结果是：%d\n", r);
+			break;
+		case 3:
+			printf("请输入2个操作数：");
+			scanf("%d %d", &x, &y);
+			r = mul(x, y);
+			printf("结果是：%d\n", r);
+			break;
+		case 4:
+			printf("请输入2个操作数：");
+			scanf("%d %d", &x, &y);
+			r = div(x, y);
+			printf("结果是：%d\n", r);
+			break;
+		case 0:
+			printf("退出计算器");
+			break;
+		default:
+			printf("输入错误，请输入0~4的数字");
+			break;
+		}*/
+	} while (input);
+	return 0;
+}
