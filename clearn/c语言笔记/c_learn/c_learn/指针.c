@@ -804,93 +804,108 @@
 //菜单：0退出
 
 
-int add(int x, int y)
-{
-	return x + y;
-}
-int sub(int x, int y)
-{
-	return x - y;
-}
-int mul(int x, int y)
-{
-	return x * y;
-}
-int div(int x, int y)
-{
-	return x / y;
-}
-void meun()
-{
-	printf("--------------------------\n");
-	printf("----------1.add-----------\n");
-	printf("----------2.sub-----------\n");
-	printf("----------3.mul-----------\n");
-	printf("----------4.div-----------\n");
-	printf("----------0.exit-----------\n");
-	printf("--------------------------\n");
-}
+//int add(int x, int y)
+//{
+//	return x + y;
+//}
+//int sub(int x, int y)
+//{
+//	return x - y;
+//}
+//int mul(int x, int y)
+//{
+//	return x * y;
+//}
+//int div(int x, int y)
+//{
+//	return x / y;
+//}
+//void meun()
+//{
+//	printf("--------------------------\n");
+//	printf("----------1.add-----------\n");
+//	printf("----------2.sub-----------\n");
+//	printf("----------3.mul-----------\n");
+//	printf("----------4.div-----------\n");
+//	printf("----------0.exit-----------\n");
+//	printf("--------------------------\n");
+//}
+//
+//int main()
+//{
+//	int input;
+//	int x, y;
+//	int r;
+//	do
+//	{
+//		meun();
+//		printf("请选择:>");
+//		scanf("%d", &input);
+//		//函数指针数组
+//		int (*pf[])(int, int) = { NULL,add,sub,mul,div };//通过NULL使下标与switch中的一致
+//		if (input >= 1 && input <= 4)
+//		{
+//			printf("请输入2个操作数：");
+//			scanf("%d %d", &x, &y);
+//			r = pf[input](x, y);
+//			printf("结果是：%d\n", r);
+//		}
+//		else if (input == 0)
+//		{
+//			printf("退出计算器\n");
+//		}
+//		else
+//		{
+//			printf("输入错误，请输入0~4的值\n");
+//		}
+//		/*switch (input)
+//		{
+//		case 1:
+//			printf("请输入2个操作数：");
+//			scanf("%d %d", &x, &y);
+//			r = add(x, y);
+//			printf("结果是：%d\n", r);
+//			break;
+//		case 2:
+//			printf("请输入2个操作数：");
+//			scanf("%d %d", &x, &y);
+//			r = sub(x, y);
+//			printf("结果是：%d\n", r);
+//			break;
+//		case 3:
+//			printf("请输入2个操作数：");
+//			scanf("%d %d", &x, &y);
+//			r = mul(x, y);
+//			printf("结果是：%d\n", r);
+//			break;
+//		case 4:
+//			printf("请输入2个操作数：");
+//			scanf("%d %d", &x, &y);
+//			r = div(x, y);
+//			printf("结果是：%d\n", r);
+//			break;
+//		case 0:
+//			printf("退出计算器");
+//			break;
+//		default:
+//			printf("输入错误，请输入0~4的数字");
+//			break;
+//		}*/
+//	} while (input);
+//	return 0;
+//}
 
-int main()
-{
-	int input;
-	int x, y;
-	int r;
-	do
-	{
-		meun();
-		printf("请选择:>");
-		scanf("%d", &input);
-		//函数指针数组
-		int (*pf[])(int, int) = { NULL,add,sub,mul,div };//通过NULL使下标与switch中的一致
-		if (input >= 1 && input <= 4)
-		{
-			printf("请输入2个操作数：");
-			scanf("%d %d", &x, &y);
-			r = pf[input](x, y);
-			printf("结果是：%d\n", r);
-		}
-		else if (input == 0)
-		{
-			printf("退出计算器\n");
-		}
-		else
-		{
-			printf("输入错误，请输入0~4的值\n");
-		}
-		/*switch (input)
-		{
-		case 1:
-			printf("请输入2个操作数：");
-			scanf("%d %d", &x, &y);
-			r = add(x, y);
-			printf("结果是：%d\n", r);
-			break;
-		case 2:
-			printf("请输入2个操作数：");
-			scanf("%d %d", &x, &y);
-			r = sub(x, y);
-			printf("结果是：%d\n", r);
-			break;
-		case 3:
-			printf("请输入2个操作数：");
-			scanf("%d %d", &x, &y);
-			r = mul(x, y);
-			printf("结果是：%d\n", r);
-			break;
-		case 4:
-			printf("请输入2个操作数：");
-			scanf("%d %d", &x, &y);
-			r = div(x, y);
-			printf("结果是：%d\n", r);
-			break;
-		case 0:
-			printf("退出计算器");
-			break;
-		default:
-			printf("输入错误，请输入0~4的数字");
-			break;
-		}*/
-	} while (input);
-	return 0;
-}
+
+
+//qsort库函数
+//是用来对数据的排序
+//基于快速排序的思想对数据进行排序的
+//qsort  函数能对任意类型进行排
+// 
+//void qsort(void* base,  //指针，指向了要排序的数组的第一个元素 
+//			size_t num,    //base指向的数组的个数
+//			size_t size,   //base指向的数组中一个元素的字节数
+//    int (*compar)(const void*, const void*));   //函数指针，应该指向一个行数
+		//‘指向的这个函数用来比较base指向的数组中任意两个数据的大小
+
+
