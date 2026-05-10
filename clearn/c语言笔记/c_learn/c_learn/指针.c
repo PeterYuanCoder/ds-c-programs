@@ -911,6 +911,7 @@
 //}
 
 //qsort库函数
+#include<stdlib.h>
 //是用来对数据的排序
 //基于快速排序的思想对数据进行排序的
 //qsort  函数能对任意类型进行排
@@ -922,3 +923,23 @@
 		//‘指向的这个函数用来比较base指向的数组中任意两个数据的大小 
 
 
+
+//结构体成员访问
+//1.结构体变量.成员名
+//2.结构体指针->成员名
+struct Stu    //结构体
+{
+	char name[20];
+	int age;
+};
+void test3()
+{
+	struct Stu s = { "zhangsan",28 };
+	printf("%s %d\n", s.name, s.age);    //结构体的访问
+}
+
+int main()
+{
+	test3();
+	return 0;
+}
