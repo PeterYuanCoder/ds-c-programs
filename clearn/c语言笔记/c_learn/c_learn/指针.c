@@ -927,19 +927,47 @@
 //结构体成员访问
 //1.结构体变量.成员名
 //2.结构体指针->成员名
-struct Stu    //结构体
-{
-	char name[20];
-	int age;
-};
-void test3()
-{
-	struct Stu s = { "zhangsan",28 };
-	printf("%s %d\n", s.name, s.age);    //结构体的访问
-}
+//struct Stu    //结构体
+//{
+//	char name[20];
+//	int age;
+//};
+//void test3()
+//{
+//	struct Stu s = { "zhangsan",28 };
+//	printf("%s %d\n", s.name, s.age);    //结构体的访问
+//}
+//
+//int main()
+//{
+//	test3();
+//	return 0;
+//}
 
+
+//重温杨辉三角
 int main()
 {
-	test3();
+	int n;
+	scanf("%d", &n);
+	int arr[30][30] = { 0 };
+	for (int i = 0; i < n; i++)
+	{
+		arr[i][0] = 1;
+		arr[i][i] = 1;
+		//j从1开始，到i-1结束，避免j=0时访问j-1=-1
+		for (int j = 1; j < i; j++)
+		{
+			arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j];
+		}
+	}
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j <= i; j++)
+		{
+			printf("%5d", arr[i][j]);
+		}
+		printf("\n");
+	}
 	return 0;
 }
