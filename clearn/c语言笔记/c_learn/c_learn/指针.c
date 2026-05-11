@@ -977,45 +977,45 @@
 //一个数组中只有两个数字是出现一次，其他所有数字都出现了两次。
 //编写一个函数找出这两个只出现一次的数字。
 
-void leek(int* p, int sz, int* a, int* b)
-{
-	int fount = 0;
-	*a = 0;
-	*b = 0;
-
-	for (int i = 0; i < sz; i++)
-	{
-		int count = 0;
-		for (int j = 0; j < sz; j++)
-		{
-			
-			if (p[i] == p[j])
-			{
-				count++;
-			}
-		}
-		if (count == 1)
-		{
-			if (fount == 0)
-			{
-				*a = p[i];
-				fount = 1;   //标记已经找到一个了
-			}
-			else
-			{
-				*b = p[i];
-				break;
-			}
-		}
-	}
-
-}
-int main()
-{
-	int arr[] = { 1,2,3,4,5,1,2,3,4,6 };
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	int a, b;
-	leek(arr, sz,&a,&b);
-	printf("%d %d", a, b);
-	return 0;
-}
+//void leek(int* p, int sz, int* a, int* b)
+//{
+//	int fount = 0;
+//	*a = 0;
+//	*b = 0;
+//
+//	for (int i = 0; i < sz; i++)
+//	{
+//		int count = 0;
+//		for (int j = 0; j < sz; j++)
+//		{
+//			
+//			if (p[i] == p[j])
+//			{
+//				count++;
+//			}
+//		}
+//		if (count == 1)
+//		{
+//			if (fount == 0)
+//			{
+//				*a = p[i];
+//				fount = 1;   //标记已经找到一个了
+//			}
+//			else
+//			{
+//				*b = p[i];
+//				break;
+//			}
+//		}
+//	}
+//
+//}
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,1,2,3,4,6 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int a, b;
+//	leek(arr, sz,&a,&b);
+//	printf("%d %d", a, b);
+//	return 0;
+//}

@@ -167,3 +167,15 @@
 //}
 
 
+
+//strcat函数    追加
+//char* strcat(char* destination, const char* source);
+
+//int main()
+//{
+//	char arr1[20] = "hello";
+//	char arr2[] = "world";
+//	strcat(arr1, arr2);  //将arr2追加到arr1后面
+//	printf("%s\n", arr1);
+//	return 0;
+//}
