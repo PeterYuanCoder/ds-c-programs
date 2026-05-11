@@ -816,7 +816,7 @@
 //{
 //	return x * y;
 //}
-//int div(int x, int y)
+//int Div(int x, int y)
 //{
 //	return x / y;
 //}
@@ -826,7 +826,7 @@
 //	printf("----------1.add-----------\n");
 //	printf("----------2.sub-----------\n");
 //	printf("----------3.mul-----------\n");
-//	printf("----------4.div-----------\n");
+//	printf("----------4.Div-----------\n");
 //	printf("----------0.exit-----------\n");
 //	printf("--------------------------\n");
 //}
@@ -841,8 +841,8 @@
 //		meun();
 //		printf("请选择:>");
 //		scanf("%d", &input);
-//		//函数指针数组
-//		int (*pf[])(int, int) = { NULL,add,sub,mul,div };//通过NULL使下标与switch中的一致
+//		//函数指针数组 --转移表
+//		int (*pf[])(int, int) = { NULL,add,sub,mul,Div };//通过NULL使下标与switch中的一致
 //		if (input >= 1 && input <= 4)
 //		{
 //			printf("请输入2个操作数：");
@@ -1017,5 +1017,40 @@
 //	int a, b;
 //	leek(arr, sz,&a,&b);
 //	printf("%d %d", a, b);
+//	return 0;
+//}
+
+
+//找凶手
+// 
+//int main()
+//{
+//	char count;
+//	for (count = 'A'; count <= 'D'; count++)
+//	{
+//		int fount = 0;
+//		if (count != 'A')
+//		{
+//			fount++;
+//		}
+//		if (count == 'C')
+//		{
+//			fount++;
+//		}
+//		if (count == 'D')
+//		{
+//			fount++;
+//		}
+//		if (count != 'D')
+//		{
+//			fount++;
+//		}
+//		if (fount == 3)
+//		{
+//			printf("找到凶手了，是%d\n", count);
+//			break;
+//		}
+//	}
+//
 //	return 0;
 //}
