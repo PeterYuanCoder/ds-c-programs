@@ -105,6 +105,7 @@
 //字符输入和输出
 //getchar    从键盘上输入一个字符
 //putchar    输出一个字符
+// 
 //int main()
 //{
 //	int r = getchar();      //scanf("%c\n",&r);
@@ -118,7 +119,7 @@
 
 //字符串函数
 
-//strlen函数   查看函数库观察标准形式   遇到\0停止
+//strlen函数   查看函数库观察标准形式     统计\0之前的字符串个数
 
 //strlen的函数运行
 //size_t my_strlen(const char* str1)
@@ -169,6 +170,24 @@
 //		p++;
 //	}
 //	return p - str;  
+//}
+
+
+//递归模拟实现     无需创建中间变量
+//size_t my_strlen(const char* s)
+//{
+//	if (*s != '\0')
+//	{
+//		return 1 + my_strlen(s + 1);
+//	}
+//	else
+//		return 0;
+//}
+//int main()
+//{
+//	size_t len = my_strlen("abcd");
+//	printf("%zu\n", len);
+//	return 0;
 //}
 
 
