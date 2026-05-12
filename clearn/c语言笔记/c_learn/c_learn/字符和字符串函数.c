@@ -79,6 +79,41 @@
 //}
 
 
+//字符转换函数        
+//tolower      大写转小写
+
+//int main()
+//{
+//	int r = tolower('X');
+//	printf("%c\n", r);
+//	putchar(r);   //打印字符
+//	return 0;
+//}
+
+//toupper      小写转大写
+
+//int main()
+//{
+//	int r = toupper('x');
+//	printf("%c\n", r);
+//	putchar(r);   //打印字符
+//	return 0;
+//}
+
+
+
+//字符输入和输出
+//getchar    从键盘上输入一个字符
+//putchar    输出一个字符
+//int main()
+//{
+//	int r = getchar();      //scanf("%c\n",&r);
+//	putchar(r);				//printf("%c\n",r);
+//	return 0;
+//}
+
+
+
 
 
 //字符串函数
