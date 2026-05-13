@@ -193,7 +193,6 @@
 
 
 
-
 //strcpy函数    字符串拷贝
 //int main()
 //{
@@ -223,6 +222,8 @@
 
 
 //strcat函数    追加
+//1.找到目标字符\0
+// 2.从源字符串中拷贝数据，在目标字符串中\0的位置开始依次覆盖
 //char* strcat(char* destination, const char* source);
 
 //int main()
@@ -232,4 +233,70 @@
 //	strcat(arr1, arr2);  //将arr2追加到arr1后面
 //	printf("%s\n", arr1);
 //	return 0;
+//}
+
+
+//模拟实现函数
+//char* my_strcat(char* dest, char* src)
+//{
+//	char* ret = dest;
+//	//找\0
+//	while (*dest!='\0')
+//	{
+//		dest++;
+//	}
+//	//数据的拷贝
+//	while (*dest++ = *src++)
+//	{
+//		;
+//	}
+//	return ret;
+//
+//}
+
+
+
+//strcmp函数
+// 
+//int strcmp(const char* str1, const char* str2);
+
+//功能： ?来?较str1和str2指向的字符串，从两个字符串的第?个字符开始?较，如果两个字符
+//的ASCII码值相等，就?较下?个字符。直到遇到不相等的两个字符，或者字符串结束
+
+
+//int main()
+//{
+//	char arr1[] = "abcdef";
+//	char arr2[] = "abq";
+//	int r = strcmp(arr1, arr2);
+//	//printf("%d\n", r);
+//	if (r > 0)
+//	{
+//		printf(">\n");
+//	}
+//	else if (r < 0)
+//	{
+//		printf("<\n");
+//	}
+//	else
+//	{
+//		printf("=\n");
+//	}
+//	return 0;
+//}
+
+
+//模拟实现函数
+//my_strcmp(const char* str1, const char* str2)
+//{
+//	assert(str1 && str2 != NULL);
+//	while (*str1 == *str2)
+//	{
+//		str1++;
+//		str2++;
+//	}
+//	if (*str1 > *str2)
+//		return 1;
+//	else
+//		return -1;
 //}
