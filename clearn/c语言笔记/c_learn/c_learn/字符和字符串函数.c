@@ -193,7 +193,7 @@
 
 
 
-//strcpy函数    字符串拷贝
+//strcpy函数    字符串拷贝    会把\0拷贝过去
 //int main()
 //{
 //	char str[10] = { 0 };
@@ -299,4 +299,18 @@
 //		return 1;
 //	else
 //		return -1;
+//}
+
+//strcpy和strcat和strcmp均是长度不受限函数
+
+//strncpy和strncat和strncmp是长度受限函数
+//strncpy函数   不把\0拷贝过去   但是超出字符个数其余补\0
+
+//int main()
+//{
+//	char arr1[20] = { 0 };
+//	char arr2[] = "abcdef";
+//	strncpy(arr1, arr2, 3);
+//	printf("%s\n", arr1);
+//	return 0;
 //}
