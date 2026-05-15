@@ -355,3 +355,45 @@
 //}
 
 
+//strstr函数
+//在一个字符串中查找子字符串
+// 
+//char* strstr(const char* str1, const char* str2);
+
+//#include<string.h>
+//
+//char* my_strstr(const char* str1, const char* str2)
+//{
+//	const char* s1;
+//	const char* s2;
+//	const char* pc = str1;
+//	while (*pc != '\0')
+//	{
+//		//从pc的位置来时找str2中的字符串
+//		s1 = pc;
+//		s2 = str2;
+//		while (*s2!='\0' && *s1!='\0' && *s1 == *s2)
+//		{
+//			s1++;
+//			s2++;
+//		}
+//		if (*s2 == '\0')
+//			return pc;
+//		pc++;
+//	}
+//}
+//int main()
+//{
+//	char arr1[20] = "abcdefabcdef";
+//	char arr2[20] = "def";
+//	char* ps = my_strstr(arr1, arr2);  //在arr1中找arr2
+//	if (ps != NULL)
+//	{
+//		printf("%s\n", ps);
+//	}
+//	else
+//	{
+//		printf("没有找到\n");
+//	}
+//	return 0;
+//}
