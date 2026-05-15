@@ -360,13 +360,15 @@
 // 
 //char* strstr(const char* str1, const char* str2);
 
-//#include<string.h>
+#include<string.h>
 //
 //char* my_strstr(const char* str1, const char* str2)
 //{
 //	const char* s1;
 //	const char* s2;
-//	const char* pc = str1;
+//	const char* pc = str1;   //特殊情况处理: 当str2是空字符串的时候
+//	if (*str2 == '\0')
+//		return str1;
 //	while (*pc != '\0')
 //	{
 //		//从pc的位置来时找str2中的字符串
@@ -394,6 +396,47 @@
 //	else
 //	{
 //		printf("没有找到\n");
+//	}
+//	return 0;
+//}
+
+
+//strtok函数       切割字符串
+// 
+// strtok会修改源字符串 所以先拷贝一份源字符串
+//char* strtok(char* str, const char* delim);
+
+//理解版     不知道多少份就不知道要几个切割语句
+//int main()
+//{
+//	char arr[] = "www.bitejiuyeke.com";
+//	const char* p = ".";     //分隔符的集合
+//	char buf[30] = { 0 };
+//	strncpy(buf, arr, 30);
+//	char* pr = strtok(arr, p);   //第一次切完后续传入NULL表示继续切割同一个字符串
+//	printf("%s\n", pr);
+//
+//	pr = strtok(NULL, p);
+//	printf("%s\n", pr);
+//
+//	pr = strtok(NULL, p);
+//	printf("%s\n", pr);
+//	return 0;
+//}
+
+
+
+//即使不知道有多少分也可以直接切割
+//int main()
+//{
+//	char arr[] = "zhangpengwei@yeah.net";
+//	const char* p = "@.";
+//	char buf[30] = { 0 };
+//	strncpy(buf, arr, 30);
+//	char* pr = NULL;
+//	for (pr = strtok(buf, p); pr != NULL; pr = strtok(NULL, p))
+//	{
+//		printf("%s\n", pr);
 //	}
 //	return 0;
 //}
