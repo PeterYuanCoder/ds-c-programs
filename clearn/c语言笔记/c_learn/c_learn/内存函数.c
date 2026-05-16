@@ -43,15 +43,41 @@
 // 
 //void* memmove(void* destination, const void* source, size_t num);
 
+void* memmove(void* dst, const void* src, size_t count)
+{
+    void* ret = dst;
+    if (dst <= src || (char*)dst >= ((char*)src + count)) 
+    {
+        //前-》后
+        while (count--) {
+            *(char*)dst = *(char*)src;
+            dst = (char*)dst + 1;
+            src = (char*)src + 1;
+        }
+    }
+    else
+    {
+        //后-》前
+        dst = (char*)dst + count - 1;
+        src = (char*)src + count - 1;
+        while (count--) {
+            *(char*)dst = *(char*)src;
+            dst = (char*)dst - 1;
+            src = (char*)src - 1;
+        }
+    }
+    return(ret);
+}
 
-//int main()
-//{
-//	int arr1[] = { 1,2,3,4,5,6,7,8,9,10 };
-//	int sz = sizeof(arr1) / sizeof(arr1[0]);
-//	memmove(arr1+2, arr1, 20);			
-//	for (int i = 0; i < sz; i++)
-//	{
-//		printf("%d ", arr1[i]);
-//	}
-//	return 0;
-//}
+
+int main()
+{
+	int arr1[] = { 1,2,3,4,5,6,7,8,9,10 };
+	int sz = sizeof(arr1) / sizeof(arr1[0]);
+	memmove(arr1+2, arr1, 20);			
+	for (int i = 0; i < sz; i++)
+	{
+		printf("%d ", arr1[i]);
+	}
+	return 0;
+}
