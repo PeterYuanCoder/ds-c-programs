@@ -10,12 +10,25 @@
 
 #include<string.h>
 
-//int main()
+//void* my_memcpy(void* dst, const void* src, size_t count)
+//{
+//	void* ret = dst;
+//	assert(dst);
+//	assert(src);
+//	while (count--) {
+//		*(char*)dst = *(char*)src;
+//		dst = (char*)dst + 1;
+//		src = (char*)src + 1;
+//	}
+//	return(ret);
+//}
+//
+//int main() 
 //{
 //	int arr1[] = { 1,2,3,4,5,6,7,8,9,10 };
 //	int arr2[20] = { 0 };
 //	int sz2 = sizeof(arr2) / sizeof(arr2[0]);
-//	memcpy(arr2, arr1+2, 20);    //+2表示从3开始拷贝    数组的运算
+//	my_memcpy(arr2, arr1+2, 20);    //+2表示从3开始拷贝    数组的运算
 //	for (int i = 0; i < sz2; i++)
 //	{
 //		printf("%d ", arr2[i]);
@@ -31,14 +44,14 @@
 //void* memmove(void* destination, const void* source, size_t num);
 
 
-int main()
-{
-	int arr1[] = { 1,2,3,4,5,6,7,8,9,10 };
-	int sz = sizeof(arr1) / sizeof(arr1[0]);
-	memmove(arr1+2, arr1, 20);			
-	for (int i = 0; i < sz; i++)
-	{
-		printf("%d ", arr1[i]);
-	}
-	return 0;
-}
+//int main()
+//{
+//	int arr1[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int sz = sizeof(arr1) / sizeof(arr1[0]);
+//	memmove(arr1+2, arr1, 20);			
+//	for (int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr1[i]);
+//	}
+//	return 0;
+//}
