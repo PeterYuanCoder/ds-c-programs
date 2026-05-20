@@ -2,6 +2,8 @@
 #include <stdio.h>
 
 
+
+//                                          整数在内存中的储存
 //⼤端（存储）模式：
 //是
 //指数据的低位字节内容保存在内存的⾼地址处，⽽数据的⾼位字节内容，保存在内存的低地址处。
@@ -165,5 +167,51 @@
 //	int* ptr2 = (int*)((int)a + 1);
 //	printf("%x, %x", ptr1[-1], *ptr2);
 //	//%x   16进制形式打印
+//	return 0;
+//}
+
+
+
+
+
+
+//                                       浮点数在内存中的储存
+
+
+//int mian()
+//{
+//	int n = 9;
+//	//原码  00000000 00000000 00000000 00001001
+//	float* pFloat = (float*)&n;
+//	printf("n的值为:%d\n", n);
+//	printf("*pFloat的值为：%f\n", *pFloat);
+//	*pFloat = 9.0;
+//	printf("n的值为：%d\n", n);
+//	printf("*pFloat的值为：%f\n", *pFloat);
+//	return 0;
+//}
+
+
+//有的浮点数不能精确保存
+
+
+#include<math.h>
+
+#define EXP 0.0000001
+
+//abs   整数绝对值
+//fabs   浮点数绝对值
+
+//int main()
+//{
+//	if (fabs((0.1 + 0.2) - 0.3)<EXP)        //EXP表示误差  
+//	{
+//		printf("相等\n");
+//	}
+//	else
+//	{
+//		printf("不相等\n");
+//	}
+//
 //	return 0;
 //}
