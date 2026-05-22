@@ -235,3 +235,33 @@
 //	print2(&s);
 //	return 0;
 //}
+
+
+
+//            9. 结构体实现位段    位 表示占二进制位
+
+//什么是位段
+//1. 位段的成员必须是int、unsigned int或signed int，在C99中位段成员的类型也可以选择其他整型家族类型，⽐如：char。
+//2. 位段的成员名后边有⼀个冒号和⼀个数字
+
+struct A
+{
+	int _a : 2;    // 占 2个bite 位
+	int _b : 5;
+	int _c : 10;
+	int _d : 30;
+};
+struct B
+{
+	int _a;   
+	int _b;
+	int _c;
+	int _d;
+};
+
+int main()
+{
+	printf("%zu\n", sizeof(struct A));
+	printf("%zu\n", sizeof(struct B));
+	return 0;
+}
