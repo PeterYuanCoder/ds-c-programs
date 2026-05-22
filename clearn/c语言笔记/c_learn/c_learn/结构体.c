@@ -193,3 +193,45 @@
 //	printf("%d\n", sizeof(struct S));
 //	return 0;
 //}
+
+
+//                 8. 结构体传参
+
+//结构体传参的时候，尽量传结构体的地址  节约时间和空间上的体统开销
+//struct S
+//{
+//	int data[1000];
+//	int num;
+//};
+//void print1(struct S t)
+//{
+//	int i = 0;
+//	for (i = 0; i < 5; i++)
+//	{
+//		printf("%d ", t.data[i]);
+//	}
+//	printf("\n");
+//	printf("%d\n", t.num);
+//}
+//
+////结构体指针->成员名   //传入的是地址
+//void print2(struct S* ps)
+//{
+//	int i = 0;
+//	for (i = 0; i < 5; i++)
+//	{
+//		printf("%d ",ps->data[i]);
+//	}
+//	printf("\n");
+//	printf("%d\n", ps->num);
+//}
+//int main()
+//{
+//	struct S s = { {1,2,3,4,5},100 };
+//	//打印 1
+//	print1(s);
+//
+//	//打印  2
+//	print2(&s);
+//	return 0;
+//}
