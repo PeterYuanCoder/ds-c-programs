@@ -108,3 +108,64 @@
 //	int data;   //数据
 //	struct Node* next;  //地址
 //};
+
+
+
+
+//         4.结构体内存对齐
+
+//1. 结构体的第1个成员对⻬到和结构体变量起始位置偏移量为0的地址处。
+//2. 从第2个成员变量开始，都要对⻬到某个对⻬数的整数倍的地址处
+//对⻬数 = 编译器默认的⼀个对⻬数与该成员变量⼤⼩的较⼩值。
+//VS中默认的值为8 
+//Linux中gcc没有默认对⻬数，对⻬数就是成员⾃⾝的⼤
+//3. 结构体总⼤⼩为最⼤对⻬数（结构体中每个成员变量都有⼀个对⻬数，所有对⻬数中最⼤的）的整数倍
+//4. 如果嵌套了结构体的情况，嵌套的结构体成员对⻬到⾃⼰的成员中最⼤对⻬数的整数倍处，结构
+//体的整体⼤⼩就是所有最⼤对⻬数（含嵌套结构体中成员的对⻬数）的整数倍
+
+//#include<stddef.h>
+//struct S1
+//{
+//	char c1;  //1
+//	int i;    //4
+//	char c2;  //1
+//};
+//struct S2
+//{
+//	char c1;   //1
+//	char c2;   //1
+//	int i;     //4
+//};
+//
+//struct S3
+//{
+//	double d;
+//	char c;
+//	int i;
+//};
+//
+//struct S4
+//{
+//	char c1;
+//	struct S3 s3;
+//	double d;
+//};
+//int main()
+//{
+//	printf("%zu\n", sizeof(struct S1));
+//	printf("%zu\n", sizeof(struct S2));
+//	printf("%zu\n", sizeof(struct S3));
+//	printf("%zu\n", sizeof(struct S4));
+//
+//
+//
+//	//offsetof  是宏 用于求偏移量   需要头文件  stddef.h
+//	printf("%d\n", offsetof(struct S1,c1));
+//	printf("%d\n", offsetof(struct S1, i));
+//	printf("%d\n", offsetof(struct S1, c2));
+//
+//	return 0;
+//}
+
+
+
