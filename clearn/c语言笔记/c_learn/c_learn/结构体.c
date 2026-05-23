@@ -342,3 +342,18 @@
 //	printf("%zu\n", sizeof(union Un));
 //	return 0;
 //}
+
+
+
+//   练习： 使用联合体来判断当前机器是大端还是小端
+int check_sys()
+{
+	union
+	{
+		int i;
+		char c;
+	}un;
+	un.i = 1;
+
+	return un.c;//返回1是⼩端，返回0是⼤端
+}
