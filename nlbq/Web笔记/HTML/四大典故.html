@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>勤奋好学的四大典故</title>
+    <style>
+        
+        body {
+            font-family: "微软雅黑", sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: red;
+            margin-bottom: 30px;
+        }
+        
+        .img-box {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 20px;
+        }
+        
+        .img-box img {
+            width: 22%;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .img-box img:hover {
+            transform: scale(1.05); /* 悬停放大效果 */
+        }
+        
+        .content {
+            padding: 20px;
+            line-height: 1.8;
+            font-size: 18px;
+            clear: both;
+        }
+        .content h2 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>勤奋好学的四大典故</h1>
+    <div class="img-box">
+        
+        <img src="https://x0.ifengimg.com/ucms/2023_18/DBC5D525AB3D82E0A147C72262FF774DECE081CF_size46_w690_h388.jpg" alt="悬梁刺股" onclick="showContent('悬梁刺股')">
+        <img src="https://ts1.tc.mm.bing.net/th/id/OIP-C.gBLRdcTFi1YdNxvqMzFgPQHaFf?rs=1&pid=ImgDetMain&o=7&rm=3" alt="凿壁偷光" onclick="showContent('凿壁偷光')">
+        <img src="https://www.shuomingshu.cn/wp-content/uploads/images/2022/11/03/ba6d6c61401b4f4faf6ab444f1e9110c_o42dl3j1jxh.jpg" alt="囊萤映雪" onclick="showContent('囊萤映雪')">
+        <img src="https://ts1.tc.mm.bing.net/th/id/OIP-C.-NTUTDqmuB_lmYO6aHj1VAHaHY?rs=1&pid=ImgDetMain&o=7&rm=3" alt="闻鸡起舞" onclick="showContent('闻鸡起舞')">
+    </div>
+
+    <div class="content" id="contentBox">
+        <h2 id="title">悬梁刺股</h2>
+        <p id="text">
+            《悬梁刺股》--东汉的孙敬，勤奋好学，到了半夜容易打盹瞌睡，为了不影响学习，他找来一根绳子，一头绑在自己的头发上，另一头绑在房梁上，只要头一低，绳子牵住头发扯痛头皮，他就会因疼痛而清醒，经过不懈努力终于称为当时著名的政治家。苏秦在往秦国求官受挫后，发奋读书，每当深夜犯困时，就用锥子刺自己的大腿，让自己保持清醒，最终成为战国时期著名的纵横家。
+        </p>
+    </div>
+
+    <script>
+        
+        const storyData = {
+            "悬梁刺股": {
+                title: "悬梁刺股",
+                text: "《悬梁刺股》--东汉的孙敬，勤奋好学，到了半夜容易打盹瞌睡，为了不影响学习，他找来一根绳子，一头绑在自己的头发上，另一头绑在房梁上，只要头一低，绳子牵住头发扯痛头皮，他就会因疼痛而清醒，经过不懈努力终于称为当时著名的政治家。苏秦在往秦国求官受挫后，发奋读书，每当深夜犯困时，就用锥子刺自己的大腿，让自己保持清醒，最终成为战国时期著名的纵横家。"
+            },
+            "凿壁偷光": {
+                title: "凿壁偷光",
+                text: "《凿壁偷光》--西汉的匡衡，幼时家境贫寒，买不起灯油，无法在夜间读书。他发现邻居家每晚都有灯光，于是凿穿墙壁，借邻居家透过来的光刻苦读书，最终成为西汉著名的经学家。"
+            },
+            "囊萤映雪": {
+                title: "囊萤映雪",
+                text: "《囊萤映雪》--晋代的车胤，家境贫寒，夏天用白绢袋装萤火虫照明读书；孙康冬天利用雪的反光读书，两人都因刻苦学习，最终成为饱学之士。"
+            },
+            "闻鸡起舞": {
+                title: "闻鸡起舞",
+                text: "《闻鸡起舞》--晋代的祖逖，胸怀大志，每天听到鸡叫就起床练剑，刻苦磨练自己，最终成为一代名将，为国家立下赫赫战功。"
+            }
+        };
+
+        
+        function showContent(storyName) {
+            const data = storyData[storyName];
+            
+            document.getElementById("title").innerText = data.title;
+            document.getElementById("text").innerText = data.text;
+        }
+    </script>
+</body>
+</html>

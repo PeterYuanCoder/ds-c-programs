@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>零陵古文化城 | 传承千年文脉 · 文旅新地标</title>
+    <!-- Font Awesome 6 (免费图标库) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: 思源宋体与优雅无衬线体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Inter:opsz,wght@14..32,300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Serif SC', system-ui, -apple-system, sans-serif;
+            background-color: #fef7ed;
+            color: #2e241f;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+        }
+
+        /* 古典主题色 */
+        :root {
+            --gold-dark: #b87c3a;
+            --gold-light: #e2bc7c;
+            --brown-deep: #3e2a23;
+            --brown-soft: #7c5a48;
+            --cream: #fff5e8;
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.05);
+            --border-radius: 12px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 头部导航 */
+        .header {
+            background: rgba(255, 245, 232, 0.96);
+            backdrop-filter: blur(2px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #ecdbba;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 16px 0;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Noto Serif SC', serif;
+            color: var(--brown-deep);
+            letter-spacing: 2px;
+        }
+
+        .logo p {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--gold-dark);
+            margin-top: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #4a342b;
+            transition: 0.3s;
+            font-size: 1rem;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold-dark);
+            border-bottom-color: var(--gold-dark);
+        }
+
+        /* 响应式导航 */
+        @media (max-width: 900px) {
+            .navbar {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .nav-links {
+                justify-content: center;
+                gap: 18px;
+            }
+        }
+
+        /* Hero 区 */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url('https://picsum.photos/id/104/1920/600?grayscale') center/cover no-repeat;
+            background-blend-mode: overlay;
+            min-height: 460px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h2 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            font-family: 'Noto Serif SC', serif;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            letter-spacing: 4px;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            max-width: 700px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+        @media (max-width: 700px) {
+            .hero-content h2 { font-size: 2rem; }
+        }
+
+        /* 公用section */
+        .section {
+            padding: 70px 0;
+            border-bottom: 1px solid #eedfcb;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 600;
+            font-family: 'Noto Serif SC', serif;
+            margin-bottom: 3rem;
+            color: var(--brown-deep);
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: var(--gold-dark);
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
+
+        /* 走进古文化城 双栏+卡片 */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+            gap: 48px;
+            margin-bottom: 56px;
+        }
+        .about-text {
+            background: white;
+            padding: 28px 32px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            border-left: 5px solid var(--gold-dark);
+        }
+        .about-text p {
+            font-size: 1.02rem;
+            line-height: 1.75;
+            margin-bottom: 1.2rem;
+            color: #3b2c24;
+        }
+        .booking-card {
+            background: #fff9f0;
+            border-radius: var(--border-radius);
+            padding: 28px 24px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #f0e2d0;
+        }
+        .booking-card i {
+            font-size: 2.5rem;
+            color: var(--gold-dark);
+            margin-bottom: 12px;
+        }
+        .booking-card h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 8px 0;
+        }
+        .booking-phone {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #b4642c;
+            margin: 20px 0 12px;
+            letter-spacing: 1px;
+        }
+        .booking-phone a {
+            color: #b4642c;
+            text-decoration: none;
+        }
+        .small-note {
+            color: #8f6b51;
+            margin-top: 8px;
+        }
+        .btn-tel {
+            display: inline-block;
+            background: var(--gold-dark);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 40px;
+            margin-top: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-tel:hover {
+            background: #9e632c;
+            transform: translateY(-2px);
+        }
+
+        /* 文化三卡片 */
+        .culture-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+        .card-item {
+            background: white;
+            flex: 1;
+            min-width: 200px;
+            border-radius: 24px;
+            padding: 28px 20px;
+            text-align: center;
+            transition: 0.25s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--gold-light);
+        }
+        .card-item i {
+            font-size: 2.4rem;
+            color: var(--gold-dark);
+            margin-bottom: 16px;
+        }
+        .card-item h4 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .card-item p {
+            font-size: 0.9rem;
+            color: #5f4a3a;
+        }
+
+        /* 楼盘相册 网格 */
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+        }
+        .album-item {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .album-item:hover {
+            transform: translateY(-6px);
+        }
+        .album-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        .album-caption {
+            padding: 16px;
+            text-align: center;
+            font-weight: 500;
+            background: white;
+        }
+
+        /* 新闻 & 政策 & 养生 列表样式 */
+        .two-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        .info-panel {
+            background: white;
+            border-radius: 24px;
+            padding: 24px 28px;
+            box-shadow: var(--shadow-sm);
+        }
+        .info-panel h3 {
+            font-size: 1.6rem;
+            border-left: 5px solid var(--gold-dark);
+            padding-left: 16px;
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+        .news-list, .policy-list, .health-list {
+            list-style: none;
+        }
+        .news-list li, .policy-list li, .health-list li {
+            padding: 14px 0;
+            border-bottom: 1px dashed #eedfcb;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .news-list li i, .policy-list li i, .health-list li i {
+            color: var(--gold-dark);
+            width: 24px;
+        }
+        .news-date {
+            font-size: 0.8rem;
+            color: #b87c3a;
+            margin-left: auto;
+        }
+
+        /* 预约看房大横幅区 */
+        .booking-banner {
+            background: linear-gradient(135deg, #2c211c, #4c3529);
+            border-radius: 28px;
+            padding: 48px 32px;
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+        }
+        .booking-banner h3 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .booking-banner .phone-large {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin: 20px 0;
+        }
+        .booking-banner .phone-large a {
+            color: #f7cf9f;
+            text-decoration: none;
+        }
+
+        /* 底部 */
+        .footer {
+            background: #2b221e;
+            color: #cfc2b6;
+            padding: 48px 0 28px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .footer p {
+            margin: 8px 0;
+        }
+        .footer a {
+            color: #e2bc7c;
+            text-decoration: none;
+        }
+
+        @media (max-width: 800px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .section {
+                padding: 50px 0;
+            }
+            .booking-card .booking-phone {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <h1>零陵古文化城</h1>
+                <p>· 潇湘文脉 · 天下零陵 ·</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">网站首页</a></li>
+                <li><a href="#about">走进古文化城</a></li>
+                <li><a href="#album">楼盘相册</a></li>
+                <li><a href="#news">活动新闻</a></li>
+                <li><a href="#policy">政策法规</a></li>
+                <li><a href="#health">健康养生</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- 首页锚点 Hero -->
+    <section id="home">
+        <div class="hero">
+            <div class="hero-content">
+                <h2>零陵古文化城</h2>
+                <p>千年文脉 · 江南遗韵 | 国际文旅综合体  &nbsp;|&nbsp; 传统文化传承示范区</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 走进古文化城 (核心) -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">走进古文化城</div>
+            <div class="about-grid">
+                <!-- 左侧详细介绍 -->
+                <div class="about-text">
+                    <p><strong>“期，属三面国的江南地。”</strong> 零陵古文化城坐落于潇湘之源，自古以来便是文人墨客神往的江南灵秀之地。每年吸引大量国内外游客来此度假休闲旅游。充裕的流动人口及旅游资源，促成零陵文化城的问世。</p>
+                    <p>项目定位立足国家文化发展战略，传承中国传统历史文化，展现人文历史精华，为中华文明发扬光大提供空间载体。通过古城文化及衍伸中国传统文化的交流交易，催生传统文化街区，借助旅游资源形成青少年科技展示区，并由此综合推出游客接待会议中心区块。</p>
+                    <p>零陵古文化城将历史精粹与现代功能融合，打造集文化体验、休闲度假、商业会展、健康养生于一体的世界级文旅地标。未来将成为湘南地区最具影响力的文化名片。</p>
+                </div>
+                <!-- 右侧预约看房+企业荣誉简讯 -->
+                <div class="booking-card">
+                    <i class="fas fa-landmark"></i>
+                    <h3>预约看房</h3>
+                    <p class="booking-phone">
+                        <a href="tel:0535-3693666">0535-3693666</a> &nbsp;|&nbsp; <a href="tel:0535-3692666">3692666</a>
+                    </p>
+                    <div class="small-note">贵宾专线 · 品鉴东方美学</div>
+                    <a href="tel:0535-3693666" class="btn-tel"><i class="fas fa-phone-alt"></i> 即刻预约</a>
+                    <hr style="margin: 20px 0; border-color:#edd7c0;">
+                    <div><i class="fas fa-trophy"></i> 企业荣誉</div>
+                    <p style="margin-top: 8px; font-size:0.85rem;">🏆 国家级文旅融合示范项目<br>🏅 中国传统文化传承基地<br>⭐ 省级重点文化产业园区</p>
+                </div>
+            </div>
+
+            <!-- 关于我们、企业文化、企业荣誉 三卡片展示 -->
+            <div class="culture-cards">
+                <div class="card-item">
+                    <i class="fas fa-building"></i>
+                    <h4>关于我们</h4>
+                    <p>零陵古文化城由著名文史专家与顶尖设计团队联合打造，深耕潇湘本土文化，致力于还原千年古城风韵，搭建国际交流平台。</p>
+                </div>
+                <div class="card-item">
+                    <i class="fas fa-feather-alt"></i>
+                    <h4>企业文化</h4>
+                    <p>“承古开新，和合共生” —— 传承不守旧，创新不忘本，以文化滋养城市灵魂，让传统活在当下。</p>
+                </div>
+                <div class="card-item">
+                    <i class="fas fa-medal"></i>
+                    <h4>企业荣誉</h4>
+                    <p>荣获“中国文旅产业创新奖”“省级文明旅游示范单位”，历年接待海内外考察团超300场，广受赞誉。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 楼盘相册 -->
+    <section id="album" class="section">
+        <div class="container">
+            <div class="section-title">楼盘相册 · 实景画卷</div>
+            <div class="album-grid">
+                <div class="album-item">
+                    <div class="album-img" style="background-image: url('https://picsum.photos/id/162/400/280');"></div>
+                    <div class="album-caption">古韵坊 · 传统文化街区</div>
+                </div>
+                <div class="album-item">
+                    <div class="album-img" style="background-image: url('https://picsum.photos/id/96/400/280');"></div>
+                    <div class="album-caption">游客接待中心 · 山水映画</div>
+                </div>
+                <div class="album-item">
+                    <div class="album-img" style="background-image: url('https://picsum.photos/id/366/400/280');"></div>
+                    <div class="album-caption">青少年科技展示区 · 未来之境</div>
+                </div>
+                <div class="album-item">
+                    <div class="album-img" style="background-image: url('https://picsum.photos/id/186/400/280');"></div>
+                    <div class="album-caption">园林示范区 · 江南园林精髓</div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 28px; color: #7c5a48;"><i class="fas fa-camera"></i> 更多实景诚邀亲临鉴赏</p>
+        </div>
+    </section>
+
+    <!-- 活动新闻 & 政策法规 & 健康养生 用双栏混合展示 (上部分新闻+政策，下部分健康养生+预约) -->
+    <section id="news" class="section">
+        <div class="container">
+            <div class="two-columns">
+                <!-- 活动新闻板块 -->
+                <div class="info-panel" id="news-block">
+                    <h3><i class="fas fa-newspaper"></i> 活动新闻</h3>
+                    <ul class="news-list">
+                        <li><i class="fas fa-calendar-alt"></i> 2025零陵文化庙会暨汉服花朝节盛大开幕 <span class="news-date">04-12</span></li>
+                        <li><i class="fas fa-chalkboard-user"></i> 潇湘国学大讲堂：非遗传承人现场授艺 <span class="news-date">03-28</span></li>
+                        <li><i class="fas fa-hands-helping"></i> “古城夜游”光影艺术季点亮文化城 <span class="news-date">03-15</span></li>
+                        <li><i class="fas fa-store"></i> 招商发布会圆满落幕，百家品牌入驻文商街 <span class="news-date">02-28</span></li>
+                    </ul>
+                </div>
+                <!-- 政策法规板块 -->
+                <div class="info-panel" id="policy">
+                    <h3><i class="fas fa-gavel"></i> 政策法规</h3>
+                    <ul class="policy-list">
+                        <li><i class="fas fa-file-signature"></i> 《零陵古城文化遗产保护条例》正式实施</li>
+                        <li><i class="fas fa-percent"></i> 文旅企业税收优惠政策延续至2026年</li>
+                        <li><i class="fas fa-building-user"></i> 非遗传承与创新专项扶持资金申请指南</li>
+                        <li><i class="fas fa-shield-alt"></i> 古城商户诚信经营规范及游客权益保障</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 健康养生独立区块 + 预约看房强化信息 -->
+    <section id="health" class="section">
+        <div class="container">
+            <div class="two-columns">
+                <div class="info-panel" id="health-block">
+                    <h3><i class="fas fa-leaf"></i> 健康养生 · 颐养身心</h3>
+                    <ul class="health-list">
+                        <li><i class="fas fa-spa"></i> 古城太极晨修会 | 每日清晨湖畔，国术养生</li>
+                        <li><i class="fas fa-mortar-board"></i> 中医四季讲堂：名医定期坐诊文化健康驿站</li>
+                        <li><i class="fas fa-walking"></i> 环城游步道+森林氧吧，年度负氧离子优级景区</li>
+                        <li><i class="fas fa-apple-alt"></i> 二十四节气食疗体验馆，古法膳食调理</li>
+                    </ul>
+                </div>
+                <div class="info-panel" style="background: #fcf3e6;">
+                    <h3><i class="fas fa-umbrella-beach"></i> 康养基地</h3>
+                    <p>依托江南山水格局，零陵古文化城打造集温泉理疗、禅修静心、森林康养为一体的高端休养区。规划占地约200亩的“潇湘康谷”，提供全方位健康管理服务。</p>
+                    <div style="margin-top: 20px;"><i class="fas fa-check-circle" style="color:#b87c3a;"></i> 已获“省级森林康养示范基地”称号</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 预约看房专区 + 电话再次强调 -->
+    <div class="container">
+        <div class="booking-banner">
+            <i class="fas fa-door-open" style="font-size: 48px; opacity: 0.9;"></i>
+            <h3>尊享预约 · 实地品鉴东方美学大境</h3>
+            <div class="phone-large">
+                <a href="tel:0535-3693666">0535-3693666</a>　｜　<a href="tel:0535-3692666">0535-3692666</a>
+            </div>
+            <p style="font-size: 1rem;">置业顾问一对一接待 | 访客专享古风伴手礼 | 样板示范区即将开放</p>
+            <a href="tel:0535-3693666" class="btn-tel" style="background: #e2bc7c; color:#2e241f;">立即预约看房 <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- 综合文化配套 展示更多项目内容 -->
+    <section class="section" style="padding-top: 30px;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; background: #fff1e3; border-radius: 28px; padding: 32px 28px;">
+                <div style="flex:1; min-width: 180px;">
+                    <i class="fas fa-chinese-yuan" style="font-size: 32px; color: #b87c3a;"></i>
+                    <h4 style="margin: 12px 0;">文化交易中心</h4>
+                    <p style="font-size: 0.9rem;">古玩字画、非遗手工艺、国际文化交流拍卖</p>
+                </div>
+                <div style="flex:1; min-width: 180px;">
+                    <i class="fas fa-chalkboard-user" style="font-size: 32px; color: #b87c3a;"></i>
+                    <h4 style="margin: 12px 0;">青少年研学基地</h4>
+                    <p style="font-size: 0.9rem;">国学课堂 · 科技探索 · 历史文化沉浸体验</p>
+                </div>
+                <div style="flex:1; min-width: 180px;">
+                    <i class="fas fa-hotel" style="font-size: 32px; color: #b87c3a;"></i>
+                    <h4 style="margin: 12px 0;">高端会议中心</h4>
+                    <p style="font-size: 0.9rem;">国际峰会 · 文化论坛 · 宴会大典</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p><i class="fas fa-map-marker-alt"></i> 中国 · 湖南永州 · 零陵古城文化产业园</p>
+        <p>贵宾热线：<a href="tel:0535-3693666">0535-3693666</a> ｜ <a href="tel:0535-3692666">0535-3692666</a> ｜ 预约接待中心：零陵古城潇湘西路8号</p>
+        <p>© 2025 零陵古文化城开发管理有限公司 版权所有 | 传承中华文脉 筑梦时代新篇</p>
+        <p style="margin-top: 12px; font-size: 0.8rem;">*本网站展示信息仅为项目形象宣传，最终解释权归开发商所有</p>
+    </div>
+</footer>
+
+<!-- 简单平滑锚点 + 导航高亮效果 -->
+<script>
+    // 高亮当前浏览区域
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    function changeActiveLink() {
+        let current = '';
+        const scrollPos = window.scrollY + 150;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href').substring(1);
+            if (href === current) {
+                link.classList.add('active');
+            }
+        });
+        // 首页特殊处理
+        if (window.scrollY < 100) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#home') link.classList.add('active');
+            });
+        }
+    }
+    window.addEventListener('scroll', changeActiveLink);
+    window.addEventListener('load', changeActiveLink);
+</script>
+</body>
+</html>

@@ -306,19 +306,39 @@
 //像结构体⼀样，联合体也是由⼀个或者多个成员构成，这些成员可以是不同的类型。联合体的关键字是union.
 //但是编译器只为最⼤的成员分配⾜够的内存空间。联合体的特点是所有成员共⽤同⼀块内存空间。所以联合体也叫共用体
 
-union Un
-{
-	char c;
-	int i;
-};
-int main()
-{
-	union Un un;
-	printf("%zu\n", sizeof(un));
-	//共用同一块内存空间
-	printf("&un = %p\n", &un);
-	printf("&un.c = %p\n", &(un.c));
-	printf("&un.i = %p\n", &(un.i));
 
-	return 0;
-}
+//union Un
+//{
+//	char c;
+//	int i;
+//};
+//int main()
+//{
+//	union Un un;
+//	printf("%zu\n", sizeof(un));
+//	//共用同一块内存空间
+//	printf("&un = %p\n", &un);
+//	printf("&un.c = %p\n", &(un.c));
+//	printf("&un.i = %p\n", &(un.i));
+//
+//	return 0;
+//}
+
+
+
+//          1. 联合体大小的计算
+//联合体的大小至少是最大成员的大小
+//当最大成员的大小不是最大对齐数的整数倍的时候,就要对齐到最大对齐数的整数倍
+
+//union Un
+//{
+//	char c[5]; //5
+//  int i;     //4
+//};
+//
+//int main()
+//{
+//	
+//	printf("%zu\n", sizeof(union Un));
+//	return 0;
+//}
