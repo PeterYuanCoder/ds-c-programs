@@ -389,3 +389,36 @@
 //    un.i = 1;
 //    return un.c;// 返回1是小端 ，返回0是大端
 //}
+
+
+
+//              三， 枚举类型
+
+//enum	是枚举类型的关键字
+//enum SEX
+//{
+//	//枚举类型的可能取值  -  枚举常量
+//	MALE,  //0     //记得是打逗号
+//	FEMALE=4,//4
+//	SECRET   //5
+//};
+//enum Color
+//{
+//	RED=3,  //3
+//	GREEN, //4
+//	BLUE   //5
+//};
+//
+//int main()
+//{
+//	/*enum SEX sex;
+//	enum Color c = RED;*/
+//
+//	//第一个默认0 ，往后依次加 1
+//	printf("%d\n", MALE);
+//	printf("%d\n", FEMALE);
+//	printf("%d\n", SECRET);
+//
+//	return 0;
+//}
+
