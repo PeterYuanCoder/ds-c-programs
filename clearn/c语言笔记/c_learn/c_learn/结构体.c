@@ -345,15 +345,47 @@
 
 
 
-//   练习： 使用联合体来判断当前机器是大端还是小端
-int check_sys()
-{
-	union
-	{
-		int i;
-		char c;
-	}un;
-	un.i = 1;
+//        2. 联合体的应用
+//图书：书名、作者、⻚数
+//杯⼦：设计
+//衬衫：设计、可选颜⾊、可选尺⼨
 
-	return un.c;//返回1是⼩端，返回0是⼤端
-}
+//struct gift_list
+//{
+//    int stock_number;//库存量
+//    double price; //  定价
+//    int item_type;//商品类型
+//    union {
+//        struct
+//        {
+//            char title[20];//书名
+//            char author[20];//作者
+//            int num_pages;// ⻚数
+//        }book;
+//        struct
+//        {
+//            char design[30];//设计
+//        }mug;
+//        struct
+//        {
+//            char design[30];// 设计
+//            int colors;//颜色
+//            int sizes;//尺⼨
+//        }shirt;
+//    }item;
+//};
+
+
+
+//   练习： 使用联合体来判断当前机器是大端还是小端
+//int check_sys()
+//{
+//    union Un
+//    {
+//        char c;
+//        int i;
+//    }un;
+//    union Un un;
+//    un.i = 1;
+//    return un.c;// 返回1是小端 ，返回0是大端
+//}
