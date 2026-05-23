@@ -244,24 +244,81 @@
 //1. 位段的成员必须是int、unsigned int或signed int，在C99中位段成员的类型也可以选择其他整型家族类型，⽐如：char。
 //2. 位段的成员名后边有⼀个冒号和⼀个数字
 
-struct A
-{
-	int _a : 2;    // 占 2个bite 位
-	int _b : 5;
-	int _c : 10;
-	int _d : 30;
-};
-struct B
-{
-	int _a;   
-	int _b;
-	int _c;
-	int _d;
-};
+//struct A
+//{
+//	int _a : 2;    // 占 2个bite 位
+//	int _b : 5;
+//	int _c : 10;
+//	int _d : 30;
+//};
+//struct B
+//{
+//	int _a;   
+//	int _b;
+//	int _c;
+//	int _d;
+//};
+//
+//int main()
+//{
+//	printf("%zu\n", sizeof(struct A));
+//	printf("%zu\n", sizeof(struct B));
+//	return 0;
+//}
 
+
+
+
+
+//       10 . 位段使用的注意事项
+//位段的⼏个成员共有同⼀个字节，这样有些成员的起始位置并不是某个字节的起始位置，那么这些位
+//置处是没有地址的。内存中每个字节分配⼀个地址，⼀个字节内部的bit位是没有地址的。
+//所以不能对位段的成员使⽤& 操作符，这样就不能使⽤scanf直接给位段的成员输⼊值，只能是先输⼊
+//放在⼀个变量中，然后赋值给位段的成员
+
+
+//struct A
+//{
+//	int _a : 2;
+//	int _b : 5;
+//	int _c : 10;
+//	int _d : 30;
+//};
+//int main()
+//{
+//	struct A sa = { 0 };
+//	//scanf("%d", &sa._b);//这是错误的
+//
+//		//正确的⽰范
+//		int b = 0;
+//	scanf("%d", &b);
+//	sa._b = b;
+//	return 0;
+//}
+
+
+
+
+
+//                      二 ， 联合和枚举
+
+//联合体类型的声明
+//像结构体⼀样，联合体也是由⼀个或者多个成员构成，这些成员可以是不同的类型。联合体的关键字是union.
+//但是编译器只为最⼤的成员分配⾜够的内存空间。联合体的特点是所有成员共⽤同⼀块内存空间。所以联合体也叫共用体
+
+union Un
+{
+	char c;
+	int i;
+};
 int main()
 {
-	printf("%zu\n", sizeof(struct A));
-	printf("%zu\n", sizeof(struct B));
+	union Un un;
+	printf("%zu\n", sizeof(un));
+	//共用同一块内存空间
+	printf("&un = %p\n", &un);
+	printf("&un.c = %p\n", &(un.c));
+	printf("&un.i = %p\n", &(un.i));
+
 	return 0;
 }
