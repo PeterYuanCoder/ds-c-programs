@@ -197,10 +197,53 @@
 //}
 
 
-//使用free释放一块动态开辟内存的一部分
+//2.4 使用free释放一块动态开辟内存的一部分
 //void test()
 //{
 //	int* p = (int*)malloc(100);
 //	p++;
 //	free(p);
 //}
+
+
+
+//2.5 对同一块动态内存多次释放
+//void test()
+//{
+//	int* p = (int*)malloc(100);
+//	free(p);
+//	free(p);//重复释放
+//}
+
+//void test()
+//{
+//	int* p = (int*)malloc(100);
+//	free(p);
+//	p = NULL;
+//	free(p);
+//}
+//int main()
+//{
+//	test();
+//	return 0;
+//}
+
+
+//2.6 动态开辟内存忘记释放（内存泄露）
+//void test()
+//{
+//	int* p = (int*)malloc(100);
+//	if (NULL != p)
+//	{
+//		*p = 20;
+//	}
+//}
+//int main()
+//{
+//	test();
+//	//只用了4个字节的空间，其他的没有释放
+//	while (1);
+//	return 0;
+//}
+//动态开辟空间一定要释放，并且正确释放     malloc 和 free 成对使用
+//如果不释放，也要给别人交代清楚
