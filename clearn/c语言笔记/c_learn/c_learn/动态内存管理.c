@@ -342,19 +342,116 @@
 
 //题目三
 
-void GetMemory(char** p, int num)
-{
-	*p = (char*)malloc(num);
-}
-void Test(void)
-{
-	char* str = NULL;
-	GetMemory(&str, 100);
-	strcpy(str, "hello");
-	printf(str);
-}
-int main()
-{
-	Test();
-	return 0;
-}
+//void GetMemory(char** p, int num)
+//{
+//	*p = (char*)malloc(num);
+//}
+//void Test(void)
+//{
+//	char* str = NULL;
+//	GetMemory(&str, 100);
+//	strcpy(str, "hello");
+//	printf(str);  //没有释放动态空间
+//	//补充
+//	free(str);
+//	str = NULL;
+//}
+//int main()
+//{
+//	Test();
+//	return 0;
+//}
+
+
+//题目四
+
+//void Test(void)
+//{
+//	char* str = (char*)malloc(100);
+//	strcpy(str, "hello");
+//	free(str);     //野指针
+//	//补充
+//	str = NULL;
+//	if (str != NULL)
+//	{
+//		strcpy(str, "world");
+//		printf(str);
+//	}
+//}
+//int main()
+//{
+//	Test();
+//	return 0;
+//}
+
+
+//           四，柔性数组
+//C99中，结构中的最后⼀个元素允许是未知⼤⼩的数组，这就叫做『柔性数组』成员
+
+
+//柔性数组的特点（要求）
+
+//1，结构中的柔性数组成员前⾯必须⾄少⼀个其他成员
+//2，sizeof返回的这种结构⼤⼩不包括柔性数组的内存
+//3，包含柔性数组成员的结构⽤malloc()函数进⾏内存的动态分配，并且分配的内存应该⼤于结构的⼤
+//⼩，以适应柔性数组的预期⼤⼩。
+
+
+//特点1
+//struct st_type
+//{
+//	int i;
+//	int a[0];  //柔性数组成员   有些编译器要去掉[]中的0
+//};
+
+
+//特点2
+//struct st_type
+//{
+//	int i;
+//	int a[0];
+//};
+//int main()
+//{
+//	printf("%zu\n", sizeof(struct st_type));
+//}
+
+
+//特点三  及使用
+//struct S
+//{
+//	int n;
+//	int arr[];//柔性数组成员，我希望arr开始的时候能存5个整形，后期arr空间大小可以调节
+//};
+//int main()
+//{
+//	struct S* ps = (struct S*)malloc(sizeof(struct S) + 5 * sizeof(int));
+//	if (ps == NULL)
+//	{
+//		perror("use malloc");
+//		return 1;
+//	}
+//	ps->n = 100;
+//	int i = 0;
+//	for (i = 0; i < 5; i++)
+//	{
+//		ps->arr[i] = 1 + i;     //在ps结构体指针中找到arr[]赋值
+//	}
+//	//扩容
+//	struct S* ptr = (struct S*)realloc(ps, sizeof(struct S) + 10 * sizeof(int));
+//	if (ptr == NULL)
+//	{
+//		perror("realloc");
+//		return 1;
+//	}
+//	ps = ptr;
+//	ptr = NULL;
+//	for (i = 0; i < 10; i++)
+//	{
+//		ps->arr[i] = 1 + i;
+//	}
+//	//释放
+//	free(ps);
+//	ps = NULL;
+//	return 0;
+//}
