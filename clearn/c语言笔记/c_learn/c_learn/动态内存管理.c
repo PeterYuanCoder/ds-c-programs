@@ -247,3 +247,94 @@
 //}
 //动态开辟空间一定要释放，并且正确释放     malloc 和 free 成对使用
 //如果不释放，也要给别人交代清楚
+
+
+
+
+//            三 ， 动态内存经典笔试题分析
+// 
+//题目一
+
+#include<string.h>
+//void GetMemory(char* p)
+//{
+//	p = (char*)malloc(100);
+//}
+//void Test(void)
+//{
+//	char* str = NULL;
+//	GetMemory(str);    //传入的是str的值NULL，实参没有变化，还是NULL
+//	strcpy(str, "hello world");
+//	printf(str);
+//}
+//int main()
+//{
+//	Test();
+//	return 0;
+//}
+
+
+//修改一
+//void GetMemory(char** p)
+//{
+//	*p = (char*)malloc(100);
+//}
+//void Test(void)
+//{
+//	char* str = NULL;
+//	GetMemory(&str);    //实参没有变化，还是NULL
+//	strcpy(str, "hello world");
+//	printf(str);
+//	free(str);
+//	str = NULL;
+//}
+//int main()
+//{
+//	Test();
+//	return 0;
+//}
+
+//修改二
+//char* GetMemory(char* p)
+//{
+//	p = (char*)malloc(100);
+//	return p;
+//}
+//void Test(void)
+//{
+//	char* str = NULL;
+//	str = GetMemory(str);    //传入的是str的值NULL，实参没有变化，还是NULL
+//	strcpy(str, "hello world");
+//	printf(str);
+//	free(str);
+//	str = NULL;
+//}
+//int main()
+//{
+//	Test();
+//	return 0;
+//}
+
+
+
+//题目二
+
+//char* GetMemory(void)
+//{
+//	static char p[] = "hello world";       //p生命周期只在函数内
+//	//延长生命周期
+//	//1.static
+//	//2.动态开辟
+//		return p;
+//}
+//void Test(void)
+//{
+//	char* str = NULL;
+//	str = GetMemory();       //地址传过来了但是无法打印   野指针
+//	printf(str);
+//}
+//int main()
+//{
+//	Test();
+//	return 0;
+//}
