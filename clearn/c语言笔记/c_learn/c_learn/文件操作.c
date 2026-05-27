@@ -44,3 +44,42 @@
 //程序⽂件包括源程序⽂件（后缀为.c）, ⽬标⽂件（windows环境后缀为.obj）, 可执⾏程序（windows
 //环境后缀为.exe）。
 
+
+//4. 二进制文件和文本文件
+
+
+//根据数据的组织形式，数据⽂件被分为⽂本⽂件和⼆进制⽂件。
+//数据在内存中以⼆进制的形式存储，如果不加转换的输出到外存的⽂件中，就是⼆进制⽂件。
+//如果要求在外存上以ASCII码的形式存储，则需要在存储前转换。以ASCII字符的形式存储的⽂件就是⽂
+//本⽂件。
+
+
+//5. 文件的打开和关闭
+//int main()
+//{
+//
+//	int a = 10000;
+//	FILE* pf = fopen("test.txt", "wb");    //打开文件   "wb"表示打开一个二进制文件
+//	fwrite(&a, 4, 1, pf);//⼆进制的形式写到⽂件中
+//	fclose(pf);  //关闭文件
+//	pf = NULL;
+//	return 0;
+//}
+
+
+//5.1流和标准流
+// 三个标准流的类型事：FILE*，通常称为文件指针
+
+
+//5.2 文件指针
+//struct _iobuf {
+//	char* _ptr;
+//	int   _cnt;
+//	char* _base;
+//	int   _flag;
+//	int   _file;
+//	int   _charbuf;
+//	int   _bufsiz;
+//	char* _tmpfname;
+//};
+//typedef struct _iobuf FILE;
