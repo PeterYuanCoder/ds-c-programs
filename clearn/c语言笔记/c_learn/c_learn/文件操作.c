@@ -55,6 +55,8 @@
 
 
 //5. 文件的打开和关闭
+//fopen 打开文件   fclose 关闭文件
+
 //int main()
 //{
 //
@@ -65,6 +67,57 @@
 //	pf = NULL;
 //	return 0;
 //}
+
+
+
+
+//fopen函数
+
+//FILE* fopen(const char* filename, const char* mode)
+
+//filename：表示打开文件的名字，可以是绝对路径，也可以是相对路径
+//mode：表示打开文件的操作方式
+
+//fopen函数是⽤来打开参数功能：
+//后续对流的操作是通过filename指定的⽂件，同时将打开的⽂件和⼀个流进⾏关联，fopen函数返回的指针来维护。
+//具体对流（关联的⽂件）的操作是通过参数mode来指定的
+
+//返回值
+//若⽂件成功打开，该函数将返回⼀个指向FILE对象的指针，该指针可⽤于后续操作中标识对应的流。
+//若打开失败，则返回NULL指针，所以⼀定要fopen的返回值判断,来判读文件是否打开成功
+
+
+
+//fclose函数
+
+//int fclose ( FILE * stream );
+
+//stream:指向要关闭的流的FILE对象的指针
+
+//功能：：关闭参数stream关联的⽂件，并取消其关联关系。
+//与该流关联的所有内部缓冲区均会解除关联并刷新：任何未写⼊的输出缓冲区内容将被写⼊，任何未读取的输⼊缓冲区内容将被丢弃
+
+//关闭成功stream指向的流会返回0，否则会返回EOF
+
+
+int main()
+{
+	FILE* pf = fopen("../../test.txt", "r");    //注意如果是绝对路径的，小心\转义字符
+	if (pf == NULL)
+	{
+		perror("fopen");
+		return 1;
+	}
+	else
+	{
+		printf("打开文件成功\n");
+	}
+	//读文件
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+}
+
 
 
 //5.1流和标准流
