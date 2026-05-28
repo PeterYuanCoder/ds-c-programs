@@ -100,23 +100,24 @@
 //关闭成功stream指向的流会返回0，否则会返回EOF
 
 
-int main()
-{
-	FILE* pf = fopen("../../test.txt", "r");    //注意如果是绝对路径的，小心\转义字符
-	if (pf == NULL)
-	{
-		perror("fopen");
-		return 1;
-	}
-	else
-	{
-		printf("打开文件成功\n");
-	}
-	//读文件
-	//关闭文件
-	fclose(pf);
-	pf = NULL;
-}
+//int main()
+//{
+//	FILE* pf = fopen("../../test.txt", "w");    //注意如果是绝对路径的，小心\转义字符       
+//	//以w形式打开文件，即使文件不存在也会自己创建一个文件，如果里面有内容 打开后会全删掉
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	else
+//	{
+//		printf("打开文件成功\n");
+//	}
+//	//读文件
+//	//关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//}
 
 
 
@@ -136,3 +137,46 @@ int main()
 //	char* _tmpfname;
 //};
 //typedef struct _iobuf FILE;
+
+
+//  6.文件的顺序读写
+
+//fputc
+
+//int fputc(int character, FILE* stream);
+
+//character:被写入的字符
+
+//功能：将参数character指定的字符写⼊到stream指向的输出流中，通常⽤于向⽂件或标准输出流写⼊字符。
+//在写⼊字符之后，还会调整指⽰器。字符会被写⼊流内部位置指⽰器当前指向的位置，随后该指⽰器⾃动向前移动⼀个位置。
+//从输入流中读取一个字符
+
+//返回值：
+//成功时返回写入的字符（以int形式）
+//失败时返回EOF（通常是-1）,错误指示器会被设置，可通过perror()检查具体错误
+
+int main()
+{
+	FILE* pf = fopen("test.txt", "w"); //以w的形式打开⽂件，才能正确的写⽂件
+
+	if (pf == NULL)
+	{
+		perror("fopen\n");
+		return 1;
+	}
+	//写文件
+	/*fputc('a', fp);
+	fputc('b', fp);
+	fputc('c', fp);*/
+	
+	//循环写入
+	for (char ch = 'a'; ch <= 'z'; ch++)
+	{
+		fputc(ch, pf);
+	}
+
+	//关闭⽂件
+	fclose(pf);
+	pf = NULL; //将指针置为NULL避免成为野指针。
+	return 0;
+}
