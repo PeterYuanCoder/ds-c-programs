@@ -155,28 +155,165 @@
 //成功时返回写入的字符（以int形式）
 //失败时返回EOF（通常是-1）,错误指示器会被设置，可通过perror()检查具体错误
 
-int main()
-{
-	FILE* pf = fopen("test.txt", "w"); //以w的形式打开⽂件，才能正确的写⽂件
+//int main()
+//{
+//	FILE* pf = fopen("test.txt", "w"); //以w的形式打开⽂件，才能正确的写⽂件
+//
+//	if (pf == NULL)
+//	{
+//		perror("fopen\n");
+//		return 1;
+//	}
+//	//写文件
+//	/*fputc('a', fp);
+//	fputc('b', fp);
+//	fputc('c', fp);*/
+//	
+//	//循环写入
+//	for (char ch = 'a'; ch <= 'z'; ch++)
+//	{
+//		//写入文件
+//		fputc(ch, pf);
+//		//输出到屏幕
+//		fputc(ch, stdout);   //stdout  标准输出流
+//	}
+//
+//	//关闭⽂件
+//	fclose(pf);
+//	pf = NULL; //将指针置为NULL避免成为野指针。
+//	return 0;
+//}
 
-	if (pf == NULL)
-	{
-		perror("fopen\n");
-		return 1;
-	}
-	//写文件
-	/*fputc('a', fp);
-	fputc('b', fp);
-	fputc('c', fp);*/
-	
-	//循环写入
-	for (char ch = 'a'; ch <= 'z'; ch++)
-	{
-		fputc(ch, pf);
-	}
 
-	//关闭⽂件
-	fclose(pf);
-	pf = NULL; //将指针置为NULL避免成为野指针。
-	return 0;
-}
+//fgetc函数
+
+//int fgetc(FILE* stream);
+
+//功能：从参数stream指向的流中读取⼀个字符。
+//函数返回的是⽂件指⽰器当前指向的字符，读取这个字符之后，⽂件指⽰器⾃动前进道下⼀个字符(从输出流中写入一个字符)
+
+//返回值：
+//成功是返回读取的字符 （以int形式）
+
+//若调⽤时流已处于⽂件末尾，函数返回EOF ,并设置流的⽂件结束指⽰器(feof)
+//若发⽣读取错误，函数返回EOF,并设置流的错误指⽰器（ferror).
+
+
+//从文件中读
+
+//int main()
+//{
+//	FILE* pf = fopen("test.txt", "w"); //以w的形式打开⽂件，才能正确的写⽂件
+//
+//	if (pf == NULL)
+//	{
+//		perror("fopen\n");
+//		return 1;
+//	}
+//	//读文件
+//	int ch = 0;
+//	while (ch = fgetc(pf) != EOF)
+//	{
+//		printf("%c\n", ch);
+//	}
+//	//关闭⽂件
+//	fclose(pf);
+//	pf = NULL; //将指针置为NULL避免成为野指针。
+//	return 0;
+//}
+
+//从键盘中读
+
+//int main()
+//{
+//	int ch;
+//	while (ch = fgetc(stdin) != EOF)   //stdin  键盘
+//	{
+//		printf("%c\n", ch);
+//	}
+//	return 0;
+//}
+
+
+//feof和ferror
+
+//int feof(FILE* stream);
+//检测stream指针指向的流是否遇到文件末尾
+
+//如果在读取⽂件的过程中，遇到了⽂件末尾，⽂件读取就会结束。
+//这时读取函数会在对应的流上设置⼀个⽂件结束的指⽰符，这个⽂件结束指⽰符可以通过feof函数检测到。
+//如果feof函数检测到⽂件结束指⽰符已经被设置，则返回⾮0的值，如果没有设置则返回0
+
+//int ferror(FILE* stream)
+//检测stream指针指向的流是否发生读/写错误
+
+//如果在读/写⽂件的过程中，发⽣了读/写错误，⽂件读取就会结束。这时读/写函数会在对应的流上设置⼀个错误指⽰符，这个错误指⽰符可以通过ferror函数检测到。
+//如果ferror函数检测错误指⽰符已经被设置，则返回⾮0的值，如果没有设置则返回0
+
+
+//检测feof函数
+
+//int main()
+//{
+//	FILE* fp = fopen("test.txt", "r");
+//	if (fp == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		int c = fgetc(fp);
+//		if (c == EOF)
+//		{
+//			if (feof(fp))
+//				printf("遇到文件末尾了\n");
+//			else if (ferror(fp))
+//				printf("读取发生了错误\n");
+//		}
+//		else
+//		{
+//			fputc(c, stdout);
+//		}
+//		//fputc(c, stdout);//使用fputc 在标准输出流上打印1字符
+//	}
+//	//不再使用文件时，需要关闭文件
+//	fclose(fp);
+//	fp = NULL;   //避免野指针
+//	return 0;
+//}
+
+
+
+//检测ferror函数
+
+//以写的形式打开文件后，再去读文件，就会发生错误   不支持读操作
+//int main()
+//{
+//    FILE* fp = fopen("test.txt", "w");
+//    if (fp == NULL)
+//    {
+//        perror("fopen");
+//        return 1;
+//    }
+//    //读⽂件
+//    int c = fgetc(fp);
+//    if (c == EOF)
+//    {
+//        if (feof(fp))
+//            printf("遇到⽂件末尾了\n");
+//        else if (ferror(fp))
+//        {
+//            printf("读⽂件发⽣了错误\n");
+//        }
+//    }
+//    else
+//    {
+//        fputc(c, stdout);//使用fputc在标准输出流上打印字符
+//    }
+//    //关闭文件
+//    fclose(fp);
+//    fp = NULL;
+//    return 0;
+//}
