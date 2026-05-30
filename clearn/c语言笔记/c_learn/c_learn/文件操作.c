@@ -123,6 +123,9 @@
 
 //5.1流和标准流
 // 三个标准流的类型事：FILE*，通常称为文件指针
+//标准输入流 stdin
+//标准输出流 stdout
+//标准错误流 stderr
 
 
 //5.2 文件指针
@@ -454,5 +457,34 @@
 //	//关闭文件
 //	fclose(fp);
 //	fp = NULL;
+//	return 0;
+//}
+
+
+//sprintf函数
+//将格式化数据转换成一个字符串
+
+//sscanf函数
+//从字符串中读取格式化数据（解析字符串中的结构化数据）
+
+//struct Stu
+//{
+//	char name[20];
+//	int age;
+//	float score;
+//};
+//
+//int main()
+//{
+//	struct Stu s = { "zhangsan",20,95.5f };
+//	char arr[30] = { 0 };
+//	sprintf(arr, "%s %d %f", s.name, s.age, s.score);
+//	printf("%s\n", arr);
+//	
+//	//从arr中解析一个结构体数据
+//	struct Stu t = { 0 };
+//	sscanf(arr, "%s %d %f", t.name, &(t.age),&(t.score));
+//	fprintf(stdout, "%s %d %f", s.name, s.age, s.score);
+//
 //	return 0;
 //}
