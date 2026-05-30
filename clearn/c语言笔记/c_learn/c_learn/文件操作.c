@@ -317,3 +317,69 @@
 //    fp = NULL;
 //    return 0;
 //}
+
+
+
+//fputs函数
+
+//int fputs(const char* str, FILE* stream);
+
+//功能：将参数str指向的字符串写入到参数stream指定的流中（不包含结尾的\0),适用与文件流或标准输出（stdout)
+
+//参数：
+//str:str是指针,指向要写入的字符串(必须以\0结尾)
+//stream:是FILE指针，指向要写入字符串的流
+
+//int main()
+//{
+//	FILE* fp = fopen("test.txt", "w");
+//	if (fp == NULL)
+//	{
+//		perror("fopen\n");
+//		return 1;
+//	}
+//	int i = 0;
+//	fputs("he\0llo", fp);
+//	fputs("world", fp);
+//	//关闭文件
+//	fclose(fp);
+//	fp = NULL;
+//	return 0;
+//}
+
+
+//fgets函数
+
+//char* fgets(char* str, int num, FILE* stream);
+
+//功能：
+//从stream指定输⼊流中读取字符串，⾄读取到换⾏符、⽂件末尾（EOF）或达到指定字符数（包含结尾的空字符\0），然后将读取到的字符串存储到str指向的空间中。
+
+//参数：num:最大读取字符数(包含结尾的\0,实际上最多读取num-1个字符）
+
+//返回值
+//成功则返回str指针
+//若遇到文件结尾,设置文件结束指示器，并返回NULL,用feof检测
+//若读取错误，设置流错误指示器,并返回NULL,用ferror检测
+
+//int main()
+//{
+//	FILE* fp = fopen("test.txt", "r");
+//	if (fp == NULL)
+//	{
+//		perror("fopen\n");
+//		return 1;
+//	}
+//	//读文件
+//	char arr[20] = "------------";
+//	//fgets(arr, 5, fp);//abcd\0
+//
+//	while (fgets(arr, 5, fp) != NULL)
+//	{
+//		printf("%s", arr);
+//	}
+//	//关闭文件
+//	fclose(fp);
+//	fp = NULL;
+//	return 0;
+//}
