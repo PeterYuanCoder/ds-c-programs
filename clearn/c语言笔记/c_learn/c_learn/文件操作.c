@@ -488,3 +488,37 @@
 //
 //	return 0;
 //}
+
+//fwrite函数
+//size_t fwrite(const void* ptr, size_t size, size_t count, FILE* stream);
+
+//功能：函数用于将数据块写入stream指向的文件流中，是以2进制的形式写入的
+
+//参数
+//ptr:要写入的数据块的指针
+//size:要写⼊的每个数据项的⼤⼩（以字节为单位）
+//count:要写入的数据项的数量
+
+//struct Stu
+//{
+//	char name[20];
+//	int age;
+//	float score;
+//};
+//int main()
+//{
+//	struct Stu s = { "zhangsan",20,95.5f };
+//	FILE* fp = fopen("test.txt", "wb");
+//	if (fp == NULL)
+//	{
+//		perror("fopen\n");
+//		return 1;
+//	}
+//	//写文件
+//	fwrite(&s, sizeof(struct Stu), 1, fp);
+//
+//	//关闭文件
+//	fclose(fp);
+//	fp = NULL;
+//	return 0;
+//}
