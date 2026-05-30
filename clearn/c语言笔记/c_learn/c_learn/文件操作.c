@@ -383,3 +383,76 @@
 //	fp = NULL;
 //	return 0;
 //}
+
+
+//fprintf函数   写入
+
+//int fprintf ( FILE * stream, const char * format, ... );
+
+//fprintf是将格式化数据写入指定文件流的函数。它与printf类似，但可以输出到任意流，而不仅限于控制台
+
+//参数：...:可变参数列表
+
+//返回值：成功时，返回写入的字符总数(非负值)
+//失败时，先设置对应流的错误指示器，再返回负值，可以通过ferror检测
+
+
+//struct Stu
+//{
+//	char name[20];
+//	int age;
+//	float score;
+//};
+//
+//int main()
+//{
+//	struct Stu s = { "张三",20,95.5f };
+//	FILE* fp = fopen("test.txt", "w");
+//	if (fp == NULL)
+//	{
+//		perror("fopen\n");
+//		return 1;
+//	}
+//	//写文件
+//	fprintf(fp,"名字：%s 年龄：%d 成绩：%f\n", s.name, s.age, s.score);
+//	
+//	//关闭文件
+//	fclose(fp);
+//	fp = NULL;
+//	return 0;
+//}
+
+
+//fscanf函数   读出
+
+//int fscanf ( FILE * stream, const char * format, ... );
+
+//fscanf是从指定⽂件流中读取格式化数据的函数,类似与scanf,可以指定输入源
+
+
+//struct Stu
+//{
+//	char name[20];
+//	int age;
+//	float score;
+//};
+//
+//int main()
+//{
+//	struct Stu s = { 0 };
+//	FILE* fp = fopen("test.txt", "r");
+//	if (fp == NULL)
+//	{
+//		perror("fopen\n");
+//		return 1;
+//	}
+//	//读文件
+//	
+//	fscanf(fp, "名字：%s 年龄：%d 成绩：%f\n", s.name, &(s.age), &(s.score));    //name是指针，无需取地址
+//	fprintf(stdout, "名字：%s 年龄：%d 成绩：%f\n", s.name, s.age, s.score);
+//
+//	//关闭文件
+//	fclose(fp);
+//	fp = NULL;
+//	return 0;
+//}
