@@ -553,3 +553,113 @@
 //	return 0;
 //}
 
+
+//    7. 文件的随便读写
+
+//fseek函数
+
+//int fseek(FILE* stream, long int offset, int origin);
+
+//offset：偏移量，由第三个参数来确定取值，正数（向文件末尾方向移动），反之
+//origin：偏移的起始点 .有三种情况
+//SEEK_SET   文件起始位置
+//SEEK_CUR   光标当前位置
+//SEEK_END   文件结束位置
+
+//int main()
+//{
+//	FILE* pf = fopen("test.txt", "w"); //以w的形式打开⽂件，才能正确的写⽂件
+//
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	//定位文件指针
+//	fseek(pf, 5, SEEK_SET);    //从pf文件指针起始位置偏移5个光标
+//	fseek(pf, 5, SEEK_CUR);
+//	fseek(pf, 5, SEEK_END);
+//	int c = fgetc(pf);
+//	fputc(c, stdout);
+//
+//	//关闭⽂件
+//	fclose(pf);
+//	pf = NULL; //将指针置为NULL避免成为野指针。
+//	return 0;
+//}
+
+
+//ftell函数
+
+long int ftell(FILE* stream);
+
+//stream;已打开文件
+
+//功能：返回文件指针相对起始位置的偏移量
+
+//int main()
+//{
+//	FILE* pf = fopen("test.txt", "w"); //以w的形式打开⽂件，才能正确的写⽂件
+//
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	int c = fgetc(pf);
+//	fputc(c, stdout);//z
+//
+//	int pos = ftell(pf);   //先记录偏移量  后面在返回这个位置
+//	//定位文件指针
+//	fseek(pf, 5, SEEK_CUR);  //位置变换了
+//	int c = fgetc(pf);
+//	fputc(c, stdout);//s
+//	
+//	fseek(pf, pos, SEEK_SET);  //再从起始位置偏移一定的偏移量到达先前的位置
+//	int c = fgetc(pf);
+//	fputc(c, stdout);//h
+//
+//	//关闭⽂件
+//	fclose(pf);
+//	pf = NULL; //将指针置为NULL避免成为野指针。
+//	return 0;
+//}
+
+//rewind函数
+
+void rewind(FILE* stream);
+
+//功能：让文件指针的位置回到文件的起始位置
+
+//rewind 不仅移动文件指针，还会清除文件的错误标志和文件结束标志
+
+//int main()
+//{
+//	FILE* pf = fopen("test.txt", "w"); //以w的形式打开⽂件，才能正确的写⽂件
+//
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	int c = fgetc(pf);
+//	fputc(c, stdout);//z
+//
+//	int pos = ftell(pf);   //先记录偏移量  后面在返回这个位置
+//	//定位文件指针
+//	fseek(pf, 5, SEEK_CUR);  //位置变换了
+//	int c = fgetc(pf);
+//	fputc(c, stdout);//s
+//	
+//	fseek(pf, pos, SEEK_SET);  //再从起始位置偏移一定的偏移量到达先前的位置
+//	int c = fgetc(pf);
+//	fputc(c, stdout);//h
+//
+//	rewid(pf);  //回到起始位置
+//	int c = fgetc(pf);
+//	fputc(c, stdout);
+//	//关闭⽂件
+//	fclose(pf);
+//	pf = NULL; //将指针置为NULL避免成为野指针。
+//	return 0;
+//}
