@@ -663,3 +663,35 @@ void rewind(FILE* stream);
 //	pf = NULL; //将指针置为NULL避免成为野指针。
 //	return 0;
 //}
+
+
+
+//文件缓冲区
+//从内存向磁盘输出数据会先送到内存中的缓冲区，装满缓冲区后才⼀起送到磁盘上
+
+
+
+//fflush函数
+//int fflush(FILE* stream);
+
+//功能：强制刷新参数stream指定流的缓冲区，确保数据写入底层设备
+//对于输出流：将缓冲区中未写入的数据立即写入文件
+
+//程序正常终止（exit)或调用（fclose）是会自动刷新,但程序崩溃时缓冲区的数据可能丢失
+
+//#include <windows.h>
+//int main()
+//{
+//	FILE* pf = fopen("test.txt", "w");
+//	fputs("abcdef", pf);//先将代码放入缓冲区
+//	printf("睡眠10秒已经写数据了，打开test.txt⽂件，发现⽂件没有内容\n");
+//	Sleep(10000);
+//	pf = NULL;
+//	printf("刷新缓冲区\n");
+//	fflush(pf);//刷新缓冲区才写入文件
+//	printf("再睡眠10秒此时，再次打开test.txt⽂件，⽂件有内容了\n");
+//	Sleep(10000);
+//	//关闭文件也会刷新缓冲区
+//	fclose(pf);
+//	pf = NULL;
+//}
