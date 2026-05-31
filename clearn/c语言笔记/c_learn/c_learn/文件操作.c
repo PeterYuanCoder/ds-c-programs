@@ -522,3 +522,34 @@
 //	fp = NULL;
 //	return 0;
 //}
+
+
+
+//fread函数
+
+//功能：从stream指向的文件中读取数据块，并储存到ptr指向的内存缓冲区
+
+//struct Stu
+//{
+//	char name[20];
+//	int age;
+//	float score;
+//};
+//int main()
+//{
+//	struct Stu s = { 0 };
+//	FILE* fp = fopen("test.txt", "rb");
+//	if (fp == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	//读文件
+//	fread(&s, sizeof(struct Stu), 1, fp);
+//	printf("%s %d %.2f", s.name,s.age,s.score);
+//	//关闭文件
+//	fclose(fp);
+//	fp = NULL;
+//	return 0;
+//}
+
