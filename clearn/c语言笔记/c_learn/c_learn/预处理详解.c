@@ -105,3 +105,52 @@
 //	int* p = MALLOC(4, int);
 //	return 0;
 //}
+
+
+
+//7.#和##
+
+
+//#运算符
+//#运算符将宏的⼀个参数转换为字符串字⾯量。它仅允许出现在带参数的宏的替换列表中
+
+
+//#define PRINT(val,format) printf("the value of "#val" is " format "\n",val)
+////因为预处理器搜索时字符串常量不会被搜索,所以要想输出式子随之变化就需要用#将式子变成字符串进行输出
+//int main()
+//{
+//	int a = 10;
+//	PRINT(a, "%d");
+//	//printf("the value of a is %d\n",a);
+//	return 0;
+//}
+
+
+//##运算符
+//##可以把位于它两边的符号合成⼀个符号，它允许宏定义从分离的⽂本⽚段创建标识符。##被称为记号粘合
+
+//   \是续行符
+//#define GENERIC_MAX(type) type max_##type(type x,type y)\
+//						{\
+//							return x>y?x:y;\
+//						}
+//
+//GENERIC_MAX(int);
+//GENERIC_MAX(char);
+//GENERIC_MAX(float);
+//
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int m1 = max_int(a, b);
+//	printf("%d\n", m1);
+//	return 0;
+//}
+
+
+//8.命名约定
+
+//一般情况下
+//宏名全大写
+//函数名不要全部大写
