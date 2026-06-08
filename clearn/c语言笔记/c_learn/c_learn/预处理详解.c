@@ -214,3 +214,83 @@
 //	}
 //	return 0;
 //}
+
+
+//            常见的条件编译指令
+
+//单分支条件编译
+
+//#if 常量表达式
+//        //    
+//#endif
+
+//#define m 1
+//int main()
+//{
+//#if m==1      //这里一定不能用变量，因为条件编译是在预处理阶段，还没有生成可执行程序
+//	printf("hehe\n");
+//#endif
+//	return 0;
+//}
+
+
+//多分支条件编译
+
+//#if 常量表达式
+//           //   
+//#elif 常量表达式
+//           //   
+//#else
+//           //   
+//#endif
+
+
+//#define M 5
+//int main()
+//{
+//#if M<5
+//	printf("嘻嘻\n");
+//#elif M==5
+//	printf("哈哈\n");
+//#else
+//	printf("娜娜\n");
+//#endif
+//	return 0;
+//}
+
+
+
+//判断是否被定义
+
+//判断是否被定义
+//#if defined(symbol)     //这两个是等效的
+//#ifdef symbol
+
+//判断是否没被定义
+//#if !defined(symbol) 
+//#ifndef symbol 
+
+
+//#define m 0
+//int main()
+//{
+//#ifdef m
+//	printf("haha\n");
+//#endif
+//	return 0;
+//}
+
+
+//条件编译的嵌套
+//#if defined(OS_UNIX)
+//	#ifdef OPTION1
+//		unix_version_option1();
+//	#endif
+//	#ifdef OPTION2
+//		unix_version_option2();
+//	#endif
+//#elif defined(OS_MSDOS)
+//	#ifdef OPTION2
+//		msdos_version_option2();
+//	#endif
+//#endif
