@@ -1,6 +1,78 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
+
+
+//int main()
+//{
+//	printf("%-5d\n",123);
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	printf("%12f\n", 123.45);
+//	return 0;
+//}
+
+//int main()
+//{
+//	printf("%+d\n", 10);
+//	printf("%-d\n", -10);
+//	return 0;
+//}
+
+int main()
+{
+	printf("%.2f\n", 5);
+	return 0;
+}
+
+
+//int n = 100;   //全局变量
+//int main()
+//{
+//	int n = 10;  //局部变量
+//	
+//	printf("%d\n", n);
+//	return 0;
+//}
+
+//sizeof中表达式不进行计算
+//int main()
+//{
+//	short s = 2;
+//	int b = 10;
+//	printf("%d\n", sizeof(s = b + 1));
+//	printf("s = %d\n", s);
+//	return 0;
+//}
+
+//
+//int main()
+//{
+//	printf("%zu\n", sizeof(int));
+//	return 0;
+//}
+
+//int   //整形
+//short int  //短整型
+//long int   //长整形 sa
+//long long int  //长长整形
+
+
+//unsigned char   //无符号的
+//signed char     //有符号的
+
+//
+//int main()
+//{
+//	printf("Hello\nWorld\n");
+//	return 0;
+//}
+
+
 //int main()
 //{
 //	//定义无符号类型的变量    只能输出正数   不写unsigned就是有符号类型
@@ -57,7 +129,7 @@
 //long long 8               8
 //float    4                4
 //double   8                8
-
+//
 
 
 
