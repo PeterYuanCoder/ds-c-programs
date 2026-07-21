@@ -23,12 +23,80 @@
 //	return 0;
 //}
 
-int main()
-{
-	printf("%.2f\n", 5);
-	return 0;
-}
+//int main()
+//{
+//	printf("%.2f\n", 5);
+//	return 0;
+//}
 
+
+//int main()
+//{
+//	printf("%6.2f", 4.3);
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	printf("%.5s\n", "Hello World");
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	int score = 0;
+//	printf("请输入成绩：");
+//	scanf("%d", &score);
+//	printf("成绩是:%d\n", score);
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	int a = 0;
+//	scanf("%d\n", &a);
+//	printf("%d\n",a);
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	int a, b, c;
+//	scanf("%d%d%d", &a, &b, &c);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a;
+//	int b = scanf("%d", &a);
+//	printf("%d\n", b);
+//	return 0;
+//}
+
+//int main()
+//{
+//	char name[11];
+//	scanf("%10s", name);
+//	for (int i = 0; i < 10; i++)
+//	{
+//		printf("%c\n", name[i]);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int year = 0;
+//	int month = 0;
+//	int day = 0;
+//	scanf("%d%*c%d%*c%d", &year, &month, &day);
+//	return 0;
+//}
 
 //int n = 100;   //全局变量
 //int main()
