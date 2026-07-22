@@ -48,7 +48,7 @@
 //		printf("青少年\n");
 //	else if (age >= 18 && age < 28)
 //		printf("青年\n");
-//	else if ("age>=28&&age<40")
+//	else if (age>=28 && age<40)
 //		printf("中年\n");
 //	else if (age > 40 && age < 60)
 //		printf("壮年\n");
@@ -182,15 +182,66 @@
 //	return 0;
 //}
 
+//int main()
+//{
+//	int year = 0;
+//	scanf("%d", &year);
+//	if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+//		printf("是闰年\n");
+//	return 0;
+//}
 
 
 
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	switch (n % 3)
+//	{
+//	case 0:
+//		printf("整除，余数为0\n");
+//		break;
+//	case 1:
+//		printf("余数是1\n");
+//		break;
+//	case 2:
+//		printf("余数是2\n");
+//		break;
+//	}
+//	return 0;
+//}
 
+
+
+//int main()
+//{
+//	int day = 0;
+//	scanf("%d", &day);
+//
+//	switch (day)
+//	{
+//	case 1:
+//	case 2:
+//	case 3:
+//	case 4:
+//	case 5:
+//		printf("工作日\n");
+//		break;
+//	case 6:
+//	case 7:
+//		printf("休息日\n");
+//		break;
+//	default:
+//		printf("输入错误\n");
+//		break;
+//	}
+//	return 0;
+//}
 
 
 //二，循环语句
 //while循环
-
 
 
 //break  跳出后面所有的循环
@@ -223,6 +274,17 @@ int main()
 	}
 }
 */
+
+//int main()
+//{
+//	int i = 0;
+//	while (i <= 10)
+//	{
+//		printf("%d ", i);
+//		i++;
+//	}
+//	return 0;
+//}
 
 /*
 int main()
@@ -272,6 +334,10 @@ int main()
 
 
 //for 循环
+
+//for (表达式1; 表达式2; 表达式3)
+//	语句;
+
 //for (初始化; 判断部分; 调整部分);
 //不要再for循环体内修改循环变量，防止for循环失去控制
 //建议for语句的循环控制变量的取值采用“前闭后开区间”写法
@@ -279,18 +345,17 @@ int main()
 
 
 
-/*
-int main()
-{
-	int i = 0;
-	for (i =1; i <= 10; i++)
-	{
-		printf("%d ", i);
-		printf("hehe\n");
-	}
-	return 0;
-}
-*/
+
+//int main()
+//{
+//	int i = 0;
+//	for (i =1; i <= 10; i++)
+//	{
+//		printf("%d ", i);
+//	}
+//	return 0;
+//}
+
 
 
 /*
