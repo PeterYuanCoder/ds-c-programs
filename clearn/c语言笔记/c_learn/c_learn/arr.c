@@ -10,6 +10,14 @@
 //	return 0;
 //}
 
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5 };
+//	printf("%d ", arr[2]);
+//	printf("%d ", arr[1]);
+//	return 0;
+//}
+
 
 //迭代
 //int main()
@@ -39,6 +47,15 @@
 //	return 0;
 //}
 
+//int main()
+//{
+//	int arr[2] = { 0 };
+//	for (int i = 0; i < 2; i++)
+//	{
+//		printf("&arr[%d]=%p\n", i, &arr[i]);
+//	}
+//	return 0;
+//}
 
 
 //sizeof与数组
@@ -46,9 +63,9 @@
 //int main()
 //{
 //	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
-//	printf("%d\n", sizeof(arr));  //sizeof  求整个数组的字节大小
+//	printf("%d\n", sizeof(arr));              //sizeof  求整个数组的字节大小
 //	int len = sizeof(arr) / sizeof(arr[0]);  //求数组的长度
-//	
+//	printf("%d\n", len);
 //	return 0;
 //}
 
@@ -158,7 +175,7 @@
 //                      二维数组是特殊的一维数组
 //int main()
 //{
-//	//什么都没定义值   值是随机的
+//	//什么都没定义   值是随机的
 //	int arr[2][3];
 //	int arr1[] = { 1,2,3,4 };
 //	int arr2[2][3] = { {1,2},{3,4,5} };//没有赋值的用0补
