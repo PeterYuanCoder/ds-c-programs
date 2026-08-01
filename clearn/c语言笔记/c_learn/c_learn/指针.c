@@ -2,6 +2,16 @@
 #include<stdio.h>
 
 
+//int main()
+//{
+//	int a = 10;
+//	//printf("%p\n", &a);
+//	int* pa = &a;    //取出a的地址存放到pa中
+//	*pa = 0;
+//	printf("%d\n", a);
+//	return 0;
+//}
+
 //                                             指针初识
 //int main()
 //{
@@ -29,6 +39,23 @@
 //	printf("%zd\n", sizeof(int*));
 //	printf("%zd\n", sizeof(double*));
 //	return 0;
+//}
+
+
+//指针+-整数
+
+//int main()
+//{
+//    int n = 10;
+//    char* pc = (char*)&n;
+//    int* pi = &n;
+//
+//    printf("%p\n", &n);
+//    printf("%p\n", pc);
+//    printf("%p\n", pc + 1);
+//    printf("%p\n", pi);
+//    printf("%p\n", pi + 1);
+//    return 0;
 //}
 
 
@@ -96,7 +123,7 @@
 //	}
 //	return 0;
 //}
-
+//
 
 
 //const修饰   
@@ -115,13 +142,29 @@
 //	return 0;
 //}
 
+
+//const在*右边
 //int main()
 //{
 //	int a = 10;
-//	int b = 10;
+//	int b = 20;
 //	//const修饰pb ,pb的值指向&b不能改变 ，但是*p能变
 //	int* const pb = &b;
 //	*pb = 99;
+//	printf("%d\n", b);
+//	return 0;
+//
+//}
+
+//const在*左边
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	//const修饰*pb ,*pb的值指向b不能改变 ，但是pb能变
+//	const int* pb = &b;
+//	pb = &a;
+//	printf("%d\n", *pb);
 //	return 0;
 //
 //}
@@ -130,8 +173,8 @@
 
 //assert 断言
 // 我们可以用它检查一个指针是否是NULL
-// #include<assert.h>
-// 
+
+//#include<assert.h>
 //int main()
 //{
 //	int* p = NULL;
@@ -147,7 +190,7 @@
 //	*p = 100;
 //	return 0;
 //}
-//
+
 
 
 //野指针
@@ -176,7 +219,7 @@
 //}
 
 
-//指针指向的空间释放
+//3. 指针指向的空间释放
 
 //int* text()  //n是整形 返回&n用int*返回
 //{
@@ -283,11 +326,31 @@
 //sizeof(数组名),这里数组名表示整个数组，计算的是整个数组的大小，单位是字节
 //&数组名 表示的是整个数组的地址
 
+
+//int main()
+//{
+//    int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//    printf("&arr[0] = %p\n", &arr[0]);
+//    printf("arr     = %p\n", arr);
+//    return 0;
+//}
+
+
+//int main()
+//{
+//    int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//    printf("%d\n", sizeof(arr));
+//    return 0;
+//}
+
+
 //int main()
 //{
 //	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
 //	
 //	printf("%p\n", arr);//数组名字表示首元素的地址
+//
+//	printf("%p\n", arr + 1);//数组首元素+1，这里是加4个字节
 //
 //	printf("%p\n", &arr[0]);//数组名字表示首元素的地址
 //
