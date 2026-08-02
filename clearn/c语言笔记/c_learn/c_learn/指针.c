@@ -378,6 +378,49 @@
 //	return 0;
 //}
 
+//使用指针访问数组
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	//输入
+//	int i = 0;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	//输入
+//	int* p = arr;
+//	for (i = 0; i < sz; i++)
+//	{
+//		scanf("%d", p + i);
+//		//scanf("%d", arr+i);//也可以这样写
+//	}
+//	//输出
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", *(p + i));
+//	}
+//	return 0;
+//}
+
+
+
+
+//一维数组传参的本质
+//本质是指针变量，导致sizeof(arr)求的是指针变量的大小，64位8字节，32位4字节
+//void test(int arr[])
+//{
+//	int sz2 = sizeof(arr) / sizeof(arr[0]);
+//	printf("sz2 = %d\n", sz2);
+//}
+//
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int sz1 = sizeof(arr) / sizeof(arr[0]);
+//	printf("sz1 = %d\n", sz1);
+//	test(arr);
+//	return 0;
+//}
+
+
 
 
 //数组指针
@@ -389,6 +432,54 @@
 //	int (*p)[4] = &arr;
 //	printf("%p\n", *p);    //输出首元素的地址
 //	printf("%p\n", (*p)[1]);  //(*p)[1] ===>*((*p)+1)
+//	return 0;
+//}
+
+
+//冒泡排序
+
+//void bubble_sort(int arr[], int sz)
+//{
+//	//趟数循环
+//	for (int i = 0; i < sz - 1; i++)
+//	{
+//		int flag = 1;  //为了防止再所有数提前排好，程序依旧再进行。
+//		//交换循环
+//		for (int j = 0; j < sz - 1 - i; j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				flag = 0;
+//				int tmp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = tmp;
+//			}
+//		}
+//		if (flag = 1)
+//		{
+//			break;
+//		}
+//	}
+//}
+//
+//
+//void printf_arr(int arr[], int sz)
+//{
+//	for (int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//}
+//
+//int main()
+//{
+//	int arr[10] = { 9,8,7,6,5,4,3,2,1,0 };
+//	//将数组升序排列
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	//升序
+//	bubble_sort(arr, sz);
+//	//打印
+//	printf_arr(arr, sz);
 //	return 0;
 //}
 
