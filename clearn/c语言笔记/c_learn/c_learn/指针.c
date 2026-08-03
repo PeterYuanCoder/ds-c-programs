@@ -524,6 +524,7 @@
 //}
 
 
+
 //函数指针
 
 //void test()
@@ -804,6 +805,74 @@
 //          鹏哥指针
 
 
+//字符指针
+//int main()
+//{
+//	char p = 'w';
+//	char* pa = &p;
+//	printf("%c\n", *pa);
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	char* pa = "hello world";
+//	printf("%c\n", *pa);
+//	return 0;
+//}
+
+
+
+//二维数组传参的本质
+
+//void test(int a[3][5], int r, int c)
+//{
+//    int i = 0;
+//    int j = 0;
+//    for (i = 0; i < r; i++)
+//    {
+//        for (j = 0; j < c; j++)
+//        {
+//            printf("%d ", a[i][j]);
+//        }
+//        printf("\n");
+//    }
+//}
+//
+//int main()
+//{
+//    int arr[3][5] = { {1,2,3,4,5}, {2,3,4,5,6},{3,4,5,6,7} };
+//    test(arr, 3, 5);
+//    return 0;
+//}
+
+
+//变式
+
+//void test(int (*p)[5], int r, int c)
+//{
+//    int i = 0;
+//    int j = 0;
+//    for (i = 0; i < r; i++)
+//    {
+//        for (j = 0; j < c; j++)
+//        {
+//            printf("%d ", *(*(p + i) + j));
+//        }
+//        printf("\n");
+//    }
+//}
+//
+//int main()
+//{
+//    int arr[3][5] = { {1,2,3,4,5},{2,3,4,5,6},{3,4,5,6,7} };
+//    test(arr, 3, 5);
+//    return 0;
+//}
+
+
+
 //重温数组指针     指向的是指针
 //int main()
 //{
@@ -852,6 +921,22 @@
 //}
 
 
+//int Add(int x, int y)
+//{
+//    return x + y;
+//}
+//
+//int main()
+//{
+//    int(*pf3)(int, int) = Add;
+//
+//    printf("%d\n", (*pf3)(2, 3));
+//    printf("%d\n", pf3(3, 5));
+//    return 0;
+//}
+
+
+
 //强制类型转换
 //*(void(*)())0
 //将0这个整形强制转换成函数指针类型
@@ -862,6 +947,7 @@
 
 //typedef关键字
 //用于类型的重命名，可以将复杂的类型，简单化      注意是类型
+
 //typedef unsigned int unit;
 //int main()
 //{
