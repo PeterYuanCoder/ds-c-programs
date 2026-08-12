@@ -37,6 +37,21 @@
 //
 //}
 
+//模拟使用
+//int main()
+//{
+//    int arr1[] = { 1,2,3,4,5,6,7,8,9,10 };
+//    int arr2[10] = { 0 };
+//    memcpy(arr2, arr1, 20);
+//    int i = 0;
+//    for (i = 0; i < 10; i++)
+//    {
+//        printf("%d ", arr2[i]);
+//    }
+//    return 0;
+//}
+
+
 
 //memmove函数
 //可以处理内存重叠的情况
@@ -97,7 +112,7 @@
 //int main()
 //{
 //	int arr[] = { 1,2,3,4,5 };  //以字节为单位，1个整形4个字节
-//	memset(arr, 1, 5);
+//	memset(arr, 1, 4);
 //	for (int i = 0; i < 5; i++)
 //	{
 //		printf("%d ", arr[i]);
@@ -116,7 +131,7 @@
 //{
 //	int arr1[] = { 1,2,3,4,5 };
 //	int arr2[] = { 1,2,3,44,5 };
-//	int r = memcmp(arr1, arr2, 13);     //arr1<arr2  返回 <0的值
+//	int r = memcmp(arr1, arr2, 16);     //arr1<arr2  返回 <0的值
 //	printf("%d\n", r);
 //	return 0;
 //}
