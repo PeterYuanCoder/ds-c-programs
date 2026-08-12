@@ -1163,6 +1163,29 @@
 		//‘指向的这个函数用来比较base指向的数组中任意两个数据的大小 
 
 
+#include <stdlib.h>
+
+//qsort函数的使用者得实现一个比较函数
+//int int_cmp(const void* p1, const void* p2)
+//{
+//    return (*(int*)p1 - *(int*)p2);
+//}
+//
+//int main()
+//{
+//    int arr[] = { 1, 3, 5, 7, 9, 2, 4, 6, 8, 0 };
+//    int i = 0;
+//
+//    qsort(arr, sizeof(arr) / sizeof(arr[0]), sizeof(int), int_cmp);
+//    for (i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+//    {
+//        printf("%d ", arr[i]);
+//    }
+//    printf("\n");
+//    return 0;
+//}
+
+
 
 //结构体成员访问
 //1.结构体变量.成员名
