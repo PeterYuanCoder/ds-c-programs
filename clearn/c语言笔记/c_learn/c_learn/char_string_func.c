@@ -1,7 +1,7 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<ctype.h>
-
+#include<string.h>
 
 //补充void类型指针
 //int main()
@@ -42,7 +42,9 @@
 
 //写一个代码，将字符串中的小写转大写，其他字符不变
 // 运用islower函数 判断是不是小写
-// putcher  输出大写
+//int islower(int c);
+
+// putchar  输出大写
 // 
 //注意的情况
 //int main()
@@ -99,6 +101,7 @@
 //	putchar(r);   //打印字符
 //	return 0;
 //}
+
 
 
 
@@ -194,9 +197,10 @@
 
 
 //strcpy函数    字符串拷贝    会把\0拷贝过去
+
 //int main()
 //{
-//	char str[10] = { 0 };
+//	char* str[10] = { 0 };
 //
 //	char* str_source = "abcd";
 //
@@ -361,7 +365,7 @@
 //char* strstr(const char* str1, const char* str2);
 
 #include<string.h>
-//
+//strstr模拟函数
 //char* my_strstr(const char* str1, const char* str2)
 //{
 //	const char* s1;
@@ -401,6 +405,19 @@
 //}
 
 
+//int main()
+//{
+//    char str[] = "This is a simple string";
+//    char* pch;
+//    pch = strstr(str, "simple");
+//    if (pch != NULL)
+//        printf("%s\n", pch);
+//    else
+//        printf("查找的字符串不存在\n");
+//    return 0;
+//}
+
+
 //strtok函数       切割字符串
 // 
 // strtok会修改源字符串 所以先拷贝一份源字符串
@@ -409,7 +426,7 @@
 //理解版     不知道多少份就不知道要几个切割语句
 //int main()
 //{
-//	char arr[] = "www.bitejiuyeke.com";
+//	char arr[] = "www.baidu.com";
 //	const char* p = ".";     //分隔符的集合
 //	char buf[30] = { 0 };
 //	strncpy(buf, arr, 30);
