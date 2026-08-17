@@ -325,6 +325,21 @@
 //}
 
 
+//             联合体的特点
+//共用空间
+//union Un
+//{
+//	char c;
+//	int i;
+//};
+//int main()
+//{
+//	union Un un = { 0 };
+//	un.i = 0x11223344;
+//	un.c = 0x55;
+//	printf("%x\n", un.i);
+//	return 0;
+//}
 
 //          1. 联合体大小的计算
 //联合体的大小至少是最大成员的大小
@@ -343,6 +358,25 @@
 //	return 0;
 //}
 
+
+//union Un1
+//{
+//    char c[5];
+//    int i;
+//};
+//
+//union Un2
+//{
+//    short c[7];
+//    int i;
+//};
+//
+//int main()
+//{
+//    printf("%d\n", sizeof(union Un1));
+//    printf("%d\n", sizeof(union Un2));
+//    return 0;
+//}
 
 
 //        2. 联合体的应用
@@ -377,6 +411,7 @@
 
 
 
+
 //   练习： 使用联合体来判断当前机器是大端还是小端
 //int check_sys()
 //{
@@ -384,7 +419,7 @@
 //    {
 //        char c;
 //        int i;
-//    }un;
+//    };
 //    union Un un;
 //    un.i = 1;
 //    return un.c;// 返回1是小端 ，返回0是大端
