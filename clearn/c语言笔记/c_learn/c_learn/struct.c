@@ -186,7 +186,7 @@
 //	int i;
 //	char c2;
 //};
-//
+//#pragma pack()     //取消设置的默认对齐数，还原为默认
 //int main()
 //{
 //	struct S s; 
@@ -213,7 +213,6 @@
 //	printf("\n");
 //	printf("%d\n", t.num);
 //}
-//
 ////结构体指针->成员名   //传入的是地址
 //void print2(struct S* ps)
 //{
@@ -223,7 +222,7 @@
 //		printf("%d ",ps->data[i]);
 //	}
 //	printf("\n");
-//	printf("%d\n", ps->num);
+//	printf("%d\n", ps->num); 
 //}
 //int main()
 //{
@@ -244,13 +243,15 @@
 //1. 位段的成员必须是int、unsigned int或signed int，在C99中位段成员的类型也可以选择其他整型家族类型，⽐如：char。
 //2. 位段的成员名后边有⼀个冒号和⼀个数字
 
+//位段
 //struct A
 //{
-//	int _a : 2;    // 占 2个bite 位
+//	int _a : 2;    // 占 2个bit 位
 //	int _b : 5;
 //	int _c : 10;
 //	int _d : 30;
 //};
+////结构体
 //struct B
 //{
 //	int _a;   
@@ -258,7 +259,6 @@
 //	int _c;
 //	int _d;
 //};
-//
 //int main()
 //{
 //	printf("%zu\n", sizeof(struct A));
