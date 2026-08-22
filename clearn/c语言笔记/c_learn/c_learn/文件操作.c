@@ -206,7 +206,7 @@
 
 //int main()
 //{
-//	FILE* pf = fopen("test.txt", "w"); //以w的形式打开⽂件，才能正确的写⽂件
+//	FILE* pf = fopen("test.txt", "r"); //使用r只读文件
 //
 //	if (pf == NULL)
 //	{
@@ -215,7 +215,7 @@
 //	}
 //	//读文件
 //	int ch = 0;
-//	while (ch = fgetc(pf) != EOF)
+//	while ((ch = fgetc(pf)) != EOF)
 //	{
 //		printf("%c\n", ch);
 //	}
@@ -250,7 +250,9 @@
 //int ferror(FILE* stream)
 //检测stream指针指向的流是否发生读/写错误
 
-//如果在读/写⽂件的过程中，发⽣了读/写错误，⽂件读取就会结束。这时读/写函数会在对应的流上设置⼀个错误指⽰符，这个错误指⽰符可以通过ferror函数检测到。
+//如果在读/写⽂件的过程中，发⽣了读/写错误，⽂件读取就会结束。这时读/写函数会在对应的流上设置⼀个错误指⽰符，
+// 这个错误指⽰符可以通过ferror函数检测到。
+
 //如果ferror函数检测错误指⽰符已经被设置，则返回⾮0的值，如果没有设置则返回0
 
 
@@ -374,7 +376,7 @@
 //		return 1;
 //	}
 //	//读文件
-//	char arr[20] = "------------";
+//	char arr[20] = {0};
 //	//fgets(arr, 5, fp);//abcd\0
 //
 //	while (fgets(arr, 5, fp) != NULL)
@@ -399,7 +401,7 @@
 //返回值：成功时，返回写入的字符总数(非负值)
 //失败时，先设置对应流的错误指示器，再返回负值，可以通过ferror检测
 
-
+//
 //struct Stu
 //{
 //	char name[20];
@@ -425,6 +427,29 @@
 //	return 0;
 //}
 
+//int main(void)
+//{
+//    FILE* fp = fopen("test.txt", "w");
+//    if (fp == NULL)
+//    {
+//        perror("fopen");
+//        return 1;
+//    }
+//
+//    int a = 10;
+//    double b = 3.14;
+//    char ch = 'X';
+//    char str[] = "hello file";
+//
+//    // a,b,ch,str 全部属于可变参数列表 ...
+//    fprintf(fp, "int:%d double:%lf char:%c str:%s\n", a, b, ch, str);
+//
+//    fclose(fp);
+//    fp = NULL;
+//    return 0;
+//}
+
+
 
 //fscanf函数   读出
 
@@ -433,7 +458,7 @@
 //fscanf是从指定⽂件流中读取格式化数据的函数,类似与scanf,可以指定输入源
 
 
-//struct Stu
+//struct stu
 //{
 //	char name[20];
 //	int age;
@@ -442,7 +467,7 @@
 //
 //int main()
 //{
-//	struct Stu s = { 0 };
+//	struct stu s = { 0 };
 //	FILE* fp = fopen("test.txt", "r");
 //	if (fp == NULL)
 //	{
@@ -451,7 +476,7 @@
 //	}
 //	//读文件
 //	
-//	fscanf(fp, "名字：%s 年龄：%d 成绩：%f\n", s.name, &(s.age), &(s.score));    //name是指针，无需取地址
+//	//fscanf(fp, "名字：%s 年龄：%d 成绩：%f\n", s.name, &(s.age), &(s.score));    //name是数组，无需取地址
 //	fprintf(stdout, "名字：%s 年龄：%d 成绩：%f\n", s.name, s.age, s.score);
 //
 //	//关闭文件
@@ -459,6 +484,8 @@
 //	fp = NULL;
 //	return 0;
 //}
+
+
 
 
 //sprintf函数
@@ -489,6 +516,8 @@
 //	return 0;
 //}
 
+
+
 //fwrite函数
 //size_t fwrite(const void* ptr, size_t size, size_t count, FILE* stream);
 
@@ -499,7 +528,7 @@
 //size:要写⼊的每个数据项的⼤⼩（以字节为单位）
 //count:要写入的数据项的数量
 
-//struct Stu
+//struct stu
 //{
 //	char name[20];
 //	int age;
@@ -507,7 +536,7 @@
 //};
 //int main()
 //{
-//	struct Stu s = { "zhangsan",20,95.5f };
+//	struct stu s = { "zhangsan",20,95.5f };
 //	FILE* fp = fopen("test.txt", "wb");
 //	if (fp == NULL)
 //	{
@@ -515,7 +544,7 @@
 //		return 1;
 //	}
 //	//写文件
-//	fwrite(&s, sizeof(struct Stu), 1, fp);
+//	fwrite(&s, sizeof(struct stu), 1, fp);
 //
 //	//关闭文件
 //	fclose(fp);
@@ -568,7 +597,7 @@
 
 //int main()
 //{
-//	FILE* pf = fopen("test.txt", "w"); //以w的形式打开⽂件，才能正确的写⽂件
+//	FILE* pf = fopen("test.txt", "rb");
 //
 //	if (pf == NULL)
 //	{
@@ -577,8 +606,8 @@
 //	}
 //	//定位文件指针
 //	fseek(pf, 5, SEEK_SET);    //从pf文件指针起始位置偏移5个光标
-//	fseek(pf, 5, SEEK_CUR);
-//	fseek(pf, 5, SEEK_END);
+//	//fseek(pf, 5, SEEK_CUR);
+//	//fseek(pf, 5, SEEK_END);
 //	int c = fgetc(pf);
 //	fputc(c, stdout);
 //
@@ -591,78 +620,65 @@
 
 //ftell函数
 
-long int ftell(FILE* stream);
+//long int ftell(FILE* stream);
 
 //stream;已打开文件
 
 //功能：返回文件指针相对起始位置的偏移量
 
+
+
 //int main()
 //{
-//	FILE* pf = fopen("test.txt", "w"); //以w的形式打开⽂件，才能正确的写⽂件
-//
-//	if (pf == NULL)
-//	{
-//		perror("fopen");
-//		return 1;
-//	}
-//	int c = fgetc(pf);
-//	fputc(c, stdout);//z
-//
-//	int pos = ftell(pf);   //先记录偏移量  后面在返回这个位置
-//	//定位文件指针
-//	fseek(pf, 5, SEEK_CUR);  //位置变换了
-//	int c = fgetc(pf);
-//	fputc(c, stdout);//s
-//	
-//	fseek(pf, pos, SEEK_SET);  //再从起始位置偏移一定的偏移量到达先前的位置
-//	int c = fgetc(pf);
-//	fputc(c, stdout);//h
-//
-//	//关闭⽂件
-//	fclose(pf);
-//	pf = NULL; //将指针置为NULL避免成为野指针。
-//	return 0;
+//    FILE* pFile= fopen("test.txt", "rb");
+//    long size;
+//    
+//    if (pFile == NULL)
+//        perror("Error opening file");
+//    else
+//    {
+//        fseek(pFile, 0, SEEK_END);   //将文件指针移到文件末尾
+//        size = ftell(pFile);         //文件光标在末尾，这时候我们使用ftell可以求出文件字节大小
+//        fclose(pFile);
+//        printf("Size of myfile.txt: %ld bytes.\n", size);
+//    }
+//    return 0;
 //}
+
 
 //rewind函数
 
-void rewind(FILE* stream);
+//void rewind(FILE* stream);
 
 //功能：让文件指针的位置回到文件的起始位置
 
 //rewind 不仅移动文件指针，还会清除文件的错误标志和文件结束标志
 
+//#include <stdio.h>
 //int main()
 //{
-//	FILE* pf = fopen("test.txt", "w"); //以w的形式打开⽂件，才能正确的写⽂件
+//    FILE* fp = fopen("test.txt", "rb");
+//    if (fp == NULL)
+//        return 1;
 //
-//	if (pf == NULL)
-//	{
-//		perror("fopen");
-//		return 1;
-//	}
-//	int c = fgetc(pf);
-//	fputc(c, stdout);//z
+//    fseek(fp, 2, SEEK_SET); // 从开头向后跳2字节，指向字符'c'
 //
-//	int pos = ftell(pf);   //先记录偏移量  后面在返回这个位置
-//	//定位文件指针
-//	fseek(pf, 5, SEEK_CUR);  //位置变换了
-//	int c = fgetc(pf);
-//	fputc(c, stdout);//s
-//	
-//	fseek(pf, pos, SEEK_SET);  //再从起始位置偏移一定的偏移量到达先前的位置
-//	int c = fgetc(pf);
-//	fputc(c, stdout);//h
+//    char ch;
+//    fread(&ch, 1, 1, fp);
+//    printf("%c\n", ch); //输出 c
 //
-//	rewid(pf);  //回到起始位置
-//	int c = fgetc(pf);
-//	fputc(c, stdout);
-//	//关闭⽂件
-//	fclose(pf);
-//	pf = NULL; //将指针置为NULL避免成为野指针。
-//	return 0;
+//    long pos = ftell(fp);
+//    printf("当前位置：%ld\n", pos); //3
+//
+//    rewind(fp); //回到开头
+//    fread(&ch, 1, 1, fp);
+//    printf("%c\n", ch); //输出 a
+//
+//    fclose(fp);
+//    fp = NULL;
+//    return 0;
 //}
+
 
 
 
