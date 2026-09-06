@@ -271,14 +271,14 @@
 //#ifndef symbol 
 
 
-#define m 0
-int main()
-{
-#ifdef m
-	printf("haha\n");
-#endif
-	return 0;
-}
+//#define m 0
+//int main()
+//{
+//#ifdef m
+//	printf("haha\n");
+//#endif
+//	return 0;
+//}
 
 
 //条件编译的嵌套
