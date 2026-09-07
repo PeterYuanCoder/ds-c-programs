@@ -12,8 +12,8 @@ void menu()
 
 void game()
 {
-	char mine[ROWS][COLS ]; //存放的时雷的信息
-	char show[ROWS][COLS];  //存放的时排查出的雷的信息
+	char mine[ROWS][COLS ]; //存放的是雷的信息
+	char show[ROWS][COLS];  //存放的是排查出的雷的信息
 	//初始化棋盘
 	InitBoard(mine, ROWS, COLS,'0');  //引用第四个参数进行初始化
 	InitBoard(show, ROWS, COLS,'*');
