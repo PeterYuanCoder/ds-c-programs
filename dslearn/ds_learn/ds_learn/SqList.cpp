@@ -20,8 +20,26 @@ void SqListInit(SqList* ps)
 	ps->capacity = 4;
 }
 
+//ÅĞ¶ÏÊÇ·ñĞèÒªÀ©Èİ
+static void SqListCheckCapacity(SqList* ps)
+{
+	assert(ps);
+	if (ps->size == ps->capacity)
+	{
+
+		SqDataType* tmp = (SqDataType*)realloc(ps->arr, sizeof(SqDataType) * ps->capacity * 2);
+		if (tmp == NULL)
+		{
+			printf("SqListCheckCapacity:¿Õ¼äÉêÇëÊ§°Ü\n");
+			return;
+		}
+		ps->arr = tmp;
+		ps->capacity *= 2;
+	}
+}
+
 // Ïú»ÙË³Ğò±í
-void SqListDestroy(SqList* ps)
+void SqListDestroy(SqList * ps)
 {
 	assert(ps);
 	free(ps->arr);
@@ -47,8 +65,8 @@ int LocateElem(SqList* ps, SqDataType x)
 		{
 			return i;
 		}
-		return -1;
 	}
+	return -1;
 }
 
 // ÔÚË³Ğò±íµÄµÚi¸öÎ»ÖÃ²åÈëÔªËØx£¨i¿ÉÈ¡0~size£©
@@ -56,6 +74,7 @@ void SqListInsert(SqList* ps, int i, SqDataType x)
 {
 	assert(ps);
 	assert(i >= 0 && i <= ps->size);
+	SqListCheckCapacity(ps);
 	for (int j = ps->size - 1; j >= i; j--)
 	{
 		ps->arr[j + 1] = ps->arr[j];
@@ -112,6 +131,7 @@ int SqListSize(SqList* ps)
 void SqListPushBack(SqList* ps, SqDataType x)
 {
 	assert(ps);
+	SqListCheckCapacity(ps);
 	ps->arr[ps->size] = x;
 	ps->size++;
 }
@@ -120,6 +140,7 @@ void SqListPushBack(SqList* ps, SqDataType x)
 void SqListPushFront(SqList* ps, SqDataType x)
 {
 	assert(ps);
+	SqListCheckCapacity(ps);
 	for (int i = ps->size - 1; i >= 0; i--)
 	{
 		ps->arr[i + 1] = ps->arr[i];
