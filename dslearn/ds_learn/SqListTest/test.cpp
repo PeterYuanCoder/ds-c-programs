@@ -242,6 +242,12 @@ TEST(SqListLifecycle, Destroy_ReleasesResources) {
 //        故对越界的调用,程序应当直接断言失败退出,而不是返回乱数据。
 //        这类"接口保护"也属于接口行为的一部分,值得用死亡测试锁定。
 // ---------------------------------------------------------------------------
+TEST_F(SqListTest, Modify_ChangesValueAtPosition) {
+	PushSome(&list_, 3);                // [1, 2, 3]
+	SqListModify(&list_, 1, 99);
+	EXPECT_EQ(GetElem(&list_, 1), 99);
+}
+
 #ifndef NDEBUG
 TEST_F(SqListTest, GetElem_OutOfRangeCrashes) {
 	// 空表上取下标 5:越界,应触发 assert 崩溃(死亡)

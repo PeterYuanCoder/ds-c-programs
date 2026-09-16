@@ -23,6 +23,8 @@ void SqListDestroy(SqList* ps);
 
 // 返回顺序表中第i个下标位置元素的值
 SqDataType GetElem(SqList* ps, int i);
+// 修改顺序表中第 i 个位置元素的值
+void SqListModify(SqList* ps, int i, SqDataType x);
 
 // 返回第一个等于x的数据元素的下标，若不存在返回-1
 int LocateElem(SqList* ps, SqDataType x);

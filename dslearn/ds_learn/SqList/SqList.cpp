@@ -54,6 +54,13 @@ SqDataType GetElem(SqList* ps, int i)
 	assert(i >= 0 && i < ps->size);
 	return ps->arr[i];
 }
+// 修改顺序表中第 i 个位置元素的值
+void SqListModify(SqList* ps, int i, SqDataType x)
+{
+	assert(ps);
+	assert(i >= 0 && i < ps->size);
+	ps->arr[i] = x;
+}
 
 // 返回第一个等于x的数据元素的下标，若不存在返回-1
 int LocateElem(SqList* ps, SqDataType x)
