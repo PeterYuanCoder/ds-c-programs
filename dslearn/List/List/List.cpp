@@ -28,7 +28,7 @@ void ListPrint(LNode* L)
     assert(L);
     printf("头结点->");
     LNode* cur = L->next;//存头结点的地址
-    while (cur == NULL)//最后都会返回为NULL
+    while (cur != NULL)//最后都会返回为NULL
     {
         printf("%d->", cur->data);
         cur = cur->next;
@@ -42,13 +42,21 @@ int ListSize(LNode* L)
     assert(L);
     int size = 0;
     LNode* cur = L->next;
-    while (cur == NULL)
+    while (cur != NULL)
     {
         cur = cur->next;
         size++;
     }
     return size;
 }
+
+// 判断链表是否为空，空返回真，否则返回假
+bool ListEmpty(LNode* L)
+{
+    assert(L);
+    return L->next == NULL;
+}
+
 
 
 //查找
@@ -57,7 +65,7 @@ LNode* ListLocateElem(LNode* L, LDataType x)
 {
     assert(L);
     LNode* cur = L->next;
-    while (cur == NULL)
+    while (cur != NULL)
     {
         if (cur->data == x)
         {
@@ -111,7 +119,7 @@ LDataType ListDelete(LNode* L, int i)
     assert(L);
     assert(i >= 0);
     int j = -1;
-    LNode* i_1Node = L->next;
+    LNode* i_1Node = L;
     while (j < i - 1 && i_1Node != NULL)
     {
         i_1Node = i_1Node->next;
@@ -125,6 +133,59 @@ LDataType ListDelete(LNode* L, int i)
     iNode = NULL;
     return x;
 }
+
+//头插
+void ListPushFront(LNode* L, LDataType x)
+{
+    assert(L);
+    LNode* newNode = BuyListNode(x);
+    newNode->next = L->next;
+    L->next = newNode;
+}
+
+//尾插
+void ListPushBack(LNode* L, LDataType x)
+{
+    assert(L);
+    LNode* tail = L;
+    while (tail->next != NULL)
+    {
+        tail = tail->next;
+    }
+    tail->next = BuyListNode(x);
+}
+
+//头删
+LDataType ListPopFront(LNode* L)
+{
+    assert(L);
+    assert(L->next != NULL); // 空链表不能头删
+    LNode* del = L->next;
+    L->next = del->next;
+    LDataType x = del->data;
+    free(del);
+    del = NULL;
+    return x;
+}
+
+//尾删
+LDataType ListPopBack(LNode* L)
+{
+    assert(L);
+    assert(L->next != NULL); // 空链表不能尾删
+    LNode* prev = L;
+    while (prev->next->next != NULL)
+    {
+        prev = prev->next;
+    }
+    LNode* del = prev->next;
+    prev->next = NULL;
+    LDataType x = del->data;
+    free(del);
+    del = NULL;
+    return x;
+}
+
 
 
 //销毁链表
