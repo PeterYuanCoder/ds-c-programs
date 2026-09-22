@@ -26,6 +26,9 @@ Debug/
 .vs
 Release/
 
+# NuGet 还原生成的本地 packages 目录
+packages/
+
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
