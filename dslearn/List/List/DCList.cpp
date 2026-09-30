@@ -47,4 +47,7 @@ void DCListDestroy(DCListNode* L)
 DCListNode* DCListGetElem(DCListNode* L, int i)
 {
 
+
+
+
 }
