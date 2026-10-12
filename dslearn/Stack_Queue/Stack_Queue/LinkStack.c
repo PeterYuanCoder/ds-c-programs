@@ -40,17 +40,20 @@ void LinkStackPush(LinkStack* s, STDataType x)
 
 	newNode->next = s->topHead;
 	s->topHead = newNode;
-
+	s->size++;
 }
 
 // 出栈，并返回栈顶元素
 STDataType LinkStackPop(LinkStack* s)
 {
+	assert(s);
+	assert(!LinkStackEmpty(s));
 	LNode* delNode = s->topHead;
 	LNode* topE = delNode->data;
 	s->topHead = delNode->next;
 	free(delNode);
 	delNode = NULL;
+	s->size--;
 	return topE;
 }
 
