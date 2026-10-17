@@ -8,10 +8,11 @@
 typedef int HeapDataType;
 typedef struct {
 	HeapDataType* a;
-	int size;
-	int capacity;
+	int size;      //元素个数
+	int capacity;   //堆的容量
 }Heap;
 
+//交换函数
 void Swap(int* x, int* y);
 
 //向上调整算法
