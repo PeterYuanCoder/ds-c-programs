@@ -1,7 +1,7 @@
-#define _CRT_SECURE_NO_WARNINGS
+ï»¿#define _CRT_SECURE_NO_WARNINGS
 #include"Heap.h"
 
-//Ä¬ÈÏ³õÊ¼»¯¶Ñ
+//é»˜è®¤åˆå§‹åŒ–å †
 void HeapInit(Heap* hp)
 {
 	assert(hp);
@@ -9,7 +9,7 @@ void HeapInit(Heap* hp)
 	hp->capacity = hp->size = 0;
 }
 
-//·â×°Ò»¸ö×¨ÃÅÓÃÀ´½»»»µÄº¯Êı
+//å°è£…ä¸€ä¸ªä¸“é—¨ç”¨æ¥äº¤æ¢çš„å‡½æ•°
 void Swap(int* x, int* y)
 {
 	assert(x != NULL && y != NULL);
@@ -18,17 +18,17 @@ void Swap(int* x, int* y)
 	*y = tmp;
 }
 
-//ÏòÉÏµ÷ÕûËã·¨
+//å‘ä¸Šè°ƒæ•´ç®—æ³•
 void AdjustUp(HeapDataType* a,int child)
 {
 	assert(a);
-	//Ë«Ç×
+	//åŒäº²
 	int parent = (child - 1) / 2;
 	while (child > 0)
 	{
 		if (a[child] < a[parent])
 		{
-			//½»»»
+			//äº¤æ¢
 			Swap(&a[child], &a[parent]);
 			child = parent;
 			parent = (child - 1) / 2;
@@ -40,13 +40,13 @@ void AdjustUp(HeapDataType* a,int child)
 	}
 }
 
-//¶ÑµÄ²åÈë
+//å †çš„æ’å…¥
 void HeapPush(Heap* hp, HeapDataType x)
 {
 	assert(hp);
-	if (hp->capacity == hp->size)   //¶ÑÎª¿Õ
+	if (hp->capacity == hp->size)   //å †ä¸ºç©º
 	{
-		//¿ª±Ù¿Õ¼ä
+		//å¼€è¾Ÿç©ºé—´
 		int newCapacity = hp->capacity == 0 ? 4 : hp->capacity * 2;
 		HeapDataType* tmp = (HeapDataType*)realloc(hp->a, sizeof(HeapDataType) * newCapacity);
 		if (tmp == NULL)
@@ -66,22 +66,22 @@ void HeapPush(Heap* hp, HeapDataType x)
 void AdjustDown(HeapDataType* a, int size, int parent)
 {
 	assert(a);
-	//Ä¬ÈÏchildÎª×óº¢×Ó
+	//é»˜è®¤childä¸ºå·¦å­©å­
 	int child = parent * 2 + 1;
 	while (child<size) 
 	{
-		//Ñ¡³öĞ¡µÄÄÇ¸öº¢×Ó
-		if (a[child+1]>size && a[child + 1] > a[child])
+		//é€‰å‡ºå°çš„é‚£ä¸ªå­©å­
+		if (child+1<size && a[child + 1] < a[child])
 		{
 			child++;
 		}
 
-		//±È½ÏĞ¡µÄº¢×Ó¸ú¸¸Ç×±È½Ï
-		if (a[child] > a[parent])
+		//æ¯”è¾ƒå°çš„å­©å­è·Ÿçˆ¶äº²æ¯”è¾ƒ
+		if (a[child] < a[parent])
 		{
-			//½»»»¸¸Ç×ºÍº¢×Ó
+			//äº¤æ¢çˆ¶äº²å’Œå­©å­
 			Swap(&a[child], &a[parent]);
-			//¸¸Ç×µ½º¢×ÓµÄÎ»ÖÃÉÏÀ´
+			//çˆ¶äº²åˆ°å­©å­çš„ä½ç½®ä¸Šæ¥
 			parent = child;
 			child = parent * 2 + 1;
 		}
@@ -92,19 +92,20 @@ void AdjustDown(HeapDataType* a, int size, int parent)
 	}
 }
 
-// ¶ÑµÄÉ¾³ı£¬É¾³ı¶Ñ¶¥Êı¾İ
+// å †çš„åˆ é™¤ï¼Œåˆ é™¤å †é¡¶æ•°æ®
 void HeapPop(Heap* hp)
 {
 	assert(hp);
-	//½»»»¶Ñ¶¥ºÍ¶ÑÎ²µÄÊı¾İÎ»ÖÃ
+	assert(hp->size > 0);
+	//äº¤æ¢å †é¡¶å’Œå †å°¾çš„æ•°æ®ä½ç½®
 	Swap(&hp->a[0], &hp->a[hp->size - 1]);
 	hp->size--;
 
-	//ÏòÏÂµ÷ÕûËã·¨
+	//å‘ä¸‹è°ƒæ•´ç®—æ³•
 	AdjustDown(hp->a, hp->size,0);
 }
 
-// »ñÈ¡¶Ñ¶¥Êı¾İ
+// è·å–å †é¡¶æ•°æ®
 HeapDataType HeapTop(Heap* hp)
 {
 	assert(hp);
@@ -115,20 +116,24 @@ HeapDataType HeapTop(Heap* hp)
 
 
 
-//¸øÒ»×éÊı¾İ£¬ÈÃÄã½¨¶Ñ
+//ç»™ä¸€ç»„æ•°æ®ï¼Œè®©ä½ å»ºå †
 void HeapInitArray(Heap* hp, HeapDataType* a, int n)
 {
 	assert(hp);
-	assert(hp->a);
+	assert(a);
+	assert(n > 0);
 
-	//ÏòÉÏµ÷Õû     Ö±½Ó²åÈëÔªËØ
-	for (int i = 1; i < n; i++)
+	hp->a = (HeapDataType*)malloc(sizeof(HeapDataType) * n);
+	if (hp->a == NULL)
 	{
-		AdjustUp(hp->a, i);
+		perror("HeapInitArray::malloc()");
+		exit(-1);
 	}
+	memcpy(hp->a, a, sizeof(HeapDataType) * n);
+	hp->size = hp->capacity = n;
 
 
-	//ÏòÏÂµ÷Õû     ÕÒµ½×îºóÒ»¸ö·ÇÒ¶×Ó£¨Ò¶×ÓµÄË«Ç×£©
+	//å‘ä¸‹è°ƒæ•´     æ‰¾åˆ°æœ€åä¸€ä¸ªéå¶å­ï¼ˆå¶å­çš„åŒäº²ï¼‰
 	for (int i = (n - 1 - 1) / 2; i >= 0 ; i--)
 	{
 		AdjustDown(hp->a, n, i);
@@ -137,21 +142,47 @@ void HeapInitArray(Heap* hp, HeapDataType* a, int n)
 
 
 
-//¶ÑÅÅĞò
+//å †æ’åº
 void HeapSort(int* a, int n)
 {
-	//ÉıĞò£¬½¨´ó¶Ñ
+	//å‡åºï¼Œå»ºå¤§å †
 	for (int i = (n - 1 - 1) / 2; i >= 0; i++)
 	{
 		AdjustDown(a, n, i);
 	}
-	//Ñ¡ÊıÅÅĞò
-	int j = 1;  //Ñ¡µÚ¼¸´óµÄÊı
-	while (j < n)     //µ±jµÈÓÚnÊ±£¬Ö»ÓĞÒ»¸öÔªËØÁË
+	//é€‰æ•°æ’åº
+	int j = 1;  //é€‰ç¬¬å‡ å¤§çš„æ•°
+	while (j < n)     //å½“jç­‰äºnæ—¶ï¼Œåªæœ‰ä¸€ä¸ªå…ƒç´ äº†
 	{
 		Swap(&a[0], &a[n - j]);
 		AdjustDown(a, n - j, 0);
 		j++;
 	}
 
+}
+
+
+// åˆ¤ç©º
+int HeapEmpty(Heap* hp)
+{
+	assert(hp);
+	return hp->size == 0;
+}
+
+
+//å †çš„é”€æ¯
+void HeapDestroy(Heap* hp)
+{
+	assert(hp);
+	free(hp->a);
+	hp->a = NULL;
+	hp->capacity = hp->size = 0;
+}
+
+
+//è·å–å †çš„æ•°æ®ä¸ªæ•°
+int HeapSize(Heap* hp)
+{
+	assert(hp);
+	return hp->size;
 }
