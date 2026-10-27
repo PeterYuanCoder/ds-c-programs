@@ -17,3 +17,8 @@ void SelectSort(int* a, int n);
 //ц╟ещеепР
 void BubbleSort(int* a, int n);
 
+//©Лее
+void QuickSort(int* a, int left, int right);
+
+//мз©у╥╗
+int PartitionDigHole(int* a, int left, int right);

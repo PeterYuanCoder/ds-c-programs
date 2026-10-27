@@ -93,3 +93,71 @@ void SelectSort(int* a, int n)
 		}
 	}
 }
+
+
+//冒泡排序
+void BubbleSort(int* a, int n)
+{
+	for (int i = 0; i < n - 1; i++)
+	{
+		//单趟冒泡排序
+		int flag = 0;
+		for (int j = 0; j < n - i - 1; j++)
+		{
+			if (a[j] > a[j + 1])
+			{
+				Swap(&a[j], &a[j + 1]);
+				flag = 1;
+			}
+		}
+		if (flag == 0)
+		{
+			break;
+		}
+	}
+}
+
+//挖空法
+int PartitionDigHole(int* a, int left, int right)
+{
+	int pivotkeyi = a[left];
+	while (left < right)
+	{
+		//从左边找小的，来填右边的位置（pivotkeyi）
+		while (left < right && a[right] >= pivotkeyi)
+		{
+			right--;
+		}
+		//找到了,替换位置
+		a[left] = a[right];
+		//从右边找大的，来填左边的位置
+		while (left < right && a[left] <= pivotkeyi)
+		{
+			left++;
+		}
+		//找到了，替换位置
+		a[right] = a[left];
+	}
+	//将基准值放到相遇的位置
+	a[left] = pivotkeyi;
+	//返回相遇的位置的坐标
+	return left;
+}
+
+
+void QuickSort(int* a, int left, int right)
+{
+	if (left >= right)
+	{
+		return -1;
+	}
+	//找基准值，确定基准值的位置
+	int pivotkeyi = PartitionDigHole(a, left, right);
+
+	//递归
+	//左区间
+	QuickSort(a, left, pivotkeyi - 1);
+	//右区间
+	QuickSort(a, pivotkeyi + 1, right);
+
+}
