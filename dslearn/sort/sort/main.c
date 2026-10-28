@@ -37,7 +37,7 @@ void TestQuickSort() {
     int a[] = { 23,44,38,5,47,15,36,26,27,2 };
 
     PrintArray(a, sizeof(a) / sizeof(int));
-    // PartitionDigHole(a, 0, sizeof(a) / sizeof(int) - 1);
+    PartitionDigHole(a, 0, sizeof(a) / sizeof(int) - 1);
     QuickSort(a, 0, sizeof(a) / sizeof(int) - 1);
     PrintArray(a, sizeof(a) / sizeof(int));
 }

@@ -22,3 +22,5 @@ void QuickSort(int* a, int left, int right);
 
 //ÍÚ¿Õ·¨
 int PartitionDigHole(int* a, int left, int right);
+
+//¼ÆÊıÅÅĞò

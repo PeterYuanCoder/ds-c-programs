@@ -145,6 +145,26 @@ int PartitionDigHole(int* a, int left, int right)
 }
 
 
+//Lumoto的单趟划分
+int PartitionLomuto(int* a, int left, int right)
+{
+	int pivotkeyi = a[right];
+	int cur = left;
+	int prev = left - 1;
+	while (cur < right)
+	{
+		if (a[cur] <= pivotkeyi)
+		{
+			prev++;
+			Swap(&a[prev], &a[cur]);
+		}
+		cur++;
+	}
+	Swap(&a[prev + 1], &a[right]);
+	return prev + 1;
+}
+
+
 void QuickSort(int* a, int left, int right)
 {
 	if (left >= right)
@@ -152,7 +172,8 @@ void QuickSort(int* a, int left, int right)
 		return -1;
 	}
 	//找基准值，确定基准值的位置
-	int pivotkeyi = PartitionDigHole(a, left, right);
+	int pivotkeyi = PartitionLomuto(a, left, right);
+	//int pivotkeyi = PartitionDigHole(a, left, right);
 
 	//递归
 	//左区间
@@ -161,3 +182,4 @@ void QuickSort(int* a, int left, int right)
 	QuickSort(a, pivotkeyi + 1, right);
 
 }
+
