@@ -63,15 +63,16 @@ void HeapPush(Heap* hp, HeapDataType x)
 	AdjustUp(hp->a, hp->size - 1);
 }
 
+//向下调整算法
 void AdjustDown(HeapDataType* a, int size, int parent)
 {
 	assert(a);
 	//默认child为左孩子
 	int child = parent * 2 + 1;
-	while (child<size) 
+	while (child < size) 
 	{
 		//选出小的那个孩子
-		if (child+1<size && a[child + 1] < a[child])
+		if (child + 1 < size && a[child + 1] < a[child])
 		{
 			child++;
 		}
@@ -185,4 +186,47 @@ int HeapSize(Heap* hp)
 {
 	assert(hp);
 	return hp->size;
+}
+
+
+//前序遍历
+void Preorder(BTNode* root) {
+	if (root == NULL) {
+		printf("N ");
+		return;
+	}
+	// 根
+	printf("%c ", root->data);
+	// 递归遍历左子树
+	Preorder(root->left);
+	// 递归遍历右子树
+	Preorder(root->right);
+}
+
+//中序遍历
+void Inorder(BTNode* root) {
+	if (root == NULL) {
+		printf("N ");
+		return;
+	}
+	// 递归遍历左子树
+	Inorder(root->left);
+	// 根
+	printf("%c ", root->data);
+	// 递归遍历右子树
+	Inorder(root->right);
+}
+
+//后序遍历
+void Postorder(BTNode* root) {
+	if (root == NULL) {
+		printf("N ");
+		return;
+	}
+	// 递归遍历左子树
+	Postorder(root->left);
+	// 递归遍历右子树
+	Postorder(root->right);
+	// 根
+	printf("%c ", root->data);
 }

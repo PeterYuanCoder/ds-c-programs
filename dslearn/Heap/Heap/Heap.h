@@ -12,6 +12,16 @@ typedef struct {
 	int capacity;   //堆的容量
 }Heap;
 
+
+typedef int BTDataType;
+// 二叉链
+typedef struct BinaryTreeNode {
+	struct BinaryTreeNode* left;   // 指向左孩子的指针
+	struct BinaryTreeNode* right;  // 指向右孩子的指针
+	BTDataType data;               // 数据元素
+}BTNode;
+
+
 //交换函数
 void Swap(int* x, int* y);
 
@@ -44,3 +54,12 @@ int HeapEmpty(Heap* hp);
 
 //获取堆的数据个数
 int HeapSize(Heap* hp);
+
+//前序遍历
+void Preorder(BTNode* root);
+
+//中序遍历
+void Inorder(BTNode* root);
+
+//后序遍历
+void Postorder(BTNode* root);
