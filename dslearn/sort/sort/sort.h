@@ -1,6 +1,7 @@
 #pragma once
 #include<stdio.h>
-
+#include<string.h>
+#include<stdlib.h>
 
 //交换函数
 void Swap(int* x, int* y);
@@ -27,3 +28,4 @@ int PartitionDigHole(int* a, int left, int right);
 int PartitionLomuto(int* a, int left, int right);
 
 //计数排序
+void CountSort(int* a, int n);

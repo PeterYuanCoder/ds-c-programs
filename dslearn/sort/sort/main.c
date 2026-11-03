@@ -43,6 +43,15 @@ void TestQuickSort() {
 }
 
 
+void TestCountSort() {
+    //int a[] = { 14,19,13,10,19,14,19,18 };
+    int a[] = { 6,1,2,9,4,2,4,1,4,-5,-5,-3,6 };
+
+    PrintArray(a, sizeof(a) / sizeof(int));
+    CountSort(a, sizeof(a) / sizeof(int));
+    PrintArray(a, sizeof(a) / sizeof(int));
+}
+
 
 int main()
 {
@@ -52,7 +61,9 @@ int main()
 
     //TestSelectSort();
 
-    TestQuickSort();
+    //TestQuickSort();
+
+    TestCountSort(); 
     
     return 0;
 }

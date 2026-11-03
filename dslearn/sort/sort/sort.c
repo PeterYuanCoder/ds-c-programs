@@ -77,10 +77,10 @@ void ShellSort(int* a, int n)
 void SelectSort(int* a, int n)
 {
 	//每次选出最小的或者选出最大的
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < n - 1; i++)
 	{
 		int min = i;
-		for (int j = i; j < n ; j++)
+		for (int j = i + 1; j < n; j++)
 		{
 			if (a[min] > a[j])
 			{
@@ -185,3 +185,59 @@ void QuickSort(int* a, int left, int right)
 
 
 //计数排序
+void CountSort(int* a, int n)
+{
+	//遍历一遍选出最大和最小的值
+	int min = a[0];
+	int max = a[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (a[i] < min)
+		{
+			min = a[i];
+		}
+		if (a[i] > max)
+		{
+			max = a[i];
+		}
+	}
+	int range = max - min + 1;
+	//开辟数组空间来计数
+	int* count = (int*)calloc(range, sizeof(int));
+	if (count == NULL)
+	{
+		perror("calloc::count()");
+		return;
+	}
+	//统计次数
+	for (int i = 0; i < n; i++)
+	{
+		count[a[i] - min]++;
+	}
+	//count[i]记录<=映射值x的个数
+	for (int i = 1; i < range; i++)
+	{
+		//当前位置等于前面次数的累加和
+		count[i] += count[i - 1];
+	}
+
+	//开辟空间来存放数据，然后将这个数组拷贝回原数组即可
+	int* tmp = (int*)malloc(sizeof(int) * n);
+	if (tmp == NULL)
+	{
+		perror("malloc()::tmp()");
+		return;
+	}
+	//存放数据，从后往前处理，确保稳定性
+	for (int i = n - 1; i >= 0; i--)
+	{
+		tmp[count[a[i] - min] - 1] = a[i];
+		count[a[i] - min]--;
+	}
+	//拷贝
+	memcpy(a, tmp, sizeof(int) * n);
+
+	//释放
+	free(count);
+	free(tmp);
+}
